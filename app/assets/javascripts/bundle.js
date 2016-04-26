@@ -56,87 +56,7 @@
 	var React = __webpack_require__(24);
 	var ReactDOM = __webpack_require__(91);
 	
-	var LoginForm = __webpack_require__(225);
-	var SignUpForm = __webpack_require__(226);
-	
-	var App = React.createClass({
-	  displayName: 'App',
-	
-	  getInitialState: function () {
-	    return { loginModalOpen: false, signupModalOpen: false };
-	  },
-	
-	  openLoginModal: function (event) {
-	    event.preventDefault();
-	    this.setState({ loginModalOpen: true, signupModalOpen: false });
-	  },
-	
-	  closeLoginModal: function (event) {
-	    event.preventDefault();
-	    this.setState({ loginModalOpen: false });
-	  },
-	
-	  openSignupModal: function (event) {
-	    event.preventDefault();
-	    this.setState({ signupModalOpen: true, loginModalOpen: false });
-	  },
-	
-	  closeSignupModal: function (event) {
-	    event.preventDefault();
-	    this.setState({ signupModalOpen: false });
-	  },
-	
-	  render: function () {
-	    return React.createElement(
-	      'div',
-	      null,
-	      React.createElement(
-	        'h1',
-	        null,
-	        'Feed My Curiosity'
-	      ),
-	      this.props.children,
-	      React.createElement(
-	        'button',
-	        { onClick: this.openLoginModal },
-	        'Get Started'
-	      ),
-	      React.createElement(
-	        Modal,
-	        {
-	          isOpen: this.state.loginModalOpen },
-	        React.createElement(LoginForm, null),
-	        React.createElement(
-	          'a',
-	          { onClick: this.openSignupModal },
-	          'Sign Up Instead'
-	        ),
-	        React.createElement(
-	          'button',
-	          { onClick: this.closeLoginModal },
-	          'Close'
-	        )
-	      ),
-	      React.createElement(
-	        Modal,
-	        {
-	          isOpen: this.state.signupModalOpen,
-	          onRequestClose: this.closeSignUpModal },
-	        React.createElement(SignUpForm, null),
-	        React.createElement(
-	          'a',
-	          { onClick: this.openLoginModal },
-	          'Have an account? Click here to log in'
-	        ),
-	        React.createElement(
-	          'button',
-	          { onClick: this.closeModal },
-	          'Close'
-	        )
-	      )
-	    );
-	  }
-	});
+	var App = __webpack_require__(247);
 	
 	var routes = React.createElement(Route, { path: '/', component: App });
 	
@@ -25527,7 +25447,7 @@
 	      null,
 	      React.createElement("input", { type: "text", placeholder: "Email" }),
 	      React.createElement("input", { type: "password", placeholder: "Password" }),
-	      React.createElement("input", { type: "submit", value: "Log In and Feed" })
+	      React.createElement("input", { type: "submit", value: "Log In and Begin Feeding" })
 	    );
 	  }
 	});
@@ -27503,6 +27423,95 @@
 	  else this.add(className)
 	}
 
+
+/***/ },
+/* 247 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var React = __webpack_require__(24);
+	var Modal = __webpack_require__(227);
+	var LoginForm = __webpack_require__(225);
+	var SignUpForm = __webpack_require__(226);
+	
+	var App = React.createClass({
+	  displayName: 'App',
+	
+	  getInitialState: function () {
+	    return { loginModalOpen: false, signupModalOpen: false };
+	  },
+	
+	  openLoginModal: function (event) {
+	    event.preventDefault();
+	    this.setState({ loginModalOpen: true, signupModalOpen: false });
+	  },
+	
+	  closeLoginModal: function (event) {
+	    event.preventDefault();
+	    this.setState({ loginModalOpen: false });
+	  },
+	
+	  openSignupModal: function (event) {
+	    event.preventDefault();
+	    this.setState({ signupModalOpen: true, loginModalOpen: false });
+	  },
+	
+	  closeSignupModal: function (event) {
+	    event.preventDefault();
+	    this.setState({ signupModalOpen: false });
+	  },
+	
+	  render: function () {
+	    return React.createElement(
+	      'div',
+	      null,
+	      React.createElement(
+	        'h1',
+	        null,
+	        'Feed My Curiosity'
+	      ),
+	      this.props.children,
+	      React.createElement(
+	        'button',
+	        { onClick: this.openLoginModal },
+	        'Get Started'
+	      ),
+	      React.createElement(
+	        Modal,
+	        {
+	          isOpen: this.state.loginModalOpen },
+	        React.createElement(LoginForm, null),
+	        React.createElement(
+	          'a',
+	          { onClick: this.openSignupModal },
+	          'Sign Up Instead'
+	        ),
+	        React.createElement(
+	          'button',
+	          { onClick: this.closeLoginModal },
+	          'Close'
+	        )
+	      ),
+	      React.createElement(
+	        Modal,
+	        {
+	          isOpen: this.state.signupModalOpen },
+	        React.createElement(SignUpForm, null),
+	        React.createElement(
+	          'a',
+	          { onClick: this.openLoginModal },
+	          'Have an account? Click here to log in'
+	        ),
+	        React.createElement(
+	          'button',
+	          { onClick: this.closeSignupModal },
+	          'Close'
+	        )
+	      )
+	    );
+	  }
+	});
+	
+	module.exports = App;
 
 /***/ }
 /******/ ]);

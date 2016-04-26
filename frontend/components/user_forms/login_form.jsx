@@ -6,7 +6,7 @@ var LoginForm = React.createClass({
       <form>
         <input type="text" placeholder="Email"/>
         <input type="password" placeholder="Password" />
-        <input type="submit" value="Log In and Feed" />
+        <input type="submit" value="Log In and Begin Feeding" />
       </form>
     );
   }
