@@ -77,11 +77,11 @@ FeedMyCuriosity is a web application inspired by Feedly that will be built using
   - [x] ensure_session_token
   - [x] reset_session_token
   - [x] generate session_token
-  - [ ] current_user
+  - [x] current_user
   - [x] password=
   - [x] validations
-  - [ ] logout!
-  - [ ] login
+  - [x] logout!
+  - [x] login
 - [ ] user signup/signin pages
   - [ ] make views for now, refactor into React Component later
 - [ ] blank landing page after sign in
