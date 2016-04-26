@@ -27504,20 +27504,34 @@
 	          style: style
 	        },
 	        React.createElement(
-	          'ul',
-	          null,
-	          errors
-	        ),
-	        React.createElement(LoginForm, null),
-	        React.createElement(
-	          'a',
-	          { onClick: this.openSignupModal },
-	          'Sign Up Instead'
-	        ),
-	        React.createElement(
-	          'button',
-	          { onClick: this.closeLoginModal },
-	          'Close'
+	          'div',
+	          { className: 'modal-parent' },
+	          React.createElement(
+	            'h3',
+	            { className: 'modal-header' },
+	            'Log In'
+	          ),
+	          React.createElement(
+	            'ul',
+	            null,
+	            errors
+	          ),
+	          React.createElement(LoginForm, null),
+	          React.createElement(
+	            'pre',
+	            { className: 'alternative' },
+	            'Don\'t have an account? ',
+	            React.createElement(
+	              'a',
+	              { onClick: this.openSignupModal },
+	              'Sign Up Here'
+	            )
+	          ),
+	          React.createElement(
+	            'button',
+	            { className: 'modal-close-btn', onClick: this.closeLoginModal },
+	            'Close'
+	          )
 	        )
 	      ),
 	      React.createElement(
@@ -27527,20 +27541,29 @@
 	          style: style
 	        },
 	        React.createElement(
-	          'ul',
-	          null,
-	          errors
-	        ),
-	        React.createElement(SignUpForm, null),
-	        React.createElement(
-	          'a',
-	          { onClick: this.openLoginModal },
-	          'Have an account? Click here to log in'
-	        ),
-	        React.createElement(
-	          'button',
-	          { onClick: this.closeSignupModal },
-	          'Close'
+	          'div',
+	          { className: 'modal-parent' },
+	          React.createElement(
+	            'h3',
+	            { className: 'modal-header' },
+	            'FeedMyCuriosity Sign Up'
+	          ),
+	          React.createElement(
+	            'ul',
+	            null,
+	            errors
+	          ),
+	          React.createElement(SignUpForm, null),
+	          React.createElement(
+	            'a',
+	            { onClick: this.openLoginModal },
+	            'Have an account? Click here to log in'
+	          ),
+	          React.createElement(
+	            'button',
+	            { className: 'modal-close-btn', onClick: this.closeSignupModal },
+	            'Close'
+	          )
 	        )
 	      )
 	    );
@@ -27598,7 +27621,7 @@
 	          placeholder: 'Password',
 	          onChange: this.passwordChange,
 	          value: this.state.password }),
-	        React.createElement('input', { type: 'submit', value: 'Log In and Begin Feeding' })
+	        React.createElement('input', { className: 'modal-submit-btn', type: 'submit', value: 'Log In and Begin Feeding' })
 	      )
 	    );
 	  }

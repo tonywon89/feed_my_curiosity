@@ -38,7 +38,7 @@ var LoginForm = React.createClass({
                  placeholder="Password"
                  onChange={this.passwordChange}
                  value={this.state.password}/>
-          <input type="submit" value="Log In and Begin Feeding" />
+          <input className="modal-submit-btn" type="submit" value="Log In and Begin Feeding" />
         </form>
       </div>
     );

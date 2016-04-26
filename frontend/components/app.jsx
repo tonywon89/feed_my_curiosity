@@ -92,10 +92,17 @@ var App = React.createClass({
           isOpen={this.state.loginModalOpen}
           style={style}
         >
-          <ul>{errors}</ul>
-          <LoginForm />
-          <a onClick={this.openSignupModal}>Sign Up Instead</a>
-          <button onClick={this.closeLoginModal}>Close</button>
+          <div className="modal-parent">
+            <h3 className="modal-header">Log In</h3>
+            <ul>{errors}</ul>
+            <LoginForm />
+            <pre className="alternative">
+              Don't have an account? <a onClick={this.openSignupModal}>Sign Up Here</a>
+            </pre>
+            <button className="modal-close-btn" onClick={this.closeLoginModal}>
+              Close
+            </button>
+          </div>
 
         </Modal>
 
@@ -103,11 +110,15 @@ var App = React.createClass({
           isOpen={this.state.signupModalOpen}
           style={style}
         >
-          <ul>{errors}</ul>
-          <SignUpForm />
-          <a onClick={this.openLoginModal}>Have an account? Click here to log in</a>
-          <button onClick={this.closeSignupModal}>Close</button>
-
+          <div className="modal-parent">
+            <h3 className="modal-header">FeedMyCuriosity Sign Up</h3>
+            <ul>{errors}</ul>
+            <SignUpForm />
+            <a onClick={this.openLoginModal}>Have an account? Click here to log in</a>
+            <button className="modal-close-btn" onClick={this.closeSignupModal}>
+              Close
+            </button>
+          </div>
         </Modal>
       </div>
     );

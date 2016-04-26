@@ -1,6 +1,8 @@
 $green: #38B769;
 $blue: #5999AD;
 $header-background-color: #D6F8D6;
+$close-btn-color: #7D807F;
+$close-btn-hover-color: #FF5C35;
 
 // Splash Page styles
 
@@ -13,10 +15,27 @@ header {
   background-color: $header-background-color;
 }
 
-button {
-  padding: 5px;
-  border: 1px solid black;
+button, input[type="submit"] {
+  color: white;
+  background-color: $blue;
+  padding: 10px;
   border-radius: 3px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+button:hover, input[type="submit"]:hover {
+  background-color: $green; //#8FDDDD;
+  color: white;
+}
+
+a {
+  text-decoration: underline;
+  color: blue;
+}
+
+a:hover {
+  cursor: pointer;
+  color: $green;
 }
 
 button.getting-started {
@@ -26,7 +45,7 @@ button.getting-started {
   border: 0px;
   margin: 50px;
   background-color: #2bb24c;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)
+
 }
 
 h1.header-text {
@@ -39,6 +58,63 @@ h1.header-text {
 
 // Modal Authentication element styles
 
-.auth-form {
+div.modal-parent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
+h3.modal-header {
+  font-size: 30px;
+  font-weight: bold;
+  padding: 30px;
+  color: $green;
+}
+
+// Auth Form
+div.auth-form {
+  position: relative;
+  padding: 20px;
+  width: 75%;
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+input[type="text"], input[type="password"] {
+  color: green;
+  width: 85%;
+  border: 1px solid gray;
+  border-radius: 4px;
+  padding: 10px;
+  margin: 15px 0;
+  box-sizing: border-box
+}
+
+input:focus {
+  background-color: #D6F8D6;
+
+}
+
+pre.alternative {
+  padding: 10px;
+}
+
+.modal-submit-btn {
+  width: 50%;
+  background-color: green;
+  margin: 10px 0 0 0;
+}
+
+button.modal-close-btn {
+  position:relative;
+  left: 0px;
+  background-color: $close-btn-color
+}
+
+button.modal-close-btn:hover {
+  background-color: $close-btn-hover-color;
+  color: white;
 }
