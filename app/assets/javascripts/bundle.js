@@ -27433,6 +27433,32 @@
 	var LoginForm = __webpack_require__(225);
 	var SignUpForm = __webpack_require__(226);
 	
+	var style = {
+	  overlay: {
+	    position: 'fixed',
+	    top: 0,
+	    left: 0,
+	    right: 0,
+	    bottom: 0,
+	    backgroundColor: 'rgba(0, 0, 0, 0.25)',
+	    zIndex: 10
+	  },
+	  content: {
+	    position: 'fixed',
+	    top: '100px',
+	    left: '150px',
+	    right: '150px',
+	    bottom: '100px',
+	    border: '1px solid #ccc',
+	    borderRadius: '20px',
+	    padding: '20px',
+	    height: '50%',
+	    width: '450px',
+	    margin: 'auto',
+	    zIndex: 11
+	  }
+	};
+	
 	var App = React.createClass({
 	  displayName: 'App',
 	
@@ -27478,7 +27504,9 @@
 	      React.createElement(
 	        Modal,
 	        {
-	          isOpen: this.state.loginModalOpen },
+	          isOpen: this.state.loginModalOpen,
+	          style: style
+	        },
 	        React.createElement(LoginForm, null),
 	        React.createElement(
 	          'a',
@@ -27494,7 +27522,9 @@
 	      React.createElement(
 	        Modal,
 	        {
-	          isOpen: this.state.signupModalOpen },
+	          isOpen: this.state.signupModalOpen,
+	          style: style
+	        },
 	        React.createElement(SignUpForm, null),
 	        React.createElement(
 	          'a',
