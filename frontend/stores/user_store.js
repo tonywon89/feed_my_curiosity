@@ -5,7 +5,7 @@ var ErrorConstants = require("../constants/error_constants");
 
 var UserStore = new Store(AppDispatcher);
 
-var _currentUser = "unitialized";
+var _currentUser = undefined;
 var _authErrors = [];
 
 UserStore.currentUser = function () {
@@ -26,18 +26,24 @@ var updateErrors = function (errors) {
   UserStore.__emitChange();
 };
 
+var logoutUser = function () {
+  _currentUser = undefined;
+  UserStore.__emitChange();
+};
+
 UserStore.__onDispatch = function (payload) {
-  alert("In UserStore dispatch");
+  // alert("In UserStore dispatch");
   switch (payload.actionType) {
     case UserConstants.CURRENT_USER_RECEIVED:
-      alert("In User store dispatch, current user received");
+      // alert("In User store dispatch, current user received");
       updateCurrentUser(payload.currentUser);
       break;
     case UserConstants.LOGGED_OUT_CURRENT_USER:
-      alert("In User store dispatch, logged out current user");
+      // alert("In User store dispatch, logged out current user");
+      logoutUser();
       break;
     case ErrorConstants.ERRORS_RECEIVED:
-      alert("In User store dispatch, errors received");
+      // alert("In User store dispatch, errors received");
       updateErrors(payload.errors);
       break;
   }

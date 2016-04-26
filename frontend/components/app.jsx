@@ -2,7 +2,8 @@ var React = require('react');
 var Modal = require('react-modal');
 var LoginForm = require("./user_forms/login_form");
 var SignUpForm = require("./user_forms/sign_up_form");
-
+var CurrentUserStateMixn = require("../mixins/current_user_state_mixin");
+var UserClientActions = require("../actions/user/user_client_actions");
 var style = {
   overlay : {
     position        : 'fixed',
@@ -30,6 +31,8 @@ var style = {
 };
 
 var App = React.createClass({
+  mixins: [CurrentUserStateMixn],
+
   getInitialState: function () {
     return { loginModalOpen: false, signupModalOpen: false };
   },
@@ -54,13 +57,32 @@ var App = React.createClass({
     this.setState({ signupModalOpen: false });
   },
 
+  logOut: function (event) {
+    event.preventDefault();
+    UserClientActions.logout();
+  },
+
   render: function () {
+    var content;
+    var currentUser = this.state.currentUser;
+
+    if (currentUser) {
+      content = (
+        <div>
+          You are logged in as {currentUser.email}
+          <button onClick={this.logOut}>Log out</button>
+        </div>
+      );
+    } else {
+      content = <button onClick={this.openLoginModal}>Get Started</button>;
+    }
+
     return (
       <div>
         <h1>Feed My Curiosity</h1>
         {this.props.children}
 
-        <button onClick={this.openLoginModal}>Get Started</button>
+        {content}
 
         <Modal
           isOpen={this.state.loginModalOpen}

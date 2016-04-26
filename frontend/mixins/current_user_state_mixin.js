@@ -11,11 +11,16 @@ var CurrentUserStateMixin = {
 
   componentDidMount: function () {
     this.listener = UserStore.addListener(this._onChange);
+    UserClientActions.fetchCurrentUser();
+  },
 
-    if (this.state.currentUser === "unitialized" ||
-        this.state.currentUser === "none") {
-      UserClientActions.fetchCurrentUser();
-    }
+  _onChange: function () {
+    this.setState({
+      currentUser: UserStore.currentUser(),
+      authErrors: UserStore.authErrors(),
+      loginModalOpen: false,
+      signupModalOpen: false
+    });
   },
 
   componentWillUnmount: function () {

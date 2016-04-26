@@ -24,8 +24,8 @@ var LoginForm = React.createClass({
       email: this.state.email,
       password: this.state.password
     };
+    
     UserClientActions.login(user);
-
   },
 
   render: function () {

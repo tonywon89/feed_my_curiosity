@@ -27390,7 +27390,8 @@
 	var Modal = __webpack_require__(91);
 	var LoginForm = __webpack_require__(246);
 	var SignUpForm = __webpack_require__(255);
-	
+	var CurrentUserStateMixn = __webpack_require__(276);
+	var UserClientActions = __webpack_require__(247);
 	var style = {
 	  overlay: {
 	    position: 'fixed',
@@ -27420,6 +27421,8 @@
 	var App = React.createClass({
 	  displayName: 'App',
 	
+	  mixins: [CurrentUserStateMixn],
+	
 	  getInitialState: function () {
 	    return { loginModalOpen: false, signupModalOpen: false };
 	  },
@@ -27444,7 +27447,35 @@
 	    this.setState({ signupModalOpen: false });
 	  },
 	
+	  logOut: function (event) {
+	    event.preventDefault();
+	    UserClientActions.logout();
+	  },
+	
 	  render: function () {
+	    var content;
+	    var currentUser = this.state.currentUser;
+	
+	    if (currentUser) {
+	      content = React.createElement(
+	        'div',
+	        null,
+	        'You are logged in as ',
+	        currentUser.email,
+	        React.createElement(
+	          'button',
+	          { onClick: this.logOut },
+	          'Log out'
+	        )
+	      );
+	    } else {
+	      content = React.createElement(
+	        'button',
+	        { onClick: this.openLoginModal },
+	        'Get Started'
+	      );
+	    }
+	
 	    return React.createElement(
 	      'div',
 	      null,
@@ -27454,11 +27485,7 @@
 	        'Feed My Curiosity'
 	      ),
 	      this.props.children,
-	      React.createElement(
-	        'button',
-	        { onClick: this.openLoginModal },
-	        'Get Started'
-	      ),
+	      content,
 	      React.createElement(
 	        Modal,
 	        {
@@ -27533,6 +27560,7 @@
 	      email: this.state.email,
 	      password: this.state.password
 	    };
+	
 	    UserClientActions.login(user);
 	  },
 	
@@ -27638,7 +27666,7 @@
 	
 	var UserServerActions = {
 	  receiveCurrentUser: function (currentUser) {
-	    alert("In User Server Actions, receiveCurrentUser");
+	    // alert("In User Server Actions, receiveCurrentUser");
 	    AppDispatcher.dispatch({
 	      actionType: UserConstants.CURRENT_USER_RECEIVED,
 	      currentUser: currentUser
@@ -27646,7 +27674,7 @@
 	  },
 	
 	  logoutCurrentUser: function () {
-	    alert("In User Server Actions, logoutCurrentUser");
+	    // alert("In User Server Actions, logoutCurrentUser");
 	    AppDispatcher.dispatch({
 	      actionType: UserConstants.LOGGED_OUT_CURRENT_USER
 	    });
@@ -28012,7 +28040,7 @@
 	
 	var ErrorServerActions = {
 	  receiveErrors: function (errors) {
-	    alert("In ErrorServerActions receiveErrors");
+	    // alert("In ErrorServerActions receiveErrors");
 	    AppDispatcher.dispatch({
 	      actionType: ErrorConstants.ERRORS_RECEIVED,
 	      errors: errors
@@ -28043,7 +28071,7 @@
 	
 	var UserStore = new Store(AppDispatcher);
 	
-	var _currentUser = "unitialized";
+	var _currentUser = undefined;
 	var _authErrors = [];
 	
 	UserStore.currentUser = function () {
@@ -28064,18 +28092,24 @@
 	  UserStore.__emitChange();
 	};
 	
+	var logoutUser = function () {
+	  _currentUser = undefined;
+	  UserStore.__emitChange();
+	};
+	
 	UserStore.__onDispatch = function (payload) {
-	  alert("In UserStore dispatch");
+	  // alert("In UserStore dispatch");
 	  switch (payload.actionType) {
 	    case UserConstants.CURRENT_USER_RECEIVED:
-	      alert("In User store dispatch, current user received");
+	      // alert("In User store dispatch, current user received");
 	      updateCurrentUser(payload.currentUser);
 	      break;
 	    case UserConstants.LOGGED_OUT_CURRENT_USER:
-	      alert("In User store dispatch, logged out current user");
+	      // alert("In User store dispatch, logged out current user");
+	      logoutUser();
 	      break;
 	    case ErrorConstants.ERRORS_RECEIVED:
-	      alert("In User store dispatch, errors received");
+	      // alert("In User store dispatch, errors received");
 	      updateErrors(payload.errors);
 	      break;
 	  }
@@ -34525,6 +34559,50 @@
 	
 	module.exports = FluxMixinLegacy;
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+
+/***/ },
+/* 276 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var UserStore = __webpack_require__(258);
+	var UserClientActions = __webpack_require__(247);
+	
+	var CurrentUserStateMixin = {
+	  getInitialState: function () {
+	    return {
+	      currentUser: UserStore.currentUser(),
+	      authErrors: UserStore.authErrors()
+	    };
+	  },
+	
+	  componentDidMount: function () {
+	    this.listener = UserStore.addListener(this._onChange);
+	    UserClientActions.fetchCurrentUser();
+	  },
+	
+	  _onChange: function () {
+	    this.setState({
+	      currentUser: UserStore.currentUser(),
+	      authErrors: UserStore.authErrors(),
+	      loginModalOpen: false,
+	      signupModalOpen: false
+	    });
+	  },
+	
+	  componentWillUnmount: function () {
+	    this.listener.remove();
+	  },
+	
+	  updateUser: function () {
+	    this.setState({
+	      currentUser: UserStore.currentUser(),
+	      authErrors: UserStore.authErrors()
+	    });
+	  }
+	
+	};
+	
+	module.exports = CurrentUserStateMixin;
 
 /***/ }
 /******/ ]);
