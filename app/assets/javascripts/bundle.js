@@ -27533,9 +27533,7 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(24);
-	var hashHistory = __webpack_require__(1).hashHistory;
 	var UserClientActions = __webpack_require__(247);
-	
 	var UserStore = __webpack_require__(258);
 	
 	var LoginForm = React.createClass({
@@ -27600,6 +27598,11 @@
 	
 	  logout: function () {
 	    UserApiUtil.logout();
+	  },
+	
+	  createUser: function (user) {
+	    alert(" in UserClientActions, create user");
+	    UserApiUtil.createUser(user);
 	  }
 	};
 	
@@ -27647,6 +27650,20 @@
 	      url: "api/session",
 	      success: function () {
 	        UserServerActions.logoutCurrentUser();
+	      },
+	      error: function (errors) {
+	        ErrorServerActions.receiveErrors(errors.responseJSON);
+	      }
+	    });
+	  },
+	
+	  createUser: function (user) {
+	    $.ajax({
+	      type: "POST",
+	      url: "api/user",
+	      data: { user: user },
+	      success: function (currentUser) {
+	        UserServerActions.receiveCurrentUser(currentUser);
 	      },
 	      error: function (errors) {
 	        ErrorServerActions.receiveErrors(errors.responseJSON);
@@ -28014,17 +28031,48 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(24);
+	var UserClientActions = __webpack_require__(247);
+	var UserStore = __webpack_require__(258);
 	
 	var SignUpForm = React.createClass({
-	  displayName: "SignUpForm",
+	  displayName: 'SignUpForm',
+	
+	  getInitialState: function () {
+	    return { email: "", password: "" };
+	  },
+	
+	  emailChange: function (event) {
+	    this.setState({ email: event.target.value });
+	  },
+	
+	  passwordChange: function (event) {
+	    this.setState({ password: event.target.value });
+	  },
+	
+	  handleSubmit: function (event) {
+	    event.preventDefault();
+	
+	    var user = {
+	      email: this.state.email,
+	      password: this.state.password
+	    };
+	
+	    UserClientActions.createUser(user);
+	  },
 	
 	  render: function () {
 	    return React.createElement(
-	      "form",
-	      null,
-	      React.createElement("input", { type: "text", placeholder: "Email" }),
-	      React.createElement("input", { type: "password", placeholder: "Password" }),
-	      React.createElement("input", { type: "submit", value: "Satisfy Thy Curiosity" })
+	      'form',
+	      { onSubmit: this.handleSubmit },
+	      React.createElement('input', { type: 'text',
+	        placeholder: 'Email',
+	        onChange: this.emailChange,
+	        value: this.state.email }),
+	      React.createElement('input', { type: 'password',
+	        placeholder: 'Password',
+	        onChange: this.passwordChange,
+	        value: this.state.password }),
+	      React.createElement('input', { type: 'submit', value: 'Satisfy Thy Curiosity' })
 	    );
 	  }
 	});

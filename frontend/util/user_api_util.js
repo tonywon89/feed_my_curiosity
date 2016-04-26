@@ -41,6 +41,20 @@ var UserApiUtil = {
         ErrorServerActions.receiveErrors(errors.responseJSON);
       }
     });
+  },
+
+  createUser: function (user) {
+    $.ajax({
+      type: "POST",
+      url: "api/user",
+      data: {user: user},
+      success: function (currentUser) {
+        UserServerActions.receiveCurrentUser(currentUser);
+      },
+      error: function (errors) {
+        ErrorServerActions.receiveErrors(errors.responseJSON);
+      }
+    });
   }
 };
 

@@ -12,6 +12,11 @@ var UserClientActions = {
   logout: function () {
     UserApiUtil.logout();
   },
+
+  createUser: function (user) {
+    alert(" in UserClientActions, create user");
+    UserApiUtil.createUser(user);
+  }
 };
 
 module.exports = UserClientActions;
