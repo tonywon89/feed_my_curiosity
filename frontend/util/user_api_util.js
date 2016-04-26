@@ -1,4 +1,4 @@
-
+var UserServerActions = require("../actions/user/user_server_actions");
 
 var UserApiUtil = {
   login: function (user) {
@@ -7,7 +7,7 @@ var UserApiUtil = {
       url: "api/session",
       data: {user : user},
       success: function (currentUser) {
-        alert("Login Success");
+        UserServerActions.receiveCurrentUser(currentUser);
       },
       error: function (errors) {
         alert("Login Fail");
