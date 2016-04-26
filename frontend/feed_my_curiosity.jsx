@@ -5,14 +5,20 @@ var IndexRoute = ReactRouter.IndexRoute;
 var Link = ReactRouter.Link;
 var hashHistory = ReactRouter.hashHistory;
 
+var Modal = require('react-modal');
+
 var React = require('react');
 var ReactDOM = require('react-dom');
+
+var LoginForm = require("./components/user_forms/login_form");
+var SignUpForm = require("./components/user_forms/sign_up_form");
 
 var App = React.createClass({
   render: function () {
     return (
       <div>
         <h1>Feed My Curiosity</h1>
+        <SignUpForm />
         {this.props.children}
       </div>
     );
