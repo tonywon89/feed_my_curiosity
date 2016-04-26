@@ -70,9 +70,9 @@ FeedMyCuriosity is a web application inspired by Feedly that will be built using
 
 **Objective:** Functioning rails project with Authentication
 
-- [ ] create new project
-- [ ] setup Webpack and Flux scaffold
-- [ ] create `User` model
+- [x] create new project
+- [x] setup Webpack and Flux scaffold
+- [x] create `User` model
 - [ ] authentication
   - [ ] ensure_session_token
   - [ ] reset_session_token
