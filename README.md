@@ -74,12 +74,12 @@ FeedMyCuriosity is a web application inspired by Feedly that will be built using
 - [x] setup Webpack and Flux scaffold
 - [x] create `User` model
 - [ ] authentication
-  - [ ] ensure_session_token
-  - [ ] reset_session_token
-  - [ ] generate session_token
+  - [x] ensure_session_token
+  - [x] reset_session_token
+  - [x] generate session_token
   - [ ] current_user
-  - [ ] password=
-  - [ ] validations
+  - [x] password=
+  - [x] validations
   - [ ] logout!
   - [ ] login
 - [ ] user signup/signin pages
