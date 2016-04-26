@@ -57,8 +57,8 @@
 	var ReactDOM = __webpack_require__(93);
 	
 	var App = __webpack_require__(245);
-	var UserStore = __webpack_require__(258);
-	// window.ErrorServerActions = require("./actions/error/error_server_actions");
+	
+	window.UserApiUtil = __webpack_require__(248);
 	
 	var routes = React.createElement(Route, { path: '/', component: App });
 	
@@ -27398,7 +27398,7 @@
 	    left: 0,
 	    right: 0,
 	    bottom: 0,
-	    backgroundColor: 'rgba(0, 0, 0, 0.25)',
+	    backgroundColor: 'rgba(0, 0, 0, 0.75)',
 	    zIndex: 10
 	  },
 	  content: {
@@ -27509,6 +27509,8 @@
 	var hashHistory = __webpack_require__(1).hashHistory;
 	var UserClientActions = __webpack_require__(247);
 	
+	var UserStore = __webpack_require__(258);
+	
 	var LoginForm = React.createClass({
 	  displayName: 'LoginForm',
 	
@@ -27560,10 +27562,16 @@
 	var UserApiUtil = __webpack_require__(248);
 	
 	var UserClientActions = {
-	  fetchCurrentUser: function () {},
+	  fetchCurrentUser: function () {
+	    UserApiUtil.fetchCurrentUser();
+	  },
 	
 	  login: function (user) {
 	    UserApiUtil.login(user);
+	  },
+	
+	  logout: function () {
+	    UserApiUtil.logout();
 	  }
 	};
 	
@@ -27577,6 +27585,19 @@
 	var ErrorServerActions = __webpack_require__(256);
 	
 	var UserApiUtil = {
+	  fetchCurrentUser: function () {
+	    $.ajax({
+	      type: "GET",
+	      url: "api/user",
+	      success: function (currentUser) {
+	        UserServerActions.receiveCurrentUser(currentUser);
+	      },
+	      error: function (errors) {
+	        ErrorServerActions.receiveErrors(errors.responseJSON);
+	      }
+	    });
+	  },
+	
 	  login: function (user) {
 	    $.ajax({
 	      type: "POST",
@@ -27585,6 +27606,19 @@
 	      dataType: "json",
 	      success: function (currentUser) {
 	        UserServerActions.receiveCurrentUser(currentUser);
+	      },
+	      error: function (errors) {
+	        ErrorServerActions.receiveErrors(errors.responseJSON);
+	      }
+	    });
+	  },
+	
+	  logout: function () {
+	    $.ajax({
+	      type: "DELETE",
+	      url: "api/session",
+	      success: function () {
+	        UserServerActions.logoutCurrentUser();
 	      },
 	      error: function (errors) {
 	        ErrorServerActions.receiveErrors(errors.responseJSON);
@@ -27606,8 +27640,15 @@
 	  receiveCurrentUser: function (currentUser) {
 	    alert("In User Server Actions, receiveCurrentUser");
 	    AppDispatcher.dispatch({
-	      actionType: UserConstants.RECEIVED_CURRENT_USER,
+	      actionType: UserConstants.CURRENT_USER_RECEIVED,
 	      currentUser: currentUser
+	    });
+	  },
+	
+	  logoutCurrentUser: function () {
+	    alert("In User Server Actions, logoutCurrentUser");
+	    AppDispatcher.dispatch({
+	      actionType: UserConstants.LOGGED_OUT_CURRENT_USER
 	    });
 	  }
 	};
@@ -27934,7 +27975,8 @@
 /***/ function(module, exports) {
 
 	var UserConstants = {
-	  CURRENT_USER_RECEIVED: "CURRENT_USER_RECEIVED"
+	  CURRENT_USER_RECEIVED: "CURRENT_USER_RECEIVED",
+	  LOGGED_OUT_CURRENT_USER: "LOGGED_OUT_CURRENT_USER"
 	};
 	
 	module.exports = UserConstants;
@@ -28027,10 +28069,15 @@
 	  switch (payload.actionType) {
 	    case UserConstants.CURRENT_USER_RECEIVED:
 	      alert("In User store dispatch, current user received");
+	      updateCurrentUser(payload.currentUser);
+	      break;
+	    case UserConstants.LOGGED_OUT_CURRENT_USER:
+	      alert("In User store dispatch, logged out current user");
 	      break;
 	    case ErrorConstants.ERRORS_RECEIVED:
 	      alert("In User store dispatch, errors received");
-	
+	      updateErrors(payload.errors);
+	      break;
 	  }
 	};
 	

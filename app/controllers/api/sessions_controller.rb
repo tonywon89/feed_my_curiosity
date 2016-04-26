@@ -15,8 +15,13 @@ class Api::SessionsController < ApplicationController
   end
 
   def destroy
-    logout!
-    render json: {}
+    if current_user
+      logout!
+      render json: {}
+    else
+      @errors = ["There is no logged in user to log out"]
+      render "api/users/errors", status: 500
+    end
   end
 
 end

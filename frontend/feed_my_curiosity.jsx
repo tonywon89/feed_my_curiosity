@@ -11,8 +11,8 @@ var React = require('react');
 var ReactDOM = require('react-dom');
 
 var App = require("./components/app");
-var UserStore = require("./stores/user_store");
-// window.ErrorServerActions = require("./actions/error/error_server_actions");
+
+window.UserApiUtil = require("./util/user_api_util");
 
 var routes = (
   <Route path="/" component={App}>

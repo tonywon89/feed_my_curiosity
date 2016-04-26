@@ -2,6 +2,8 @@ var React = require('react');
 var hashHistory = require('react-router').hashHistory;
 var UserClientActions = require('../../actions/user/user_client_actions');
 
+var UserStore = require("../../stores/user_store");
+
 var LoginForm = React.createClass({
   getInitialState: function () {
     return { email: "", password: "" };

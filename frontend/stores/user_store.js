@@ -31,10 +31,15 @@ UserStore.__onDispatch = function (payload) {
   switch (payload.actionType) {
     case UserConstants.CURRENT_USER_RECEIVED:
       alert("In User store dispatch, current user received");
+      updateCurrentUser(payload.currentUser);
+      break;
+    case UserConstants.LOGGED_OUT_CURRENT_USER:
+      alert("In User store dispatch, logged out current user");
       break;
     case ErrorConstants.ERRORS_RECEIVED:
       alert("In User store dispatch, errors received");
-
+      updateErrors(payload.errors);
+      break;
   }
 };
 

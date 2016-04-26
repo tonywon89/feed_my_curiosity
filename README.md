@@ -66,7 +66,7 @@ FeedMyCuriosity is a web application inspired by Feedly that will be built using
 
 ## Implementation Timeline
 
-### Phase 1: Backend setup and User Authentication (0.5 days), deploy to Heroku
+### Phase 1: Backend setup and User Authentication (1 day), deploy to Heroku
 
 **Objective:** Functioning rails project with Authentication
 
