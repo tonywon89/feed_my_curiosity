@@ -62,6 +62,30 @@
 	var App = React.createClass({
 	  displayName: 'App',
 	
+	  getInitialState: function () {
+	    return { loginModalOpen: false, signupModalOpen: false };
+	  },
+	
+	  openLoginModal: function (event) {
+	    event.preventDefault();
+	    this.setState({ loginModalOpen: true, signupModalOpen: false });
+	  },
+	
+	  closeLoginModal: function (event) {
+	    event.preventDefault();
+	    this.setState({ loginModalOpen: false });
+	  },
+	
+	  openSignupModal: function (event) {
+	    event.preventDefault();
+	    this.setState({ signupModalOpen: true, loginModalOpen: false });
+	  },
+	
+	  closeSignupModal: function (event) {
+	    event.preventDefault();
+	    this.setState({ signupModalOpen: false });
+	  },
+	
 	  render: function () {
 	    return React.createElement(
 	      'div',
@@ -71,8 +95,45 @@
 	        null,
 	        'Feed My Curiosity'
 	      ),
-	      React.createElement(SignUpForm, null),
-	      this.props.children
+	      this.props.children,
+	      React.createElement(
+	        'button',
+	        { onClick: this.openLoginModal },
+	        'Get Started'
+	      ),
+	      React.createElement(
+	        Modal,
+	        {
+	          isOpen: this.state.loginModalOpen },
+	        React.createElement(LoginForm, null),
+	        React.createElement(
+	          'a',
+	          { onClick: this.openSignupModal },
+	          'Sign Up Instead'
+	        ),
+	        React.createElement(
+	          'button',
+	          { onClick: this.closeLoginModal },
+	          'Close'
+	        )
+	      ),
+	      React.createElement(
+	        Modal,
+	        {
+	          isOpen: this.state.signupModalOpen,
+	          onRequestClose: this.closeSignUpModal },
+	        React.createElement(SignUpForm, null),
+	        React.createElement(
+	          'a',
+	          { onClick: this.openLoginModal },
+	          'Have an account? Click here to log in'
+	        ),
+	        React.createElement(
+	          'button',
+	          { onClick: this.closeModal },
+	          'Close'
+	        )
+	      )
 	    );
 	  }
 	});
@@ -81,6 +142,7 @@
 	
 	document.addEventListener("DOMContentLoaded", function () {
 	  var root = document.getElementById("root");
+	  Modal.setAppElement(root);
 	  ReactDOM.render(React.createElement(Router, { history: hashHistory, routes: routes }), root);
 	});
 
@@ -25464,7 +25526,8 @@
 	      "form",
 	      null,
 	      React.createElement("input", { type: "text", placeholder: "Email" }),
-	      React.createElement("input", { type: "password", placeholder: "Password" })
+	      React.createElement("input", { type: "password", placeholder: "Password" }),
+	      React.createElement("input", { type: "submit", value: "Log In and Feed" })
 	    );
 	  }
 	});
@@ -25485,7 +25548,8 @@
 	      "form",
 	      null,
 	      React.createElement("input", { type: "text", placeholder: "Email" }),
-	      React.createElement("input", { type: "password", placeholder: "Password" })
+	      React.createElement("input", { type: "password", placeholder: "Password" }),
+	      React.createElement("input", { type: "submit", value: "Satisfy Thy Curiosity" })
 	    );
 	  }
 	});
