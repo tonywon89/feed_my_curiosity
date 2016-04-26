@@ -18,6 +18,7 @@ UserStore.authErrors = function () {
 
 var updateCurrentUser = function (user) {
   _currentUser = user;
+  _authErrors = [];
   UserStore.__emitChange();
 };
 
@@ -28,6 +29,7 @@ var updateErrors = function (errors) {
 
 var logoutUser = function () {
   _currentUser = undefined;
+  _authErrors = [];
   UserStore.__emitChange();
 };
 

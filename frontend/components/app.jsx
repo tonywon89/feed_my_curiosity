@@ -39,22 +39,22 @@ var App = React.createClass({
 
   openLoginModal: function (event) {
     event.preventDefault();
-    this.setState({ loginModalOpen: true, signupModalOpen: false });
+    this.setState({ loginModalOpen: true, signupModalOpen: false, authErrors: [] });
   },
 
   closeLoginModal: function (event) {
     event.preventDefault();
-    this.setState({ loginModalOpen: false });
+    this.setState({ loginModalOpen: false, authErrors: [] });
   },
 
   openSignupModal: function (event) {
     event.preventDefault();
-    this.setState({ signupModalOpen: true, loginModalOpen: false });
+    this.setState({ signupModalOpen: true, loginModalOpen: false, authErrors: [] });
   },
 
   closeSignupModal: function (event) {
     event.preventDefault();
-    this.setState({ signupModalOpen: false });
+    this.setState({ signupModalOpen: false, authErrors: [] });
   },
 
   logOut: function (event) {
@@ -77,6 +77,10 @@ var App = React.createClass({
       content = <button onClick={this.openLoginModal}>Get Started</button>;
     }
 
+    var errors = this.state.authErrors.map(function(error){
+      return <li>{error.error_message}</li>;
+    });
+
     return (
       <div>
         <h1>Feed My Curiosity</h1>
@@ -88,7 +92,7 @@ var App = React.createClass({
           isOpen={this.state.loginModalOpen}
           style={style}
         >
-
+          <ul>{errors}</ul>
           <LoginForm />
           <a onClick={this.openSignupModal}>Sign Up Instead</a>
           <button onClick={this.closeLoginModal}>Close</button>
@@ -99,7 +103,7 @@ var App = React.createClass({
           isOpen={this.state.signupModalOpen}
           style={style}
         >
-
+          <ul>{errors}</ul>
           <SignUpForm />
           <a onClick={this.openLoginModal}>Have an account? Click here to log in</a>
           <button onClick={this.closeSignupModal}>Close</button>

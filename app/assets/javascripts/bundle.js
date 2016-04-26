@@ -27429,22 +27429,22 @@
 	
 	  openLoginModal: function (event) {
 	    event.preventDefault();
-	    this.setState({ loginModalOpen: true, signupModalOpen: false });
+	    this.setState({ loginModalOpen: true, signupModalOpen: false, authErrors: [] });
 	  },
 	
 	  closeLoginModal: function (event) {
 	    event.preventDefault();
-	    this.setState({ loginModalOpen: false });
+	    this.setState({ loginModalOpen: false, authErrors: [] });
 	  },
 	
 	  openSignupModal: function (event) {
 	    event.preventDefault();
-	    this.setState({ signupModalOpen: true, loginModalOpen: false });
+	    this.setState({ signupModalOpen: true, loginModalOpen: false, authErrors: [] });
 	  },
 	
 	  closeSignupModal: function (event) {
 	    event.preventDefault();
-	    this.setState({ signupModalOpen: false });
+	    this.setState({ signupModalOpen: false, authErrors: [] });
 	  },
 	
 	  logOut: function (event) {
@@ -27476,6 +27476,14 @@
 	      );
 	    }
 	
+	    var errors = this.state.authErrors.map(function (error) {
+	      return React.createElement(
+	        'li',
+	        null,
+	        error.error_message
+	      );
+	    });
+	
 	    return React.createElement(
 	      'div',
 	      null,
@@ -27492,6 +27500,11 @@
 	          isOpen: this.state.loginModalOpen,
 	          style: style
 	        },
+	        React.createElement(
+	          'ul',
+	          null,
+	          errors
+	        ),
 	        React.createElement(LoginForm, null),
 	        React.createElement(
 	          'a',
@@ -27510,6 +27523,11 @@
 	          isOpen: this.state.signupModalOpen,
 	          style: style
 	        },
+	        React.createElement(
+	          'ul',
+	          null,
+	          errors
+	        ),
 	        React.createElement(SignUpForm, null),
 	        React.createElement(
 	          'a',
@@ -27601,7 +27619,6 @@
 	  },
 	
 	  createUser: function (user) {
-	    alert(" in UserClientActions, create user");
 	    UserApiUtil.createUser(user);
 	  }
 	};
@@ -28132,6 +28149,7 @@
 	
 	var updateCurrentUser = function (user) {
 	  _currentUser = user;
+	  _authErrors = [];
 	  UserStore.__emitChange();
 	};
 	
@@ -28142,6 +28160,7 @@
 	
 	var logoutUser = function () {
 	  _currentUser = undefined;
+	  _authErrors = [];
 	  UserStore.__emitChange();
 	};
 	
@@ -34629,11 +34648,27 @@
 	  },
 	
 	  _onChange: function () {
+	    var authErrors = UserStore.authErrors();
+	
+	    var loginModalOpen;
+	    var signupModalOpen;
+	
+	    if (authErrors.length !== 0 && this.state.loginModalOpen) {
+	      loginModalOpen = true;
+	      signupModalOpen = false;
+	    } else if (authErrors.length !== 0 && this.state.signupModalOpen) {
+	      loginModalOpen = false;
+	      signupModalOpen = true;
+	    } else {
+	      loginModalOpen = false;
+	      signupModalOpen = false;
+	    }
+	
 	    this.setState({
 	      currentUser: UserStore.currentUser(),
-	      authErrors: UserStore.authErrors(),
-	      loginModalOpen: false,
-	      signupModalOpen: false
+	      authErrors: authErrors,
+	      loginModalOpen: loginModalOpen,
+	      signupModalOpen: signupModalOpen
 	    });
 	  },
 	

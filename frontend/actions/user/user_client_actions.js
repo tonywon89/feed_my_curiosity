@@ -14,7 +14,6 @@ var UserClientActions = {
   },
 
   createUser: function (user) {
-    alert(" in UserClientActions, create user");
     UserApiUtil.createUser(user);
   }
 };

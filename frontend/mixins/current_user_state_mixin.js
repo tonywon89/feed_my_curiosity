@@ -15,11 +15,27 @@ var CurrentUserStateMixin = {
   },
 
   _onChange: function () {
+    var authErrors = UserStore.authErrors();
+
+    var loginModalOpen;
+    var signupModalOpen;
+    
+    if (authErrors.length !== 0 && this.state.loginModalOpen){
+      loginModalOpen = true;
+      signupModalOpen = false;
+    } else if (authErrors.length !== 0 && this.state.signupModalOpen) {
+      loginModalOpen = false;
+      signupModalOpen = true;
+    } else {
+      loginModalOpen = false;
+      signupModalOpen = false;
+    }
+
     this.setState({
       currentUser: UserStore.currentUser(),
-      authErrors: UserStore.authErrors(),
-      loginModalOpen: false,
-      signupModalOpen: false
+      authErrors: authErrors,
+      loginModalOpen: loginModalOpen,
+      signupModalOpen: signupModalOpen
     });
   },
 
