@@ -111,10 +111,13 @@ var App = React.createClass({
           style={style}
         >
           <div className="modal-parent">
-            <h3 className="modal-header">FeedMyCuriosity Sign Up</h3>
+            <h3 className="modal-header">Sign Up</h3>
             <ul>{errors}</ul>
             <SignUpForm />
-            <a onClick={this.openLoginModal}>Have an account? Click here to log in</a>
+            <pre className="alternative">
+                Have an account? <a onClick={this.openLoginModal}>Log in</a>
+            </pre>
+
             <button className="modal-close-btn" onClick={this.closeSignupModal}>
               Close
             </button>

@@ -28,17 +28,19 @@ var SignUpForm = React.createClass({
 
   render: function () {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <input type="text"
-               placeholder="Email"
-               onChange={this.emailChange}
-               value={this.state.email}/>
-        <input type="password"
-               placeholder="Password"
-               onChange={this.passwordChange}
-               value={this.state.password}/>
-        <input type="submit" value="Satisfy Thy Curiosity" />
-      </form>
+      <div className="auth-form">
+        <form onSubmit={this.handleSubmit}>
+          <input type="text"
+                 placeholder="Email"
+                 onChange={this.emailChange}
+                 value={this.state.email}/>
+          <input type="password"
+                 placeholder="Password"
+                 onChange={this.passwordChange}
+                 value={this.state.password}/>
+          <input className="modal-submit-btn" type="submit" value="Satisfy Thy Curiosity" />
+        </form>
+      </div>
     );
   }
 });

@@ -27546,7 +27546,7 @@
 	          React.createElement(
 	            'h3',
 	            { className: 'modal-header' },
-	            'FeedMyCuriosity Sign Up'
+	            'Sign Up'
 	          ),
 	          React.createElement(
 	            'ul',
@@ -27555,9 +27555,14 @@
 	          ),
 	          React.createElement(SignUpForm, null),
 	          React.createElement(
-	            'a',
-	            { onClick: this.openLoginModal },
-	            'Have an account? Click here to log in'
+	            'pre',
+	            { className: 'alternative' },
+	            'Have an account? ',
+	            React.createElement(
+	              'a',
+	              { onClick: this.openLoginModal },
+	              'Log in'
+	            )
 	          ),
 	          React.createElement(
 	            'button',
@@ -34640,17 +34645,21 @@
 	
 	  render: function () {
 	    return React.createElement(
-	      'form',
-	      { onSubmit: this.handleSubmit },
-	      React.createElement('input', { type: 'text',
-	        placeholder: 'Email',
-	        onChange: this.emailChange,
-	        value: this.state.email }),
-	      React.createElement('input', { type: 'password',
-	        placeholder: 'Password',
-	        onChange: this.passwordChange,
-	        value: this.state.password }),
-	      React.createElement('input', { type: 'submit', value: 'Satisfy Thy Curiosity' })
+	      'div',
+	      { className: 'auth-form' },
+	      React.createElement(
+	        'form',
+	        { onSubmit: this.handleSubmit },
+	        React.createElement('input', { type: 'text',
+	          placeholder: 'Email',
+	          onChange: this.emailChange,
+	          value: this.state.email }),
+	        React.createElement('input', { type: 'password',
+	          placeholder: 'Password',
+	          onChange: this.passwordChange,
+	          value: this.state.password }),
+	        React.createElement('input', { className: 'modal-submit-btn', type: 'submit', value: 'Satisfy Thy Curiosity' })
+	      )
 	    );
 	  }
 	});
