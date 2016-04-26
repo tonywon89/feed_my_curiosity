@@ -25437,17 +25437,46 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(24);
-	
+	var hashHistory = __webpack_require__(1).hashHistory;
+	var UserClientActions = __webpack_require__(248);
 	var LoginForm = React.createClass({
-	  displayName: "LoginForm",
+	  displayName: 'LoginForm',
+	
+	  getInitialState: function () {
+	    return { email: "", password: "" };
+	  },
+	
+	  emailChange: function (event) {
+	    this.setState({ email: event.target.value });
+	  },
+	
+	  passwordChange: function (event) {
+	    this.setState({ password: event.target.value });
+	  },
+	
+	  handleSubmit: function (event) {
+	    event.preventDefault();
+	
+	    var user = {
+	      email: this.state.email,
+	      password: this.state.password
+	    };
+	    UserClientActions.login(user);
+	  },
 	
 	  render: function () {
 	    return React.createElement(
-	      "form",
-	      null,
-	      React.createElement("input", { type: "text", placeholder: "Email" }),
-	      React.createElement("input", { type: "password", placeholder: "Password" }),
-	      React.createElement("input", { type: "submit", value: "Log In and Begin Feeding" })
+	      'form',
+	      { onSubmit: this.handleSubmit },
+	      React.createElement('input', { type: 'text',
+	        placeholder: 'Email',
+	        onChange: this.emailChange,
+	        value: this.state.email }),
+	      React.createElement('input', { type: 'password',
+	        placeholder: 'Password',
+	        onChange: this.passwordChange,
+	        value: this.state.password }),
+	      React.createElement('input', { type: 'submit', value: 'Log In and Begin Feeding' })
 	    );
 	  }
 	});
@@ -27452,9 +27481,9 @@
 	    border: '1px solid #ccc',
 	    borderRadius: '20px',
 	    padding: '20px',
-	    height: '50%',
+	    height: '75%',
 	    width: '450px',
-	    margin: 'auto',
+	    margin: '0 auto',
 	    zIndex: 11
 	  }
 	};
@@ -27542,6 +27571,44 @@
 	});
 	
 	module.exports = App;
+
+/***/ },
+/* 248 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var UserApiUtil = __webpack_require__(249);
+	
+	var UserClientActions = {
+	  login: function (user) {
+	    UserApiUtil.login(user);
+	  }
+	};
+	
+	module.exports = UserClientActions;
+
+/***/ },
+/* 249 */
+/***/ function(module, exports) {
+
+	
+	
+	var UserApiUtil = {
+	  login: function (user) {
+	    $.ajax({
+	      type: "POST",
+	      url: "api/session",
+	      data: { user: user },
+	      success: function (currentUser) {
+	        alert("Login Success");
+	      },
+	      error: function (errors) {
+	        alert("Login Fail");
+	      }
+	    });
+	  }
+	};
+	
+	module.exports = UserApiUtil;
 
 /***/ }
 /******/ ]);

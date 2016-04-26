@@ -23,9 +23,9 @@ var style = {
     border          : '1px solid #ccc',
     borderRadius    : '20px',
     padding         : '20px',
-    height          : '50%',
+    height          : '75%',
     width           : '450px',
-    margin          : 'auto',
+    margin          : '0 auto',
     zIndex          :  11
   }
 };
