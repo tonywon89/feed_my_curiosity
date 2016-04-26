@@ -3,7 +3,6 @@ var Modal = require('react-modal');
 var LoginForm = require("./user_forms/login_form");
 var SignUpForm = require("./user_forms/sign_up_form");
 
-
 var style = {
   overlay : {
     position        : 'fixed',
