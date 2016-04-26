@@ -86,7 +86,7 @@ FeedMyCuriosity is a web application inspired by Feedly that will be built using
   - [x] make views for now, refactor into React Component later
 - [x] blank landing page after sign in
 - [ ] Style Sign Up and Login Modals
-- [ ] Basic Style for Splash Page
+- [x] Basic Style for Splash Page
 - [x] seed some users to database
 - setup Heroku
 - deply to Heroku

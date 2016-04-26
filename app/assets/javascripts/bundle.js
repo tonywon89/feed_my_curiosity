@@ -27399,7 +27399,7 @@
 	    left: 0,
 	    right: 0,
 	    bottom: 0,
-	    backgroundColor: 'rgba(0, 0, 0, 0.75)',
+	    backgroundColor: 'rgba(100, 123, 124, 0.5)',
 	    zIndex: 10
 	  },
 	  content: {
@@ -27411,7 +27411,7 @@
 	    border: '1px solid #ccc',
 	    borderRadius: '20px',
 	    padding: '20px',
-	    height: '75%',
+	    height: '50%',
 	    width: '450px',
 	    margin: '0 auto',
 	    zIndex: 11
@@ -27471,15 +27471,15 @@
 	    } else {
 	      content = React.createElement(
 	        'button',
-	        { onClick: this.openLoginModal },
+	        { className: 'getting-started', onClick: this.openLoginModal },
 	        'Get Started'
 	      );
 	    }
 	
-	    var errors = this.state.authErrors.map(function (error) {
+	    var errors = this.state.authErrors.map(function (error, i) {
 	      return React.createElement(
 	        'li',
-	        null,
+	        { key: i },
 	        error.error_message
 	      );
 	    });
@@ -27488,12 +27488,15 @@
 	      'div',
 	      null,
 	      React.createElement(
-	        'h1',
+	        'header',
 	        null,
-	        'Feed My Curiosity'
+	        React.createElement(
+	          'h1',
+	          { className: 'header-text' },
+	          'Feed My Curiosity'
+	        ),
+	        content
 	      ),
-	      this.props.children,
-	      content,
 	      React.createElement(
 	        Modal,
 	        {
@@ -27582,17 +27585,21 @@
 	
 	  render: function () {
 	    return React.createElement(
-	      'form',
-	      { onSubmit: this.handleSubmit },
-	      React.createElement('input', { type: 'text',
-	        placeholder: 'Email',
-	        onChange: this.emailChange,
-	        value: this.state.email }),
-	      React.createElement('input', { type: 'password',
-	        placeholder: 'Password',
-	        onChange: this.passwordChange,
-	        value: this.state.password }),
-	      React.createElement('input', { type: 'submit', value: 'Log In and Begin Feeding' })
+	      'div',
+	      { className: 'auth-form' },
+	      React.createElement(
+	        'form',
+	        { onSubmit: this.handleSubmit },
+	        React.createElement('input', { type: 'text',
+	          placeholder: 'Email',
+	          onChange: this.emailChange,
+	          value: this.state.email }),
+	        React.createElement('input', { type: 'password',
+	          placeholder: 'Password',
+	          onChange: this.passwordChange,
+	          value: this.state.password }),
+	        React.createElement('input', { type: 'submit', value: 'Log In and Begin Feeding' })
+	      )
 	    );
 	  }
 	});

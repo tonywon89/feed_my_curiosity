@@ -11,7 +11,7 @@ var style = {
     left            : 0,
     right           : 0,
     bottom          : 0,
-    backgroundColor : 'rgba(0, 0, 0, 0.75)',
+    backgroundColor : 'rgba(100, 123, 124, 0.5)',
     zIndex          : 10
   },
   content : {
@@ -23,7 +23,7 @@ var style = {
     border          : '1px solid #ccc',
     borderRadius    : '20px',
     padding         : '20px',
-    height          : '75%',
+    height          : '50%',
     width           : '450px',
     margin          : '0 auto',
     zIndex          :  11
@@ -74,19 +74,19 @@ var App = React.createClass({
         </div>
       );
     } else {
-      content = <button onClick={this.openLoginModal}>Get Started</button>;
+      content = <button className="getting-started" onClick={this.openLoginModal}>Get Started</button>;
     }
 
-    var errors = this.state.authErrors.map(function(error){
-      return <li>{error.error_message}</li>;
+    var errors = this.state.authErrors.map(function(error, i){
+      return <li key={i}>{error.error_message}</li>;
     });
 
     return (
       <div>
-        <h1>Feed My Curiosity</h1>
-        {this.props.children}
-
-        {content}
+        <header>
+          <h1 className="header-text">Feed My Curiosity</h1>
+          {content}
+        </header>
 
         <Modal
           isOpen={this.state.loginModalOpen}
