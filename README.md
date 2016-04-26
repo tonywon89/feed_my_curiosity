@@ -243,3 +243,4 @@ FeedMyCuriosity is a web application inspired by Feedly that will be built using
 - [ ] FeedIndexItem photo is black and white initially, then fades into color
 - [ ] Modals can have multiple tabs
 - [ ] Preferences link
+- [ ] Add hovering animations to buttons (using hover.css)

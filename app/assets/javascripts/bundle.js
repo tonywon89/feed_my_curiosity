@@ -27506,6 +27506,7 @@
 	        React.createElement(
 	          'div',
 	          { className: 'modal-parent' },
+	          React.createElement('i', { className: 'fa fa-times modal-close-icon', onClick: this.closeLoginModal }),
 	          React.createElement(
 	            'h3',
 	            { className: 'modal-header' },
@@ -27526,11 +27527,6 @@
 	              { onClick: this.openSignupModal },
 	              'Sign Up Here'
 	            )
-	          ),
-	          React.createElement(
-	            'button',
-	            { className: 'modal-close-btn', onClick: this.closeLoginModal },
-	            'Close'
 	          )
 	        )
 	      ),
@@ -27543,6 +27539,7 @@
 	        React.createElement(
 	          'div',
 	          { className: 'modal-parent' },
+	          React.createElement('i', { className: 'fa fa-times modal-close-icon', onClick: this.closeSignupModal }),
 	          React.createElement(
 	            'h3',
 	            { className: 'modal-header' },
@@ -27563,11 +27560,6 @@
 	              { onClick: this.openLoginModal },
 	              'Log in'
 	            )
-	          ),
-	          React.createElement(
-	            'button',
-	            { className: 'modal-close-btn', onClick: this.closeSignupModal },
-	            'Close'
 	          )
 	        )
 	      )
