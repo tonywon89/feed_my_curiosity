@@ -115,10 +115,9 @@ FeedMyCuriosity is a web application inspired by Feedly that will be built using
   - [ ] displays title (link to website)
   - [ ] displays logo of website
   - [x] displays description of website (clicking opens up modal with detail)
-  - [ ] displays an "Add" button (clicking opens up a different sidebar with adding collection)
+  - [x] displays an "Add" button (clicking opens up a different sidebar with adding collection)
   - [ ] displays the photo and title of the first article (clicking opens an ArticleDetail)
-- [ ] test by placing `FeedIndex` in DOM
-- deploy to Heroku
+- [x] test by placing `FeedIndex` in DOM
 
 ### Phase 3.5: Style FeedIndex and FeedIndexItem(0.5 days)
 

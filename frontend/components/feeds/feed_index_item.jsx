@@ -5,9 +5,9 @@ var FeedIndexItem = React.createClass({
     var feed = this.props.feed;
     return (
       <div className="feed-index-item">
-        <a href={feed.url}>{feed.title}</a>
+        <a href={feed.url} className="feed-index-item-title">{feed.title}</a>
         <button className="feed-index-add-btn">Add</button>
-        <p>{feed.description}</p>
+        <p className="feed-index-item-description">{feed.description}</p>
       </div>
     );
   }

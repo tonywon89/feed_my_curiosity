@@ -138,21 +138,46 @@ div.feed-index {
 }
 
 div.feed-index-item {
-  border: 1px solid red;
+  $gray: #739F81;
+  border: 1px solid #B3DABF;
   width: 30%;
   padding: 10px;
   margin: 20px;
-  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: $gray;
+  transition: all 0.75s;
+
+  &:hover {
+    border: 1px solid black;
+    color: black;
+  }
+
+
   .feed-index-add-btn {
     margin: 10px;
     font-size: 12px;
     font: 10px;
     padding: 5px;
-    background-color: $button-green;
+    border: 3px solid $button-green;
+    color: $button-green;
+    background-color: white;
+    font-weight: bold;
+
+    &:hover {
+      background-color: #B3DABF;
+
+    }
   }
 
-  .feed-index-add-btn:hover {
-    background-color: $button-hover-green;
-  }
+  .feed-index-item-title {
+    font-size: 20px;
+    color: black;
+    text-decoration: none;
 
+    &:hover {
+      color: green;
+    }
+  }
 }
