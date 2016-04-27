@@ -12,7 +12,8 @@ var ReactDOM = require('react-dom');
 
 var App = require("./components/app");
 
-window.UserApiUtil = require("./util/user_api_util");
+window.FeedApiUtil = require("./util/feed_api_util");
+var FeedStore = require("./stores/feed_store");
 
 var routes = (
   <Route path="/" component={App}>

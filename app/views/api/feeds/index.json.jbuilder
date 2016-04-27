@@ -1,9 +1,10 @@
-json.array! @feedjira_feeds do |feed|
-  json.title feed.title
-  json.url  feed.url
-  json.description feed.description
+json.array! @feedjira_feeds do |feedjira_feed|
+  json.id feedjira_feed[:id]
+  json.title feedjira_feed[:feed].title
+  json.url  feedjira_feed[:feed].url
+  json.description feedjira_feed[:feed].description
 
-  entries = feed.entries.map do |entry|
+  entries = feedjira_feed[:feed].entries.map do |entry|
     entry_obj = {}
     entry.each do |key, value|
       entry_obj[key] = value

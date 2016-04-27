@@ -11,6 +11,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # OWN GEMS
 gem 'font-awesome-sass'
+gem 'faraday', '~> 0.9.2'
 gem 'feedjira'
 gem 'bcrypt'
 

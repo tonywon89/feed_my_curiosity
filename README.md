@@ -89,7 +89,7 @@ FeedMyCuriosity is a web application inspired by Feedly that will be built using
 - [x] Basic Style for Splash Page
 - [x] seed some users to database
 - [x] setup Heroku
-- [ ] deploy to Heroku
+- [x] deploy to Heroku
 
 ### Phase 2: Feeds Model, API, basic APIUtil, Actions, and Store (0.5 days)
 
@@ -97,10 +97,10 @@ FeedMyCuriosity is a web application inspired by Feedly that will be built using
 
 - [x] create `Feed` model
 - [x] seed the database with small amount of rss feeds from websites that provide it
-- [ ] Retrieve feeds data by using a FeedAPI (`FeedsController`) to fetch the feed data
-- [ ] jBuilder views for parsed data from Feed url using Feedjira gem
-- [ ] setup `ApiUtil` to interact with the API
-- [ ] test out API interaction in the console
+- [x] Retrieve feeds data by using a FeedAPI (`FeedsController`) to fetch the feed data
+- [x] jBuilder views for parsed data from Feed url using Feedjira gem
+- [x] setup `ApiUtil` to interact with the API
+- [x] test out API interaction in the console
 - [ ] setup `FeedStore`, `FeedServerActions`, `FeedClientActions`
     - [ ] write the methods
     - [ ] test the methods
