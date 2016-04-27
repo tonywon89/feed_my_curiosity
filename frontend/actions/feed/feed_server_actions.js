@@ -7,6 +7,13 @@ var FeedServerActions = {
       actionType: FeedConstants.FEEDS_RECEIVED,
       feeds: feeds
     });
+  },
+
+  receiveSingleFeed: function (feed) {
+    AppDispatcher.dispatch({
+      actionType: FeedConstants.SINGLE_FEED_RECEIVED,
+      feed: feed
+    });
   }
 
 };

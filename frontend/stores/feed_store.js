@@ -5,11 +5,17 @@ var FeedConstants = require("../constants/feed_constants");
 var FeedStore = new Store(AppDispatcher);
 
 var _feeds = {};
+var _feedDetail;
 
 var addFeeds = function (feeds) {
   feeds.forEach(function(feed){
     _feeds[feed.id] = feed;
   });
+  FeedStore.__emitChange();
+};
+
+var addFeedDetail = function (feed) {
+  _feedDetail = feed;
   FeedStore.__emitChange();
 };
 
@@ -22,8 +28,11 @@ FeedStore.all = function () {
 FeedStore.__onDispatch = function (payload) {
   switch (payload.actionType) {
     case FeedConstants.FEEDS_RECEIVED:
-      alert("in FeedStore FEEDS_RECEIVED");
       addFeeds(payload.feeds);
+      break;
+    case FeedConstants.SINGLE_FEED_RECEIVED:
+      alert("In SINGLE_FEED_RECEIVED");
+      addFeedDetail(payload.feed);
       break;
   }
 };

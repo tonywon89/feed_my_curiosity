@@ -16,7 +16,7 @@ var FeedApiUtil = {
       type: "GET",
       url: "api/feeds/" + id,
       success: function (feed) {
-        alert("Got the feed");
+        FeedServerActions.receiveSingleFeed(feed);
       }
     });
   }
