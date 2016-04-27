@@ -27392,7 +27392,8 @@
 	var SignUpForm = __webpack_require__(275);
 	var CurrentUserStateMixn = __webpack_require__(276);
 	var UserClientActions = __webpack_require__(247);
-	var style = {
+	
+	var modalStyle = {
 	  overlay: {
 	    position: 'fixed',
 	    top: 0,
@@ -27501,7 +27502,7 @@
 	        Modal,
 	        {
 	          isOpen: this.state.loginModalOpen,
-	          style: style
+	          style: modalStyle
 	        },
 	        React.createElement(
 	          'div',
@@ -27534,7 +27535,7 @@
 	        Modal,
 	        {
 	          isOpen: this.state.signupModalOpen,
-	          style: style
+	          style: modalStyle
 	        },
 	        React.createElement(
 	          'div',

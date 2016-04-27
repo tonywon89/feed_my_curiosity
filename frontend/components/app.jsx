@@ -4,8 +4,9 @@ var LoginForm = require("./user_forms/login_form");
 var SignUpForm = require("./user_forms/sign_up_form");
 var CurrentUserStateMixn = require("../mixins/current_user_state_mixin");
 var UserClientActions = require("../actions/user/user_client_actions");
-var style = {
-  overlay : {
+
+var modalStyle = {
+  overlay: {
     position        : 'fixed',
     top             : 0,
     left            : 0,
@@ -14,7 +15,7 @@ var style = {
     backgroundColor : 'rgba(100, 123, 124, 0.5)',
     zIndex          : 10
   },
-  content : {
+  content: {
     position        : 'fixed',
     top             : '100px',
     left            : '150px',
@@ -90,7 +91,7 @@ var App = React.createClass({
 
         <Modal
           isOpen={this.state.loginModalOpen}
-          style={style}
+          style={modalStyle}
         >
           <div className="modal-parent">
             <i className="fa fa-times modal-close-icon" onClick={this.closeLoginModal}></i>
@@ -106,7 +107,7 @@ var App = React.createClass({
 
         <Modal
           isOpen={this.state.signupModalOpen}
-          style={style}
+          style={modalStyle}
         >
 
           <div className="modal-parent">
@@ -118,6 +119,7 @@ var App = React.createClass({
                 Have an account? <a onClick={this.openLoginModal}>Log in</a>
             </pre>
           </div>
+
         </Modal>
       </div>
     );
