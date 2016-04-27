@@ -4,7 +4,7 @@ var LoginForm = require("./user_forms/login_form");
 var SignUpForm = require("./user_forms/sign_up_form");
 var CurrentUserStateMixn = require("../mixins/current_user_state_mixin");
 var UserClientActions = require("../actions/user/user_client_actions");
-// This is something to test bundle.js
+
 
 var modalStyle = {
   overlay: {
