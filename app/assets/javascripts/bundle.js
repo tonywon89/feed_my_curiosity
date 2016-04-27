@@ -27392,6 +27392,7 @@
 	var SignUpForm = __webpack_require__(275);
 	var CurrentUserStateMixn = __webpack_require__(276);
 	var UserClientActions = __webpack_require__(247);
+	// This is something to test bundle.js
 	
 	var modalStyle = {
 	  overlay: {
