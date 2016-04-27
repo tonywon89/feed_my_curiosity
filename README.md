@@ -2,7 +2,7 @@
 
 [Heroku link][heroku] FeedMyCuriosity
 
-[heroku]: http://www.herokuapp.com
+[heroku]: http://feedmycuriosity.herokuapp.com/
 
 ## Minimum Viable Product
 
