@@ -8,7 +8,7 @@ var FeedIndexItemArticle = React.createClass({
 
 
     if (entry.summary) {
-      var imgRegex = new RegExp("<img src=\"(.*[\.jpg|\.png])\"");
+      var imgRegex = new RegExp("<img src=\"(.*[\.jpg|\.png]|\.jpeg|\.bmp])\"");
       imageUrl = entry.summary.match(imgRegex);
       if (imageUrl) {
         imageUrl = imageUrl[1];
@@ -24,7 +24,7 @@ var FeedIndexItemArticle = React.createClass({
     return (
       <div className="feed-index-item-article">
         {image}
-        <p>{entry.title}</p>
+        <h4>{entry.title}</h4>
       </div>
     );
   }
