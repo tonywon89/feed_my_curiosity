@@ -186,6 +186,12 @@ div.feed-index-item {
   }
 
   .feed-index-item-article {
+    height: 300px;
+    border: 1px solid black;
+
+    -moz-box-shadow:    0 2px 3px 3px green;
+    -webkit-box-shadow: 0 2px 3px 3px green;
+    box-shadow:         0 2px 3px 3px green;
     color: gray;
 
     -webkit-filter: grayscale(100%);
@@ -204,8 +210,11 @@ div.feed-index-item {
       color: black;
     }
 
-    img {
-      height: 100%;
+    h4 {
+      margin-top: 20px;
+
     }
+
+
   }
 }
