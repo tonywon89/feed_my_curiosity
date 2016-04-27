@@ -90,6 +90,8 @@ var App = React.createClass({
           {content}
         </header>
 
+        {this.props.children}
+
         <Modal
           isOpen={this.state.loginModalOpen}
           style={modalStyle}

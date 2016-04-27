@@ -15,7 +15,6 @@ var FeedServerActions = {
       feed: feed
     });
   }
-
 };
 
 module.exports = FeedServerActions;

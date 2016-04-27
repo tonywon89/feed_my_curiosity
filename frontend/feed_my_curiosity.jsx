@@ -11,12 +11,14 @@ var React = require('react');
 var ReactDOM = require('react-dom');
 
 var App = require("./components/app");
+var FeedIndex = require("./components/feeds/feed_index");
 
-window.FeedApiUtil = require("./util/feed_api_util");
+// window.FeedApiUtil = require("./util/feed_api_util");
 window.FeedStore = require("./stores/feed_store");
 
 var routes = (
   <Route path="/" component={App}>
+    <Route path="feeds" component = {FeedIndex} />
   </Route>
 );
 
