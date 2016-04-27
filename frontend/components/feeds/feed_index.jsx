@@ -1,6 +1,7 @@
 var React = require("react");
 var FeedStore = require("../../stores/feed_store");
 var FeedClientActions = require("../../actions/feed/feed_client_actions");
+var FeedIndexItem = require("./feed_index_item");
 
 var FeedIndex = React.createClass({
   getInitialState: function () {
@@ -24,7 +25,7 @@ var FeedIndex = React.createClass({
     var feeds = this.state.feeds;
     if (feeds.length !== 0) {
       feeds = feeds.map(function(feed) {
-        return <p>{feed.title}</p>;
+        return <FeedIndexItem key={feed.id} feed={feed} />;
       });
     }
     return (
