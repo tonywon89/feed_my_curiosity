@@ -24,6 +24,7 @@ var FeedIndex = React.createClass({
   render: function () {
     var feeds = this.state.feeds;
     var content;
+    
     if (feeds.length !== 0) {
       content = feeds.map(function(feed) {
         return <FeedIndexItem key={feed.id} feed={feed} />;
@@ -32,10 +33,8 @@ var FeedIndex = React.createClass({
       content = "Fetching feeds...";
     }
 
-
     return (
       <div className="feed-index">
-
         {content}
       </div>
     );

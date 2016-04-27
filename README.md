@@ -121,7 +121,7 @@ FeedMyCuriosity is a web application inspired by Feedly that will be built using
 
 ### Phase 3.5: Style FeedIndex and FeedIndexItem(0.5 days)
 
-- [ ] style `FeedIndex` to hold `FeedItem`s with proper spacing
+- [x] style `FeedIndex` to hold `FeedItem`s with proper spacing
 - [ ] make `FeedIndexItem` resemble the ones on Feedly website
 - [ ] deploy to Heroku
 

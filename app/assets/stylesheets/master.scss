@@ -130,7 +130,6 @@ i.modal-close-icon {
 // Feed Index and FeedIndex Item
 
 div.feed-index {
-  border: 1px solid black;
   display: flex;
   padding: 20px;
   margin: 20px;
@@ -158,7 +157,7 @@ div.feed-index-item {
     color: black;
     text-decoration: none;
     margin: 10px;
-    
+
     &:hover {
       color: green;
     }
