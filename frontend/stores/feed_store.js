@@ -25,13 +25,16 @@ FeedStore.all = function () {
   });
 };
 
+FeedStore.feedDetail = function () {
+  return _feedDetail;
+};
+
 FeedStore.__onDispatch = function (payload) {
   switch (payload.actionType) {
     case FeedConstants.FEEDS_RECEIVED:
       addFeeds(payload.feeds);
       break;
     case FeedConstants.SINGLE_FEED_RECEIVED:
-      alert("In SINGLE_FEED_RECEIVED");
       addFeedDetail(payload.feed);
       break;
   }
