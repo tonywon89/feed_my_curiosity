@@ -11,8 +11,6 @@ session_token   | string    | not null, indexed, unique
 **Associations:**  
 * has_many: collections  
 * has_many: feeds, through: collections  
-* has_many
-
 
 ##feeds
 

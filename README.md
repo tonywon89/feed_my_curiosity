@@ -123,13 +123,14 @@ FeedMyCuriosity is a web application inspired by Feedly that will be built using
 
 - [x] style `FeedIndex` to hold `FeedItem`s with proper spacing
 - [x] make `FeedIndexItem` resemble the ones on Feedly website
-- [ ] deploy to Heroku
+- [x] deploy to Heroku
 
 ### Phase 4: Collections Model, API, basic APIUtil, and Store  (1 day)
 
 **Objective:** Collections can be created, read, edited, and destroyed through the API
 
 - [ ] create `Collection` model
+- [ ] Add associations to models
 - [ ] CRUD API for collections, should be nested under single user (`CollectionsController`) (Under 'Organize' in sidebar)
 - [ ] jBuilder views for collections
 - [ ] seed the database with some collections under existing users
