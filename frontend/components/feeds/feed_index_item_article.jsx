@@ -19,7 +19,7 @@ var FeedIndexItemArticle = React.createClass({
 
     var image;
 
-    image = imageUrl ? <img src={imageUrl} /> : "";
+    image = imageUrl ? <img src={imageUrl} /> : <img src="http://dummyimage.com/600x400/46b0a4/414582.png&text=Curiously,+there+is+no+image" />;
 
     return (
       <div className="feed-index-item-article">

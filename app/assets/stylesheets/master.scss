@@ -165,6 +165,10 @@ div.feed-index-item {
     }
   }
 
+  .feed-index-item-description {
+    height: 100px;
+  }
+
   .feed-index-add-btn {
     width: 40%;
     margin: 10px;
@@ -200,6 +204,8 @@ div.feed-index-item {
       color: black;
     }
 
-
+    img {
+      height: 100%;
+    }
   }
 }

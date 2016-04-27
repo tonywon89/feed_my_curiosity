@@ -1,5 +1,8 @@
 var React = require('react');
+var ReactRouter = require('react-router');
+var Link = ReactRouter.Link;
 var Modal = require('react-modal');
+
 var LoginForm = require("./user_forms/login_form");
 var SignUpForm = require("./user_forms/sign_up_form");
 var CurrentUserStateMixn = require("../mixins/current_user_state_mixin");
@@ -88,6 +91,7 @@ var App = React.createClass({
         <header>
           <h1 className="header-text">Feed My Curiosity</h1>
           {content}
+          <Link to="/feeds">Fetch the feeds</Link>
         </header>
 
         {this.props.children}
