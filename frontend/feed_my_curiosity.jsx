@@ -13,7 +13,7 @@ var ReactDOM = require('react-dom');
 var App = require("./components/app");
 
 window.FeedApiUtil = require("./util/feed_api_util");
-var FeedStore = require("./stores/feed_store");
+window.FeedStore = require("./stores/feed_store");
 
 var routes = (
   <Route path="/" component={App}>

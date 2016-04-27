@@ -7,7 +7,16 @@ var FeedStore = new Store(AppDispatcher);
 var _feeds = {};
 
 var addFeeds = function (feeds) {
+  feeds.forEach(function(feed){
+    _feeds[feed.id] = feed;
+  });
+  FeedStore.__emitChange();
+};
 
+FeedStore.all = function () {
+  return Object.keys(_feeds).map(function(key) {
+    return _feeds[key];
+  });
 };
 
 FeedStore.__onDispatch = function (payload) {

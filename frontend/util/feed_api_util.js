@@ -6,7 +6,7 @@ var FeedApiUtil = {
       type: "GET",
       url: "api/feeds",
       success: function (feeds) {
-        FeedServerActions.receiveFeeds();
+        FeedServerActions.receiveFeeds(feeds);
       }
     });
   },
