@@ -18,7 +18,7 @@ FeedMyCuriosity is a web application inspired by Feedly that will be built using
 
 ## Product Goals and Priorities
 ### MVP
-- [ ] Create an account
+- [x] Create an account
 - [ ] Log in/ Log out, including as a Guest/Demo User
 - [ ] Provide feeds for the user to choose from
 - [ ] Make and delete collections
@@ -95,9 +95,9 @@ FeedMyCuriosity is a web application inspired by Feedly that will be built using
 
 **Objective** Feeds can be retrieved through the API
 
-- [ ] create `Feed` model
-- [ ] seed the database with small amount of rss feeds from websites that provide it
-- [ ] Retrieve feeds data by using an FeedAPI (`FeedsController`) to fetch the feed data
+- [x] create `Feed` model
+- [x] seed the database with small amount of rss feeds from websites that provide it
+- [ ] Retrieve feeds data by using a FeedAPI (`FeedsController`) to fetch the feed data
 - [ ] jBuilder views for parsed data from Feed url using Feedjira gem
 - [ ] setup `ApiUtil` to interact with the API
 - [ ] test out API interaction in the console
