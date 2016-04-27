@@ -26,3 +26,8 @@ group :development do
   gem 'pry-rails'
   gem 'quiet_assets'
 end
+
+group :production do
+  gem 'newrelic_rpm'
+  gem 'rails_12factor' # error feedback
+end
