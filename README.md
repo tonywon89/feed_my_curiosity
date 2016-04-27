@@ -109,11 +109,12 @@ FeedMyCuriosity is a web application inspired by Feedly that will be built using
 
 **Objective** Feeds are fetched and displayed properly in their components
 
-- [ ] setup the `FeedIndex` component
-  - [ ] pass on each feed to `FeedIndexItem`
-- [ ] setup `FeedIndexItem` component
-  - [ ] displays title and logo of website (are links to the website)
-  - [ ] displays description of website (clicking opens up modal with detail)
+- [x] setup the `FeedIndex` component
+  - [x] pass on each feed to `FeedIndexItem`
+- [x] setup `FeedIndexItem` component
+  - [ ] displays title (link to website)
+  - [ ] displays logo of website
+  - [x] displays description of website (clicking opens up modal with detail)
   - [ ] displays an "Add" button (clicking opens up a different sidebar with adding collection)
   - [ ] displays the photo and title of the first article (clicking opens an ArticleDetail)
 - [ ] test by placing `FeedIndex` in DOM

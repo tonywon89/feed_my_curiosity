@@ -4,6 +4,9 @@ $header-background-color: #D6F8D6;
 $close-btn-color: #7D807F;
 $close-btn-hover-color: #FF5C35;
 
+$button-green: #2bb24c;
+$button-hover-green: #05A838;
+
 // Splash Page styles
 
 header {
@@ -45,8 +48,11 @@ button.getting-started {
   text-align: center;
   border: 0px;
   margin: 50px;
-  background-color: #2bb24c;
+  background-color: $button-green;
+}
 
+button.getting-started:hover {
+  background-color: $button-hover-green;
 }
 
 h1.header-text {
@@ -120,4 +126,33 @@ i.modal-close-icon {
 
 .modal-close-icon:hover {
   color: $close-btn-hover-color;
+}
+
+// Feed Index and FeedIndex Item
+
+div.feed-index {
+  border: 1px solid black;
+  display: flex;
+  padding: 20px;
+  margin: 20px;
+}
+
+div.feed-index-item {
+  border: 1px solid red;
+  width: 30%;
+  padding: 10px;
+  margin: 20px;
+  
+  .feed-index-add-btn {
+    margin: 10px;
+    font-size: 12px;
+    font: 10px;
+    padding: 5px;
+    background-color: $button-green;
+  }
+
+  .feed-index-add-btn:hover {
+    background-color: $button-hover-green;
+  }
+
 }
