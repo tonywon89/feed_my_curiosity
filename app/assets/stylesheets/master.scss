@@ -94,7 +94,7 @@ input[type="text"], input[type="password"] {
   box-sizing: border-box
 }
 
-input[type="text"]:focus input[type="password"]:focus{
+input[type="text"]:focus, input[type="password"]:focus{
   background-color: #D6F8D6;
 
 }
