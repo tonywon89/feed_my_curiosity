@@ -7,7 +7,7 @@ description = @feedjira_feed[:feed].description
 if description && !description.empty?
   json.description description
 else
-  json.description "Click here to learn more about '#{feedjira_feed[:feed].title}'"
+  json.description "Click here to learn more about '#{@feedjira_feed[:feed].title}'"
 end
 
 entries = @feedjira_feed[:feed].entries.map do |entry|
