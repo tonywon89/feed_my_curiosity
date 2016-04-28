@@ -11,6 +11,14 @@ class Api::CollectionsController < ApplicationController
   end
 
   def show
+    @collection = Collection.includes(:feeds).where(id: params[:id])[0]
+    if @collection
+      render :show
+    else
+      @errors = ["Collection cannot be found"]
+      render "api/errors/errors", status: 500
+    end
+
   end
 
   def create
