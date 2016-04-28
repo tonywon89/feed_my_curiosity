@@ -7,6 +7,13 @@ var CollectionServerActions = {
       actionType: CollectionConstants.COLLECTIONS_RECEIVED,
       collections: collections
     });
+  },
+
+  receiveSingleCollection: function (collection) {
+    AppDispatcher.dispatch({
+      actionType: CollectionConstants.SINGLE_COLLECTION_RECEIVED,
+      collection: collection
+    });
   }
 };
 

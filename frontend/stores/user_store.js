@@ -34,18 +34,14 @@ var logoutUser = function () {
 };
 
 UserStore.__onDispatch = function (payload) {
-  // alert("In UserStore dispatch");
   switch (payload.actionType) {
     case UserConstants.CURRENT_USER_RECEIVED:
-      // alert("In User store dispatch, current user received");
       updateCurrentUser(payload.currentUser);
       break;
     case UserConstants.LOGGED_OUT_CURRENT_USER:
-      // alert("In User store dispatch, logged out current user");
       logoutUser();
       break;
-    case ErrorConstants.ERRORS_RECEIVED:
-      // alert("In User store dispatch, errors received");
+    case ErrorConstants.USER_ERRORS_RECEIVED:
       updateErrors(payload.errors);
       break;
   }

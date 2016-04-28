@@ -132,8 +132,13 @@ FeedMyCuriosity is a web application inspired by Feedly that will be built using
 
 - [x] create `Collection` model
 - [x] Add associations to models
-  -[x] test assoications
+  - [x] test associations
 - [ ] CRUD API for collections, should be nested under single user (`CollectionsController`) (Under 'Organize' in sidebar)
+  - [x] get all collections
+  - [ ] get single collection
+  - [ ] create collections
+  - [ ] update collections
+  - [ ] destroy collections
 - [ ] jBuilder views for collections
 - [ ] seed the database with some collections under existing users
   - [ ] Add feeds to collections

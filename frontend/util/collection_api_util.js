@@ -10,7 +10,20 @@ var CollectionApiUtil = {
         CollectionServerActions.receiveCollections(collections);
       },
       error: function (errors) {
-        ErrorServerActions.receiveErrors(errors.responseJSON);
+        ErrorServerActions.receiveCollectionErrors(errors.responseJSON);
+      }
+    });
+  },
+
+  getCollection: function (id) {
+    $.ajax({
+      type: "GET",
+      url: "api/collections/" + id,
+      success: function (collection) {
+        CollectionServerActions.receiveSingleCollection(collection);
+      },
+      error: function (errors) {
+        ErrorServerActions.receiveCollectionErrors(errors.responseJSOn);
       }
     });
   }

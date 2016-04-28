@@ -10,7 +10,7 @@ var UserApiUtil = {
         UserServerActions.receiveCurrentUser(currentUser);
       },
       error: function (errors) {
-        ErrorServerActions.receiveErrors(errors.responseJSON);
+        ErrorServerActions.receiveUserErrors(errors.responseJSON);
       }
     });
   },
@@ -25,7 +25,7 @@ var UserApiUtil = {
         UserServerActions.receiveCurrentUser(currentUser);
       },
       error: function (errors) {
-        ErrorServerActions.receiveErrors(errors.responseJSON);
+        ErrorServerActions.receiveUserErrors(errors.responseJSON);
       }
     });
   },
@@ -38,7 +38,7 @@ var UserApiUtil = {
         UserServerActions.logoutCurrentUser();
       },
       error: function (errors) {
-        ErrorServerActions.receiveErrors(errors.responseJSON);
+        ErrorServerActions.receiveUserErrors(errors.responseJSON);
       }
     });
   },
@@ -52,7 +52,7 @@ var UserApiUtil = {
         UserServerActions.receiveCurrentUser(currentUser);
       },
       error: function (errors) {
-        ErrorServerActions.receiveErrors(errors.responseJSON);
+        ErrorServerActions.receiveUserErrors(errors.responseJSON);
       }
     });
   }
