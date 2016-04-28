@@ -21,7 +21,21 @@ var CollectionServerActions = {
       actionType: CollectionConstants.COLLECTION_CREATED,
       collection: collection
     });
-  }
+  },
+
+  receiveUpdatedCollection: function (collection) {
+    AppDispatcher.dispatch({
+      actionType: CollectionConstants.COLLECTION_UPDATED,
+      collection: collection
+    });
+  },
+
+  removeCollection: function (collection) {
+    AppDispatcher.dispatch({
+      actionType: CollectionConstants.COLLECTION_DELETED,
+      collection: collection
+    });
+  },
 };
 
 module.exports = CollectionServerActions;

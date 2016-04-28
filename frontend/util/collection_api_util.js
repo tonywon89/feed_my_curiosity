@@ -53,10 +53,10 @@ var CollectionApiUtil = {
       url: "api/collections/" + collection.id,
       data: { feed: feed },
       success: function (updatedCollection) {
-        alert("Updated collection");
+        CollectionServerActions.receiveUpdatedCollection(updatedCollection);
       },
       error: function (errors) {
-        alert("Failed to update collection");
+        ErrorServerActions.receiveCollectionErrors(errors.responseJSON);
       }
     });
   },
@@ -66,10 +66,10 @@ var CollectionApiUtil = {
       type: "DELETE",
       url: "api/collections/" + collection.id,
       success: function (deletedCollection) {
-        alert("Successfully deleted collection");
+        CollectionServerActions.removeCollection(deletedCollection);
       },
       error: function (errors) {
-        alert("Failed to delete collection");
+        ErrorServerActions.receiveCollectionErrors(errors.responseJSON);
       }
     });
   }
