@@ -6,10 +6,20 @@ var FeedIndexItemArticle = React.createClass({
 
     var imageUrl;
     if (entry.summary) {
-      var imgRegex = new RegExp("<img src=\"(.*[\.jpg|\.png]|\.jpeg|\.bmp])\"");
+      var imgRegex = /src="([^"]+)"/;
       imageUrl = entry.summary.match(imgRegex);
+
       if (imageUrl) {
         imageUrl = imageUrl[1];
+      } else {
+        if (entry.content) {
+          imageUrl = entry.content.match(imgRegex);
+
+          if (imageUrl) {
+            imageUrl = imageUrl[1];
+          }
+        }
+
       }
     }
 
