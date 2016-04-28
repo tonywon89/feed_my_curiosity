@@ -137,7 +137,7 @@ div.feed-index {
 }
 
 div.feed-index-item {
-  $gray: #739F81;
+  $gray: #C1BDBD;
   border: 1px solid #B3DABF;
   width: 250px;
   padding: 10px;
@@ -150,7 +150,7 @@ div.feed-index-item {
 
   &:hover {
     border: 1px solid black;
-    color: black;
+    color: $green;
 
     .feed-index-item-article {
       -webkit-filter: grayscale(0%);
@@ -204,7 +204,7 @@ div.feed-index-item {
   .feed-index-item-article {
     height: 250px;
     border: 1px solid black;
-
+    background-color: #D2F3D2;
     -moz-box-shadow:    0px 8px 3px -3px green;
     -webkit-box-shadow: 0px 8px 3px -3px green;
     box-shadow:         0px 8px 3px -3px green;
@@ -216,6 +216,12 @@ div.feed-index-item {
     -ms-filter: grayscale(100%);
       filter: grayscale(100%);
     transition: all 0.75s;
+
+    div {
+      max-height: 200px;
+      width: 100%;
+      overflow: hidden;
+    }
 
     h4 {
       padding-left: 10px;

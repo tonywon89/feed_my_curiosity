@@ -10,7 +10,9 @@ var FeedIndexItemArticle = React.createClass({
 
     return (
       <div className="feed-index-item-article">
-        {image}
+        <div>
+          {image}
+        </div>
         <h4>{entry.title}</h4>
       </div>
     );
