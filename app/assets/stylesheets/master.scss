@@ -10,31 +10,36 @@ $button-hover-green: #05A838;
 // Splash Page styles
 
 div.app {
+  margin-top: 0;
+
   div.main {
     position: relative;
     left: 50px;
-    margin-top: 0px;
-    padding-left: 33px;
-    padding-top: 0px;
+    padding: 30px;
+    padding-top: 20px;
     padding-right: 33px;
     padding-bottom: 102px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
-    header {
-      display: flex;
-      align-items: center;
-      flex-direction: column;
-      height: 300px;
-      border: 1px solid black;
-    }
+    transition: all 0.4s;
   }
+
 }
 
-
-
+header {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 300px;
+  margin: 0;
+  border: 1px solid black;
+}
 
 // Sidebar
-
 .sidebar {
+  margin-top: 0;
   height: 100%;
   width: 200px;
   position: fixed;
@@ -43,17 +48,19 @@ div.app {
   border-top-right-radius: 3px;
   border-bottom-right-radius: 3px;
 
-  transition: left 0.4s;
+  transition: all 0.4s;
 
-  &:hover {
-    left: 0;
+  &:hover + .main, &:hover {
+    transform: translateX(150px);
+    transition: all 0.4s;
   }
 }
 
-.sidebar.shown {
-  left: 0;
-  transition: left 0.2s;
-}
+
+// .sidebar.shown {
+//   left: 0;
+//   transition: left 0.2s;
+// }
 
 .fa.fa-bars {
   font-size: 20px;
@@ -68,8 +75,6 @@ div.app {
   transition: opacity .1s;
 
 }
-
-
 
 button, input[type="submit"] {
   color: white;

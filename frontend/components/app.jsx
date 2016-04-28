@@ -77,6 +77,7 @@ var App = React.createClass({
     return (
       <div className="app">
         <Sidebar />
+
         <div className="main">
           {React.cloneElement(
             this.props.children,
@@ -86,7 +87,7 @@ var App = React.createClass({
               logOut: this.logOut
             }
           )}
-          </div>
+        </div>
 
         <Modal
           isOpen={this.state.loginModalOpen}
