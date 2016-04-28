@@ -145,7 +145,7 @@ div.feed-index-item {
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: $gray;
+  color: #87D269;
   transition: all 0.75s;
 
   &:hover {
@@ -216,6 +216,10 @@ div.feed-index-item {
       filter: grayscale(100%);
     transition: all 0.75s;
 
+    display:flex;
+    flex-direction: column;
+    align-items: left;
+
     div {
       max-height: 200px;
       width: 100%;
@@ -223,9 +227,12 @@ div.feed-index-item {
     }
 
     h4 {
+      min-height: 50px;
+      max-height: 100px;
       padding-left: 10px;
       margin-top: 10px;
-      font-size: 12px
+      font-size: 12px;
+      overflow: hidden;
     }
 
   }
