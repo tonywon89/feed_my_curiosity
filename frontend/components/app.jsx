@@ -98,6 +98,7 @@ var App = React.createClass({
 
         <Modal
           isOpen={this.state.loginModalOpen}
+          onRequestClose={this.closeLoginModal}
           style={modalStyle}
         >
           <div className="modal-parent">
@@ -114,6 +115,7 @@ var App = React.createClass({
 
         <Modal
           isOpen={this.state.signupModalOpen}
+          onRequestClose={this.closeSignupModal}
           style={modalStyle}
         >
 

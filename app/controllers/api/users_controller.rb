@@ -6,7 +6,7 @@ class Api::UsersController < ApplicationController
       render :show
     else
       @errors = ["You are not logged in."]
-      render :errors, status: 500
+      render "api/errors/errors", status: 500
     end
   end
 
@@ -17,7 +17,7 @@ class Api::UsersController < ApplicationController
       render :show
     else
       @errors = @user.errors.full_messages
-      render :errors, status: 500
+      render "api/errors/errors", status: 500
     end
   end
 
@@ -29,7 +29,7 @@ class Api::UsersController < ApplicationController
       render :show
     else
       @errors = ["There is no such user to delete."]
-      render :errors, status: 500
+      render "api/errors/errors", status: 500
     end
   end
 
