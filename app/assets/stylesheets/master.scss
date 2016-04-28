@@ -35,7 +35,8 @@ a:hover {
 
 // Main component
 div.main {
-  position: relative;
+  position: absolute;
+  margin-left: 52px;
   left: 50px;
   padding: 30px;
   padding-top: 20px;
@@ -62,7 +63,7 @@ div.main {
   transition: all 0.4s;
 
   &:hover + .main {
-    transform: translateX(216px);
+    left: 318px;
     transition: all 0.4s;
   }
 
@@ -116,18 +117,16 @@ div.main {
   .pin-btn {
     display: block;
 
-    &:hover {
-
-    }
+    &:hover {}
   }
 
   &:hover + .main {
-    transform: translateX(0);
+    left: 50px;
   }
 }
 
 .sidebar.pinned + .main {
-  left: 240px;
+  margin-left: 268px;
 }
 
 // Home component
