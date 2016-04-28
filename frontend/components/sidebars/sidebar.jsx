@@ -7,7 +7,7 @@ var Sidebar = React.createClass({
 
   pinClicked: function (event) {
     event.preventDefault();
-    
+
     if (this.state.pinned) {
       this.setState({ pinned: false });
     } else {
@@ -32,6 +32,10 @@ var Sidebar = React.createClass({
         <button className="pin-btn" onClick={this.pinClicked}>
           {pinBtnContent}
         </button>
+        <div class="sidebar-today">
+          <i className="fa fa-question-circle-o"></i>
+          <div>Today</div>
+        </div>
       </div>
     );
   }

@@ -146,20 +146,20 @@ FeedMyCuriosity is a web application inspired by Feedly that will be built using
 - [x] implement `CollectionClientActions` and `CollectionServerActions` methods for collections
 - [x] create `CollectionStore`
 - [x] test action and store methods
-- [ ] deploy to Heroku
+- [x] deploy to Heroku
 
 ### Phase 5: Sidebar (1 day)
 
 **Objective** Display a sidebar with the username, collections and their feeds, and other links when logged in, else generic page
 
-- [ ] Make a sidebar component
+- [x] Make a sidebar component
   - [ ] two cases: logged in or not logged in
   - [ ] displays different things depending on log in state
 - [ ] logged in display  
   - [ ] username at the bottom, with logout button
-  - [ ] has a "pin" button
-    - [ ] add functionality to make the side bar keep displayed
-    - [ ] change text of "pin" to "unpin" and vice versa  
+  - [x] has a "pin" button
+    - [x] add functionality to make the side bar keep displayed
+    - [x] change text of "pin" to "unpin" and vice versa  
   - [ ] has a "Today" link
   - [ ] has a "Saved For Later" link
   - [ ] has a link to an add content

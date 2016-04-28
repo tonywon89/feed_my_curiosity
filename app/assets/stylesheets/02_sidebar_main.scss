@@ -1,0 +1,104 @@
+$green: #38B769;
+$blue: #5999AD;
+$header-background-color: #D6F8D6;
+$close-btn-color: #7D807F;
+$close-btn-hover-color: #FF5C35;
+
+$button-green: #2bb24c;
+$button-hover-green: #05A838;
+
+// Main component
+div.main {
+  position: absolute;
+  margin-left: 52px;
+  left: 75px;
+  padding: 30px;
+  padding-top: 20px;
+  padding-right: 33px;
+  padding-bottom: 102px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.4s;
+}
+
+
+// Sidebar
+.sidebar {
+  margin-top: 0;
+  height: 100%;
+  width: 268px;
+  position: fixed;
+  background-color: $green;
+  left: -216px;
+  display: flex;
+  flex-direction: column;
+
+  transition: all 0.4s;
+
+  &:hover + .main {
+    left: 343px;
+    transition: all 0.4s;
+  }
+
+  &:hover {
+    left: 0;
+
+    .fa.fa-bars {
+      display: none;
+    }
+
+    .pin-btn {
+      display: block;
+    }
+  }
+
+  .pin-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    border-radius: 1px;
+    display: none;
+    font-size: 10px;
+    padding: 2px 7px;
+    opacity: 0.5;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    background-color: Transparent;
+    box-shadow: none;
+
+    &:hover {
+      opacity: 0.8;
+      border: 1px solid rgba(255, 255, 255, 0.8);
+    }
+  }
+
+  .fa.fa-bars {
+    color: white;
+    font-size: 22px;
+    position: absolute;
+    right: 18px;
+    top: 40px;
+  }
+}
+
+.sidebar.pinned {
+  left: 0;
+
+  .fa.fa-bars {
+    display: none;
+  }
+
+  .pin-btn {
+    display: block;
+
+    &:hover {}
+  }
+
+  &:hover + .main {
+    left: 75px;
+  }
+}
+
+.sidebar.pinned + .main {
+  margin-left: 268px;
+}
