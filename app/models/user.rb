@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id              :integer          not null, primary key
+#  email           :string           not null
+#  password_digest :string           not null
+#  session_token   :string           not null
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#
+
 class User < ActiveRecord::Base
   validates :email, :password_digest, :session_token, presence: true
   validates :email, uniqueness: true
@@ -5,6 +17,9 @@ class User < ActiveRecord::Base
 
   attr_reader :password
   validates :password, length: { minimum: 6, allow_nil: true }
+
+  has_many :collections
+  has_many :feeds, through: :collections, source: :feeds
 
   def self.generate_session_token
     loop do

@@ -1,0 +1,20 @@
+# == Schema Information
+#
+# Table name: collection_feeds
+#
+#  id            :integer          not null, primary key
+#  feed_id       :integer          not null
+#  collection_id :integer          not null
+#  created_at    :datetime         not null
+#  updated_at    :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  feed_id: 1
+  collection_id: 1
+
+two:
+  feed_id: 1
+  collection_id: 1
