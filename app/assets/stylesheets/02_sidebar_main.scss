@@ -22,7 +22,6 @@ div.main {
   transition: all 0.4s;
 }
 
-
 // Sidebar
 .sidebar {
   margin-top: 0;
@@ -33,7 +32,6 @@ div.main {
   left: -216px;
   display: flex;
   flex-direction: column;
-
   transition: all 0.4s;
 
   &:hover + .main {
@@ -43,20 +41,21 @@ div.main {
 
   &:hover {
     left: 0;
-
     .fa.fa-bars {
       display: none;
     }
-
     .pin-btn {
       display: block;
+    }
+    .sidebar-content {
+      display: flex;
     }
   }
 
   .pin-btn {
     position: absolute;
-    top: 20px;
-    right: 20px;
+    top: 10px;
+    right: 15px;
     border-radius: 1px;
     display: none;
     font-size: 10px;
@@ -83,17 +82,15 @@ div.main {
 
 .sidebar.pinned {
   left: 0;
-
   .fa.fa-bars {
     display: none;
   }
-
   .pin-btn {
     display: block;
-
-    &:hover {}
   }
-
+  .sidebar-content {
+    display: flex;
+  }
   &:hover + .main {
     left: 75px;
   }
@@ -101,4 +98,33 @@ div.main {
 
 .sidebar.pinned + .main {
   margin-left: 268px;
+}
+
+.sidebar-content {
+  padding: 0;
+  margin-top: 40px;
+  flex-direction: column;
+  color: white;
+  display: none;
+}
+
+.sidebar-today, .sidebar-save {
+  padding-left: 30px;
+  width: 96%;
+  display: flex;
+  padding: 5px;
+
+  div {
+    padding-left: 5px;
+  }
+  .sidebar-icon {
+    margin-top: 4px;
+    padding-right: 5px;
+    padding-left: 25px;
+  }
+
+  &:hover {
+    background-color: rgba(204, 204, 204, 0.5);
+    cursor: pointer;
+  }
 }

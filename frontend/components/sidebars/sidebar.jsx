@@ -32,9 +32,15 @@ var Sidebar = React.createClass({
         <button className="pin-btn" onClick={this.pinClicked}>
           {pinBtnContent}
         </button>
-        <div class="sidebar-today">
-          <i className="fa fa-question-circle-o"></i>
-          <div>Today</div>
+        <div className="sidebar-content">
+          <div className="sidebar-today">
+            <i className="fa fa-rss sidebar-icon"></i>
+            <div>Today</div>
+          </div>
+          <div className="sidebar-save">
+            <i className="fa fa-bookmark-o sidebar-icon"></i>
+            <div>Save for later</div>
+          </div>
         </div>
       </div>
     );
