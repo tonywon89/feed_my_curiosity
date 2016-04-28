@@ -144,8 +144,8 @@ FeedMyCuriosity is a web application inspired by Feedly that will be built using
   - [ ] Add feeds to collections
 - [x] test APIUtil interaction with API in the console
 - [x] implement `CollectionClientActions` and `CollectionServerActions` methods for collections
-- [ ] create `CollectionStore`
-- [ ] test action and store methods
+- [x] create `CollectionStore`
+- [x] test action and store methods
 - [ ] deploy to Heroku
 
 ### Phase 5: Sidebar (1 day)
