@@ -45,7 +45,7 @@ CollectionStore.__onDispatch = function (payload) {
       addCollection(payload.collection);
       break;
     case CollectionConstants.COLLECTION_UPDATED:
-      alert("COLLECTION_UPDATED");
+      addCollection(payload.collection);
       break;
     case CollectionConstants.COLLECTION_DELETED:
       alert("COLLECTION_DELETED");
