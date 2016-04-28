@@ -33,8 +33,8 @@ var CollectionApiUtil = {
       type: "POST",
       url: "api/collections",
       data: { collection: collection},
-      success: function () {
-        alert("Collection creation and feed addition was a success!");
+      success: function (createdCollection) {
+        CollectionServerActions.receiveCreatedCollection(createdCollection);
       },
       error: function (errors) {
         ErrorServerActions.receiveCollectionErrors(errors.responseJSON);

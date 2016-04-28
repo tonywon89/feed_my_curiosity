@@ -14,6 +14,14 @@ var CollectionServerActions = {
       actionType: CollectionConstants.SINGLE_COLLECTION_RECEIVED,
       collection: collection
     });
+  },
+
+  receiveCreatedCollection: function (collection) {
+    alert("In receiveCreatedCollection");
+    AppDispatcher.dispatch({
+      actionType: CollectionConstants.COLLECTION_CREATED,
+      collection: collection
+    });
   }
 };
 
