@@ -163,11 +163,12 @@ div.feed-index-item {
   }
 
   .feed-index-item-title {
-    height: 50px;
-    font-size: 20px;
+    height: 15px;
+    font-size: 17px;
     color: black;
-    text-decoration: none;
-    margin: 10px;
+    text-underline-position: under;
+    margin-top: 15px;
+    padding-bottom: 10px;
 
     &:hover {
       color: green;
@@ -175,7 +176,13 @@ div.feed-index-item {
   }
 
   .feed-index-item-description {
-    height: 100px;
+    font-size: 13px;
+    height: 40px;
+
+    &:hover {
+      cursor: pointer;
+      text-decoration: underline;
+    }
   }
 
   .feed-index-add-btn {
@@ -195,7 +202,7 @@ div.feed-index-item {
   }
 
   .feed-index-item-article {
-    height: 300px;
+    height: 250px;
     border: 1px solid black;
 
     -moz-box-shadow:    0px 8px 3px -3px green;
@@ -211,7 +218,9 @@ div.feed-index-item {
     transition: all 0.75s;
 
     h4 {
-      margin-top: 20px;
+      padding-left: 10px;
+      margin-top: 10px;
+      font-size: 12px
     }
 
   }

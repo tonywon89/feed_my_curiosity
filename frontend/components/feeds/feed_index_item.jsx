@@ -8,8 +8,8 @@ var FeedIndexItem = React.createClass({
     return (
       <div className="feed-index-item">
         <a href={feed.url} className="feed-index-item-title">{feed.title}</a>
-        <button className="feed-index-add-btn">Add Feed</button>
         <p className="feed-index-item-description">{feed.description}</p>
+        <button className="feed-index-add-btn">Add Feed</button>
         <FeedIndexItemArticle entry={feed.entries[0]} />
       </div>
     );
