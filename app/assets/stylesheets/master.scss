@@ -7,64 +7,7 @@ $close-btn-hover-color: #FF5C35;
 $button-green: #2bb24c;
 $button-hover-green: #05A838;
 
-// Splash Page styles
-
-div.app {
-  margin-top: 0;
-
-  div.main {
-    position: relative;
-    left: 50px;
-    padding: 30px;
-    padding-top: 20px;
-    padding-right: 33px;
-    padding-bottom: 102px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    transition: all 0.4s;
-  }
-}
-
-header {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  height: 300px;
-  margin: 0;
-  border: 1px solid black;
-}
-
-// Sidebar
-.sidebar {
-  margin-top: 0;
-  height: 100%;
-  width: 268px;
-  position: fixed;
-  background-color: $green;
-  left: -216px;
-
-  transition: all 0.4s;
-
-  &:hover + .main, &:hover {
-    transform: translateX(216px);
-    transition: all 0.4s;
-
-    .fa.fa-bars {
-      display: none;
-    }
-  }
-
-  .fa.fa-bars {
-    color: white;
-    font-size: 22px;
-    position: absolute;
-    right: 18px;
-    top: 40px;
-  }
-}
-
-
+// General
 
 button, input[type="submit"] {
   color: white;
@@ -90,6 +33,105 @@ a:hover {
   color: $green;
 }
 
+// Main component
+div.main {
+  position: relative;
+  left: 50px;
+  padding: 30px;
+  padding-top: 20px;
+  padding-right: 33px;
+  padding-bottom: 102px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.4s;
+}
+
+
+// Sidebar
+.sidebar {
+  margin-top: 0;
+  height: 100%;
+  width: 268px;
+  position: fixed;
+  background-color: $green;
+  left: -216px;
+  display: flex;
+  flex-direction: column;
+
+  transition: all 0.4s;
+
+  &:hover + .main {
+    transform: translateX(216px);
+    transition: all 0.4s;
+  }
+
+  &:hover {
+    left: 0;
+
+    .fa.fa-bars {
+      display: none;
+    }
+
+    .pin-btn {
+      display: block;
+    }
+  }
+
+  .pin-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    border-radius: 1px;
+    display: none;
+    font-size: 10px;
+    padding: 2px 7px;
+    opacity: 0.5;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    background-color: Transparent;
+    box-shadow: none;
+
+    &:hover {
+      opacity: 0.8;
+      border: 1px solid rgba(255, 255, 255, 0.8);
+    }
+  }
+
+  .fa.fa-bars {
+    color: white;
+    font-size: 22px;
+    position: absolute;
+    right: 18px;
+    top: 40px;
+  }
+}
+
+.sidebar.pinned {
+  left: 0;
+
+  .fa.fa-bars {
+    display: none;
+  }
+
+  .pin-btn {
+    display: block;
+
+    &:hover {
+
+    }
+  }
+
+  &:hover + .main {
+    transform: translateX(0);
+  }
+}
+
+.sidebar.pinned + .main {
+  left: 240px;
+}
+
+// Home component
+
 button.getting-started {
   color: white;
   width: 50%;
@@ -101,6 +143,14 @@ button.getting-started {
 
 button.getting-started:hover {
   background-color: $button-hover-green;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 300px;
+  margin: 0;
 }
 
 h1.header-text {

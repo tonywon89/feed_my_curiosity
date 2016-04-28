@@ -27,8 +27,9 @@ var Home = React.createClass({
         <header>
           <h1 className="header-text">Feed My Curiosity</h1>
           {content}
+          <Link to="/feeds">Fetch the feeds</Link>
         </header>
-        <Link to="/feeds">Fetch the feeds</Link>
+
       </div>
     );
   }
