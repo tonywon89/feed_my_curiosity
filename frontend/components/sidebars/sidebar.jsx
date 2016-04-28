@@ -4,7 +4,7 @@ var Sidebar = React.createClass({
   render: function () {
     return (
       <div className="sidebar">
-        This is the sidebar
+        <i className="fa fa-bars"></i>
       </div>
     );
   }

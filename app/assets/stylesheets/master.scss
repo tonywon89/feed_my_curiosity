@@ -22,10 +22,8 @@ div.app {
     display: flex;
     flex-direction: column;
     align-items: center;
-
     transition: all 0.4s;
   }
-
 }
 
 header {
@@ -41,40 +39,32 @@ header {
 .sidebar {
   margin-top: 0;
   height: 100%;
-  width: 200px;
+  width: 268px;
   position: fixed;
-  background-color: rgba(210, 223, 220, 1);
-  left: -150px;
-  border-top-right-radius: 3px;
-  border-bottom-right-radius: 3px;
+  background-color: $green;
+  left: -216px;
 
   transition: all 0.4s;
 
   &:hover + .main, &:hover {
-    transform: translateX(150px);
+    transform: translateX(216px);
     transition: all 0.4s;
+
+    .fa.fa-bars {
+      display: none;
+    }
+  }
+
+  .fa.fa-bars {
+    color: white;
+    font-size: 22px;
+    position: absolute;
+    right: 18px;
+    top: 40px;
   }
 }
 
 
-// .sidebar.shown {
-//   left: 0;
-//   transition: left 0.2s;
-// }
-
-.fa.fa-bars {
-  font-size: 20px;
-  position: fixed;
-  left: 15px;
-  top: 20px;
-  transition: opacity .1s;
-}
-
-.fa.fa-bars.disappeared {
-  opacity: 0;
-  transition: opacity .1s;
-
-}
 
 button, input[type="submit"] {
   color: white;
