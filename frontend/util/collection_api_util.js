@@ -1,3 +1,5 @@
+var CollectionServerActions = require("../actions/collection/collection_server_actions");
+var ErrorServerActions = require("../actions/error/error_server_actions");
 
 var CollectionApiUtil = {
   fetchCollections: function () {
@@ -5,10 +7,10 @@ var CollectionApiUtil = {
       type: "GET",
       url: "api/collections",
       success: function (collections) {
-        alert("In fetchCollections success");
+        CollectionServerActions.receiveCollections(collections);
       },
       error: function (errors) {
-        alert("In fetchCollections error");
+        ErrorServerActions.receiveErrors(errors.responseJSON);
       }
     });
   }

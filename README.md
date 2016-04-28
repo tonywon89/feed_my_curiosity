@@ -12,19 +12,20 @@ FeedMyCuriosity is a web application inspired by Feedly that will be built using
 - [ ] Smooth, bug-free navigation
 - [ ] Adequate seed data to demonstrate the site's features
 - [ ] The minimally necessary features for a Feedly-inspired site: CRUD collections, displaying the feeds of the user, and providing feeds for the user to choose from
-- [ ] Hosting on Heroku
+- [x] Hosting on Heroku
 - [ ] CSS styling that is satisfactorily visually appealing
 - [ ] A production README, replacing this README
 
 ## Product Goals and Priorities
 ### MVP
 - [x] Create an account
-- [ ] Log in/ Log out, including as a Guest/Demo User
-- [ ] Provide feeds for the user to choose from
+- [x] Log in/ Log out
+- [ ]  as a Guest/Demo User
+- [x] Provide feeds for the user to choose from
 - [ ] Make and delete collections
 - [ ] Display user's feeds and collections
 - [ ] Add and remove feeds from collections
-- [ ] Provides link to go to feed's website
+- [x] Provides link to go to feed's website
 - [ ] Feeds display recent articles
 - [ ] Displays specific feeds
 - [ ] Displays specific articles
@@ -131,7 +132,7 @@ FeedMyCuriosity is a web application inspired by Feedly that will be built using
 
 - [x] create `Collection` model
 - [x] Add associations to models
-  -[x] test assoications 
+  -[x] test assoications
 - [ ] CRUD API for collections, should be nested under single user (`CollectionsController`) (Under 'Organize' in sidebar)
 - [ ] jBuilder views for collections
 - [ ] seed the database with some collections under existing users
