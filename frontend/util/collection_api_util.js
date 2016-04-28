@@ -40,6 +40,24 @@ var CollectionApiUtil = {
         ErrorServerActions.receiveCollectionErrors(errors.responseJSON);
       }
     });
+  },
+
+  updateCollection: function (collection) {
+    var feed = {
+      add: collection.add,
+      remove: collection.remove,
+    };
+    $.ajax({
+      type: "PATCH",
+      url: "api/collections/" + collection.id,
+      data: { feed: feed },
+      success: function (updatedCollection) {
+        alert("Updated collection");
+      },
+      error: function (errors) {
+        alert("Failed to update collection");
+      }
+    });
   }
 };
 

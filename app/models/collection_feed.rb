@@ -10,7 +10,7 @@
 #
 
 class CollectionFeed < ActiveRecord::Base
-  validates :feed_id, :collection_id, presence: true
+  validates :feed, :collection, presence: true
   validates :feed_id, uniqueness: { scope: :collection_id }
 
   belongs_to :feed

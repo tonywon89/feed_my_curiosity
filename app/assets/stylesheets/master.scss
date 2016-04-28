@@ -188,7 +188,6 @@ div.feed-index-item {
     color: $button-green;
     background-color: white;
     font-weight: bold;
-    
 
     &:hover {
       background-color: #B3DABF;
@@ -210,19 +209,9 @@ div.feed-index-item {
     -ms-filter: grayscale(100%);
       filter: grayscale(100%);
     transition: all 0.75s;
-    //
-    // &:hover {
-    //   -webkit-filter: grayscale(0%);
-    //   -moz-filter: grayscale(0%);
-    //   -o-filter: grayscale(0%);
-    //   -ms-filter: grayscale(0%);
-    //   filter: grayscale(0%);
-    //   color: black;
-    // }
 
     h4 {
       margin-top: 20px;
-
     }
 
   }

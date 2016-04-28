@@ -11,6 +11,10 @@ var CollectionClientActions = {
 
   createCollection: function(collection) {
     CollectionApiUtil.createCollection(collection);
+  },
+
+  updateCollection: function(collection) {
+    CollectionApiUtil.updateCollection(collection);
   }
 };
 
