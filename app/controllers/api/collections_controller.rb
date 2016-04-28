@@ -21,25 +21,33 @@ class Api::CollectionsController < ApplicationController
   end
 
   def create
-    # @collection = Collection.new(collection_params)
-    # @collection.user_id = current_user.id
-    #
-    # if @collection.save
-    #   render :show
-    # else
-    #   @errors = @collection.errors.full_messages
-    #   render "api/errors/errors", status: 500
-    # end
+    if current_user
+      @collection = Collection.new(
+        name: params[:collection][:name],
+        user_id: current_user.id
+      )
+
+      @collection.transaction do
+        @collection.save!
+        @collection.collection_feeds.create!(feed_id: params[:collection][:feed_id])
+      end
+
+      if Collection.find_by(name: @collection.name, user_id: @collection.user_id)
+        render :show
+      else
+        @errors = ["Save was unsuccessful"]
+        render "api/errors/errors", status: 500
+      end
+    else
+      @errors = ["You are not logged in"]
+      render "api/errors/errors", status: 500
+    end
   end
 
   def update
   end
 
   def destroy
-  end
-
-  def collection_params
-    params.require(:collection).permit(:name)
   end
 
 end

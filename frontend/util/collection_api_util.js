@@ -23,7 +23,21 @@ var CollectionApiUtil = {
         CollectionServerActions.receiveSingleCollection(collection);
       },
       error: function (errors) {
-        ErrorServerActions.receiveCollectionErrors(errors.responseJSOn);
+        ErrorServerActions.receiveCollectionErrors(errors.responseJSON);
+      }
+    });
+  },
+
+  createCollection: function (collection) {
+    $.ajax({
+      type: "POST",
+      url: "api/collections",
+      data: { collection: collection},
+      success: function () {
+        alert("Collection creation and feed addition was a success!");
+      },
+      error: function (errors) {
+        ErrorServerActions.receiveCollectionErrors(errors.responseJSON);
       }
     });
   }

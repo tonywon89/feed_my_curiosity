@@ -10,6 +10,8 @@ var ErrorServerActions = {
   },
 
   receiveCollectionErrors: function (errors) {
+    //TODO Remove this later;
+    alert("THERE HAVE BEEN A COLLECTION ERROR");
     AppDispatcher.dispatch({
       actionType: ErrorConstants.COLLECTION_ERRORS_RECEIVED,
       errors: errors

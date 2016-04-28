@@ -8,6 +8,10 @@ var CollectionClientActions = {
   getCollection: function (id) {
     CollectionApiUtil.getCollection(id);
   },
+
+  createCollection: function(collection) {
+    CollectionApiUtil.createCollection(collection);
+  }
 };
 
 module.exports = CollectionClientActions;
