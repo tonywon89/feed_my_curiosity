@@ -3,6 +3,7 @@ var ReactRouter = require('react-router');
 var Link = ReactRouter.Link;
 var Modal = require('react-modal');
 
+var Sidebar = require("./sidebars/sidebar");
 var LoginForm = require("./user_forms/login_form");
 var SignUpForm = require("./user_forms/sign_up_form");
 var CurrentUserStateMixn = require("../mixins/current_user_state_mixin");
@@ -68,33 +69,24 @@ var App = React.createClass({
   },
 
   render: function () {
-    var content;
-    var currentUser = this.state.currentUser;
-
-    if (currentUser) {
-      content = (
-        <div>
-          You are logged in as {currentUser.email}
-          <button onClick={this.logOut}>Log out</button>
-        </div>
-      );
-    } else {
-      content = <button className="getting-started" onClick={this.openLoginModal}>Get Started</button>;
-    }
 
     var errors = this.state.authErrors.map(function(error, i){
       return <li key={i}>{error.error_message}</li>;
     });
 
     return (
-      <div>
-        <header>
-          <h1 className="header-text">Feed My Curiosity</h1>
-          {content}
-          <Link to="/feeds">Fetch the feeds</Link>
-        </header>
-
-        {this.props.children}
+      <div className="app">
+        <Sidebar />
+        <div className="main">
+          {React.cloneElement(
+            this.props.children,
+            {
+              openLoginModal: this.openLoginModal,
+              currentUser: this.state.currentUser,
+              logOut: this.logOut
+            }
+          )}
+          </div>
 
         <Modal
           isOpen={this.state.loginModalOpen}

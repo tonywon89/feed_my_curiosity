@@ -11,10 +11,12 @@ var React = require('react');
 var ReactDOM = require('react-dom');
 
 var App = require("./components/app");
+var Home = require("./components/home");
 var FeedIndex = require("./components/feeds/feed_index");
 
 var routes = (
   <Route path="/" component={App}>
+    <IndexRoute component={Home} />
     <Route path="feeds" component = {FeedIndex} />
   </Route>
 );
