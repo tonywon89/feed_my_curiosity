@@ -18,16 +18,28 @@ class Api::CollectionsController < ApplicationController
       @errors = ["Collection cannot be found"]
       render "api/errors/errors", status: 500
     end
-
   end
 
   def create
+    # @collection = Collection.new(collection_params)
+    # @collection.user_id = current_user.id
+    #
+    # if @collection.save
+    #   render :show
+    # else
+    #   @errors = @collection.errors.full_messages
+    #   render "api/errors/errors", status: 500
+    # end
   end
 
   def update
   end
 
   def destroy
+  end
+
+  def collection_params
+    params.require(:collection).permit(:name)
   end
 
 end

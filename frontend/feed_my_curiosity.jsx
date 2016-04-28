@@ -13,6 +13,8 @@ var ReactDOM = require('react-dom');
 var App = require("./components/app");
 var FeedIndex = require("./components/feeds/feed_index");
 
+window.CollectionApiUtil = require("./util/collection_api_util");
+
 var routes = (
   <Route path="/" component={App}>
     <Route path="feeds" component = {FeedIndex} />
