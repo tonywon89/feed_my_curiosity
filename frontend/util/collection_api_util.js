@@ -47,6 +47,7 @@ var CollectionApiUtil = {
       add: collection.add,
       remove: collection.remove,
     };
+
     $.ajax({
       type: "PATCH",
       url: "api/collections/" + collection.id,
@@ -56,6 +57,19 @@ var CollectionApiUtil = {
       },
       error: function (errors) {
         alert("Failed to update collection");
+      }
+    });
+  },
+
+  destroyCollection: function (collection) {
+    $.ajax({
+      type: "DELETE",
+      url: "api/collections/" + collection.id,
+      success: function (deletedCollection) {
+        alert("Successfully deleted collection");
+      },
+      error: function (errors) {
+        alert("Failed to delete collection");
       }
     });
   }

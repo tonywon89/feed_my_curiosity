@@ -17,7 +17,6 @@ var CollectionServerActions = {
   },
 
   receiveCreatedCollection: function (collection) {
-    alert("In receiveCreatedCollection");
     AppDispatcher.dispatch({
       actionType: CollectionConstants.COLLECTION_CREATED,
       collection: collection
