@@ -18,7 +18,6 @@ var resetCollections = function (collections) {
 
 var addCollectionDetail = function (collection) {
   _collectionDetail = collection;
-  debugger;
   CollectionStore.__emitChange();
 };
 
