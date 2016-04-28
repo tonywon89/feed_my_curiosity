@@ -62,9 +62,15 @@ class Api::CollectionsController < ApplicationController
   end
 
   def destroy
-    @collection = Collection.find(params[:id])
-    @collection.destroy
-    render :show
+    @collection = Collection.find_by(id: params[:id])
+
+    if @collection
+      @collection.destroy
+      render :show
+    else
+      @errors = ["Collection not found. Cannot delete"]
+      render "api/errors/errors", status: 500
+    end
   end
 
 end

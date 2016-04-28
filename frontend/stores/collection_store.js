@@ -17,9 +17,20 @@ var resetCollections = function (collections) {
   CollectionStore.__emitChange();
 };
 
+var addCollection = function (collection) {
+  _collections[collection.id] = collection;
+  CollectionStore.__emitChange();
+};
+
 var addCollectionDetail = function (collection) {
   _collectionDetail = collection;
   CollectionStore.__emitChange();
+};
+
+CollectionStore.all = function () {
+  return Object.keys(_collections).map(function(id) {
+    return _collections[id];
+  });
 };
 
 CollectionStore.__onDispatch = function (payload) {
@@ -31,7 +42,7 @@ CollectionStore.__onDispatch = function (payload) {
       addCollectionDetail(payload.collection);
       break;
     case CollectionConstants.COLLECTION_CREATED:
-      alert("COLLECTION_CREATED");
+      addCollection(payload.collection);
       break;
     case CollectionConstants.COLLECTION_UPDATED:
       alert("COLLECTION_UPDATED");
