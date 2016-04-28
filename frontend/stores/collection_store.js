@@ -22,6 +22,11 @@ var addCollection = function (collection) {
   CollectionStore.__emitChange();
 };
 
+var removeCollection = function (collection) {
+  delete _collections[collection.id];
+  CollectionStore.__emitChange();
+};
+
 var addCollectionDetail = function (collection) {
   _collectionDetail = collection;
   CollectionStore.__emitChange();
@@ -48,7 +53,7 @@ CollectionStore.__onDispatch = function (payload) {
       addCollection(payload.collection);
       break;
     case CollectionConstants.COLLECTION_DELETED:
-      alert("COLLECTION_DELETED");
+      removeCollection(payload.collection);
       break;
     case ErrorConstants.COLLECTION_ERRORS_RECEIVED:
       alert("COLLECTION ERRORS RECEIVED");
