@@ -1,6 +1,8 @@
 var React = require("react");
 var hashHistory = require("react-router").hashHistory;
 
+var SidebarCollectionIndex = require("./sidebar_collection_index");
+
 var Sidebar = React.createClass({
   getInitialState: function () {
     return { pinned: false};
@@ -35,9 +37,11 @@ var Sidebar = React.createClass({
     return (
       <div className={sidebarClass}>
         <i className="fa fa-bars"></i>
+
         <button className="pin-btn" onClick={this.pinClicked}>
           {pinBtnContent}
         </button>
+
         <div className="sidebar-content">
           <div className="sidebar-today">
             <i className="fa fa-rss sidebar-icon"></i>
@@ -52,6 +56,8 @@ var Sidebar = React.createClass({
           <button className="sidebar-add-content" onClick={this.handleAddContentClick}>
             Add Content
           </button>
+
+          <SidebarCollectionIndex />
         </div>
       </div>
     );

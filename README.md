@@ -13,14 +13,14 @@ FeedMyCuriosity is a web application inspired by Feedly that will be built using
 - [ ] Adequate seed data to demonstrate the site's features
 - [ ] The minimally necessary features for a Feedly-inspired site: CRUD collections, displaying the feeds of the user, and providing feeds for the user to choose from
 - [x] Hosting on Heroku
-- [ ] CSS styling that is satisfactorily visually appealing
+- [x] CSS styling that is satisfactorily visually appealing
 - [ ] A production README, replacing this README
 
 ## Product Goals and Priorities
 ### MVP
 - [x] Create an account
 - [x] Log in/ Log out
-- [ ]  as a Guest/Demo User
+- [ ] Log in as a Guest/Demo User
 - [x] Provide feeds for the user to choose from
 - [ ] Make and delete collections
 - [ ] Display user's feeds and collections
@@ -160,9 +160,9 @@ FeedMyCuriosity is a web application inspired by Feedly that will be built using
   - [x] has a "pin" button
     - [x] add functionality to make the side bar keep displayed
     - [x] change text of "pin" to "unpin" and vice versa  
-  - [ ] has a "Today" link
-  - [ ] has a "Saved For Later" link
-  - [ ] has a link to an add content
+  - [x] has a "Today" link
+  - [x] has a "Saved For Later" link
+  - [x] has a link to an add content
   - [ ] `SidebarCollectionIndex` is display (clicks show the collection)
     - [ ] each `SidebarCollectionindexItem` has a dropdown that displays the feeds (each feed links to `CollectionFeedDetail`);
   - [ ] has a "organize collections" link (leads to `CollectionIndex`)

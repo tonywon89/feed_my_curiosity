@@ -1,5 +1,4 @@
 var React = require("react");
-var Link = require("react-router").Link;
 
 var CurrentUserStateMixn = require("../mixins/current_user_state_mixin");
 var App = require("./app");
@@ -27,7 +26,6 @@ var Home = React.createClass({
         <header>
           <h1 className="header-text">Feed My Curiosity</h1>
           {content}
-          <Link to="/feeds">Fetch the feeds</Link>
         </header>
 
       </div>
