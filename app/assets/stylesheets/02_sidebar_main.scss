@@ -138,7 +138,7 @@ div.main {
   padding: 10px;
   width: 75%;
   align-self: center;
-  margin-top: 30px;
+  margin-top: 40px;
 
   &:hover {
     color: white;
@@ -148,30 +148,50 @@ div.main {
 
 .sidebar {
   .collection-index {
+    margin: 0;
     margin-top: 50px;
-    padding: 10px;
+
   }
 
   .collection-index-item {
-    padding: 15px;
+
     font-size: 14px;
     font-weight: bold;
+    div {
+      padding: 5px 30px;
+      display: flex;
+      h4 {
+        font-weight: 800;
+        font-size: 14px;
+      }
+      .collection-index-item-icon {
+        font-size: 20px;
+        font-weight: bold;
+        padding-right: 10px;
+        opacity: 0.3;
+        transition: all 0.4s;
 
-    &:hover {
-      background-color: rgba(204, 204, 204, 0.5);
-      cursor: pointer;
+        &:hover {
+          opacity: 1;
+        }
+      }
+
+      &:hover {
+        background-color: rgba(204, 204, 204, 0.5);
+        cursor: pointer;
+      }
+    }
+
+    .feed-item {
+      padding-left: 55px;
+      font-weight: normal;
+      color: #DBDBDB;
+      transition: color 0.4s;
+      &:hover {
+        color: white
+      }
     }
   }
 
-  .collection-index-item-icon {
-    font-size: 20px;
-    font-weight: bold;
-    padding-right: 10px;
-    opacity: 0.3;
-    transition: all 0.4s;
 
-    &:hover {
-      opacity: 1;
-    }
-  }
 }

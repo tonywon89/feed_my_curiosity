@@ -45,12 +45,12 @@ var Sidebar = React.createClass({
         <div className="sidebar-content">
           <div className="sidebar-today">
             <i className="fa fa-rss sidebar-icon"></i>
-            <div>Today</div>
+            <div>Today (Not Implemented)</div>
           </div>
 
           <div className="sidebar-save">
             <i className="fa fa-bookmark-o sidebar-icon"></i>
-            <div>Save for later</div>
+            <div>Save for later (Not Implemented)</div>
           </div>
 
           <button className="sidebar-add-content" onClick={this.handleAddContentClick}>
