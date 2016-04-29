@@ -33,7 +33,6 @@ var SidebarCollectionIndex = React.createClass({
     var collections = this.state.collections.map(function(collection) {
       return <SidebarCollectionIndexItem key={collection.id} collection={collection} />;
     });
-    //TODO REFACTOR THIS OUT LATER
     var organize = <div className="sidebar-organize-btn">Organize Collections (not implemented)</div>;
 
     return (

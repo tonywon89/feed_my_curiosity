@@ -65,7 +65,14 @@ var Sidebar = React.createClass({
         </div>
       );
     } else {
-      content = <div>Hello!</div>;
+      content = (
+        <div className="sidebar-content">
+          <h2>Welcome to <div>Feed My Curiosity</div> </h2>
+          <h3>Get your curiosity satisfied</h3>
+
+          <button className="getting-started" onClick={this.props.openLoginModal}>Get Started</button>
+        </div>
+      );
     }
 
     return (

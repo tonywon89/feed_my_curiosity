@@ -217,7 +217,8 @@ div.main {
   width: 268px;
   height: 70px;
   background-color: $green;
-
+  position: relative;
+  bottom: -30px;
   padding: 0;
   padding-top: 10px;
 
@@ -236,10 +237,11 @@ div.main {
   button {
 
     position: relative;
-    left: 220px;
+    left: 210px;
     bottom: 25px;
     font-size: 12px;
     padding: 3px;
+
     border-radius: 2px;
     opacity: 0.8;
     border: 1px solid rgba(255, 255, 255, 0.5);
@@ -250,5 +252,37 @@ div.main {
       opacity: 1;
       border: 1px solid rgba(255, 255, 255, 0.8);
     }
+  }
+}
+
+.sidebar {
+
+  button.getting-started {
+    background-color: #9FABA1;
+    margin-top: 100px;
+    &:hover {
+      background-color: $button-hover-green;
+    }
+  }
+
+
+  h2 {
+    margin-top: 100px;
+    margin-left: 20px;
+    font-size: 20px;
+    div {
+      margin-top: 10px;
+      padding-right: 0;
+      font-size: 30px;
+      color: white;
+    }
+  }
+  h3 {
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-right: 10px;
+    padding-top: 10px;
+    font-style: italic;
+    border-top: 1px solid black;
   }
 }

@@ -80,7 +80,7 @@ var App = React.createClass({
 
     return (
       <div className="app">
-        <Sidebar currentUser={this.state.currentUser}/>
+        <Sidebar currentUser={this.state.currentUser} openLoginModal={this.openLoginModal}/>
 
         <div className="main">
           {React.cloneElement(
