@@ -165,17 +165,17 @@ FeedMyCuriosity is a web application inspired by Feedly that will be built using
   - [x] `SidebarCollectionIndex` is displayed (clicks show the collection)
     - [x] each `SidebarCollectionindexItem` has a dropdown that displays the feeds (each feed links to `CollectionFeedDetail`);
   - [x] has a "organize collections" link (leads to `CollectionIndex`)
-- [ ] logged out display  
-  - [ ] has title of website and brief catch phase
-  - [ ] has login button
-  - [ ] has login as demo user (with a short descriptive text)
-  - [ ] has sign up button
-  - [ ] buttons open up a modal
-    - [ ] has a form
-    - [ ] has a submit button
+- [x] logged out display  
+  - [x] has title of website and brief catch phase
+  - [x] has login button
+  - [x] has login as demo user (with a short descriptive text)
+  - [x] has sign up button
+  - [x] buttons open up a modal
+    - [x] has a form
+    - [x] has a submit button
 
-- [ ] Add the styles to make it look nice
-- [ ] deploy to Heroku
+- [x] Add the styles to make it look nice
+- [x] deploy to Heroku
 
 ### Phase 6: Flux Architecture for Collections and Articles and React Router (2 days)
 
