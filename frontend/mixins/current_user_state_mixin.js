@@ -1,6 +1,6 @@
 var UserStore = require("../stores/user_store");
 var UserClientActions = require("../actions/user/user_client_actions");
-
+var hashHistory = require("react-router").hashHistory;
 var CurrentUserStateMixin = {
   getInitialState: function () {
     return {
@@ -19,7 +19,7 @@ var CurrentUserStateMixin = {
 
     var loginModalOpen;
     var signupModalOpen;
-    
+
     if (authErrors.length !== 0 && this.state.loginModalOpen){
       loginModalOpen = true;
       signupModalOpen = false;
@@ -49,7 +49,6 @@ var CurrentUserStateMixin = {
       authErrors: UserStore.authErrors()
     });
   }
-
 };
 
 module.exports = CurrentUserStateMixin;

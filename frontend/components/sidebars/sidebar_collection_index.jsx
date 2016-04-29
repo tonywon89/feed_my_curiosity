@@ -1,4 +1,5 @@
 var React = require("react");
+var Link = require("react-router").Link;
 
 var CollectionStore = require("../../stores/collection_store");
 var CollectionClientActions = require("../../actions/collection/collection_client_actions");
@@ -33,10 +34,13 @@ var SidebarCollectionIndex = React.createClass({
     var collections = this.state.collections.map(function(collection) {
       return <SidebarCollectionIndexItem key={collection.id} collection={collection} />;
     });
-    var organize = <div className="sidebar-organize-btn">Organize Collections (not implemented)</div>;
-
+    var organize = (
+      <div className="sidebar-organize-btn">
+        <Link to="/collections">Organize Collections</Link>
+      </div>
+    );
     return (
-      <div className="collection-index">
+      <div className="sidebar-collection-index">
         {collections}
         {organize}
       </div>

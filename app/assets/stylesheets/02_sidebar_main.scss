@@ -163,11 +163,14 @@ div.main {
 }
 
 .sidebar-content {
-  .collection-index {
+  .sidebar-collection-index {
     margin: 0;
     margin-top: 50px;
     margin-bottom: 90px;
-
+    a {
+      text-decoration: none;
+      color: white;
+    }
   }
 
   .collection-index-item {
