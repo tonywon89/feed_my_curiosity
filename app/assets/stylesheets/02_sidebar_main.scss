@@ -8,6 +8,10 @@ $button-green: #2bb24c;
 $button-hover-green: #05A838;
 $proportion: calc(70px / 100%);
 // Main component
+// body {
+//   overflow: hidden;
+// }
+
 div.main {
   position: absolute;
   margin-left: 52px;
@@ -38,6 +42,7 @@ div.main {
   &:hover + .main {
     left: 343px;
     transition: all 0.4s;
+
   }
 
   &:hover {
@@ -110,7 +115,6 @@ div.main {
 .sidebar-content {
   padding-left: 0;
   margin-top: 40px;
-  margin-bottom: 70px;
   color: white;
   display: none;
   overflow-y: scroll;
