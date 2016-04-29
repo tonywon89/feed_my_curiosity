@@ -50,6 +50,9 @@ div.main {
     .sidebar-content {
       display: flex;
     }
+    .sidebar-user-info {
+      display: block;
+    }
   }
 
   .pin-btn {
@@ -91,6 +94,9 @@ div.main {
   .sidebar-content {
     display: flex;
   }
+  .sidebar-user-info {
+    display: block;
+  }
   &:hover + .main {
     left: 75px;
   }
@@ -106,6 +112,8 @@ div.main {
   flex-direction: column;
   color: white;
   display: none;
+  overflow: scroll;
+  height: 100%;
 }
 
 .sidebar-today, .sidebar-save {
@@ -150,7 +158,6 @@ div.main {
   .collection-index {
     margin: 0;
     margin-top: 50px;
-
   }
 
   .collection-index-item {
@@ -188,10 +195,23 @@ div.main {
       color: #DBDBDB;
       transition: color 0.4s;
       &:hover {
-        color: white
+        color: white;
       }
     }
   }
+}
 
+.sidebar-user-info {
+  padding: 20px;
+  border: 1px solid black;
+  display:none;
+}
 
+.sidebar-organize-btn {
+  padding: 5px 30px;
+  margin-top: 30px;
+  &:hover {
+    background-color: rgba(204, 204, 204, 0.5);
+    cursor: pointer;
+  }
 }

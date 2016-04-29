@@ -2,6 +2,7 @@ var React = require("react");
 var hashHistory = require("react-router").hashHistory;
 
 var SidebarCollectionIndex = require("./sidebar_collection_index");
+var SidebarUserInfo = require("./sidebar_user_info");
 
 var Sidebar = React.createClass({
   getInitialState: function () {
@@ -59,6 +60,8 @@ var Sidebar = React.createClass({
 
           <SidebarCollectionIndex />
         </div>
+
+        <SidebarUserInfo />
       </div>
     );
   }

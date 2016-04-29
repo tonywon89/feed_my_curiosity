@@ -13,8 +13,7 @@ var Home = React.createClass({
     if (currentUser) {
       content = (
         <div>
-          You are logged in as {currentUser.email}
-          <button onClick={this.props.logOut}>Log out</button>
+          Welcome, {currentUser.email}!
         </div>
       );
     } else {
