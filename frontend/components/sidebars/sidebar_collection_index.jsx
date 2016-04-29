@@ -2,7 +2,7 @@ var React = require("react");
 
 var CollectionStore = require("../../stores/collection_store");
 var CollectionClientActions = require("../../actions/collection/collection_client_actions");
-
+var UserStore = require("../../stores/user_store");
 var SidebarCollectionIndexItem = require("./sidebar_collection_index_item");
 
 var SidebarCollectionIndex = React.createClass({
@@ -11,15 +11,21 @@ var SidebarCollectionIndex = React.createClass({
   },
 
   componentDidMount: function () {
-    this.listener = CollectionStore.addListener(this._onChange);
+    this.collectionListener = CollectionStore.addListener(this._onCollectionChange);
+    this.userListener = UserStore.addListener(this._onUserChange);
     CollectionClientActions.fetchCollections();
   },
 
   componentWillUnmount: function () {
-    this.listener.remove();
+    this.userListener.remove();
+    this.collectionListener.remove();
   },
 
-  _onChange: function () {
+  _onUserChange: function () {
+    CollectionClientActions.fetchCollections();
+  },
+
+  _onCollectionChange: function () {
     this.setState({ collections: CollectionStore.all() });
   },
 

@@ -8,7 +8,7 @@
 
 FeedMyCuriosity is a web application inspired by Feedly that will be built using Ruby on Rails and React.js. By the end of Week 9, this app will, at a minimum, satisfy the following criteria:
 
-- [ ] New account creation, login, and guest/demo login
+- [x] New account creation, login, and guest/demo login
 - [ ] Smooth, bug-free navigation
 - [ ] Adequate seed data to demonstrate the site's features
 - [ ] The minimally necessary features for a Feedly-inspired site: CRUD collections, displaying the feeds of the user, and providing feeds for the user to choose from
@@ -20,7 +20,7 @@ FeedMyCuriosity is a web application inspired by Feedly that will be built using
 ### MVP
 - [x] Create an account
 - [x] Log in/ Log out
-- [ ] Log in as a Guest/Demo User
+- [x] Log in as a Guest/Demo User
 - [x] Provide feeds for the user to choose from
 - [ ] Make and delete collections
 - [ ] Display user's feeds and collections

@@ -5,8 +5,7 @@ class Api::CollectionsController < ApplicationController
       @collections = Collection.includes(:feeds).where(user_id: current_user.id)
       render :index
     else
-      @errors = ["You are not logged in"]
-      render "api/errors/errors", status: 500
+      render json: []
     end
   end
 
