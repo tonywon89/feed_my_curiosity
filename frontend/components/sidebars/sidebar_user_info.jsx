@@ -18,7 +18,9 @@ var SidebarUserInfo = React.createClass({
     if (currentUser) {
       content = (
         <div>
-          <h4>{currentUser.email}</h4>
+          <pre>Curiously Logged In As:
+            <h4>{currentUser.email}</h4>
+          </pre>
           <button onClick={this.logout}>Logout</button>
         </div>
       );

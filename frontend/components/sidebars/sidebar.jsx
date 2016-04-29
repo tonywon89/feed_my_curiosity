@@ -35,33 +35,43 @@ var Sidebar = React.createClass({
       pinBtnContent = "Pin";
     }
     //TODO refactor out current user
+    var content;
+    if (this.props.currentUser) {
+      content =(
+        <div>
+          <button className="pin-btn" onClick={this.pinClicked}>
+            {pinBtnContent}
+          </button>
+
+          <div className="sidebar-content">
+            <div className="sidebar-today">
+              <i className="fa fa-rss sidebar-icon"></i>
+              <div>Today (Not Implemented)</div>
+            </div>
+
+            <div className="sidebar-save">
+              <i className="fa fa-bookmark-o sidebar-icon"></i>
+              <div>Save for later (Not Implemented)</div>
+            </div>
+
+            <button className="sidebar-add-content" onClick={this.handleAddContentClick}>
+              Add Content
+            </button>
+
+            <SidebarCollectionIndex currentUser={this.props.currentUser}/>
+          </div>
+
+          <SidebarUserInfo />
+        </div>
+      );
+    } else {
+      content = <div>Hello!</div>;
+    }
+
     return (
       <div className={sidebarClass}>
         <i className="fa fa-bars"></i>
-
-        <button className="pin-btn" onClick={this.pinClicked}>
-          {pinBtnContent}
-        </button>
-
-        <div className="sidebar-content">
-          <div className="sidebar-today">
-            <i className="fa fa-rss sidebar-icon"></i>
-            <div>Today (Not Implemented)</div>
-          </div>
-
-          <div className="sidebar-save">
-            <i className="fa fa-bookmark-o sidebar-icon"></i>
-            <div>Save for later (Not Implemented)</div>
-          </div>
-
-          <button className="sidebar-add-content" onClick={this.handleAddContentClick}>
-            Add Content
-          </button>
-
-          <SidebarCollectionIndex currentUser={this.props.currentUser}/>
-        </div>
-
-        <SidebarUserInfo />
+        {content}
       </div>
     );
   }

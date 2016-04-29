@@ -34,10 +34,8 @@ var SidebarCollectionIndex = React.createClass({
       return <SidebarCollectionIndexItem key={collection.id} collection={collection} />;
     });
     //TODO REFACTOR THIS OUT LATER
-    var organize;
-    if (this.props.currentUser) {
-      organize = <div className="sidebar-organize-btn">Organize Collections (not implemented)</div>;
-    }
+    var organize = <div className="sidebar-organize-btn">Organize Collections (not implemented)</div>;
+
     return (
       <div className="collection-index">
         {collections}
