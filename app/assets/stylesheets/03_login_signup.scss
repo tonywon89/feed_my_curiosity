@@ -49,9 +49,13 @@ input[type="text"], input[type="password"] {
   }
 }
 
-pre.alternative {
-  padding: 10px;
+pre {
+  text-align: center;
 }
+pre.alternative {
+  padding: 5px;
+}
+
 
 .modal-submit-btn {
   width: 50%;

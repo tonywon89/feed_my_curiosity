@@ -68,6 +68,10 @@ var App = React.createClass({
     UserClientActions.logout();
   },
 
+  guestLogin: function () {
+    UserClientActions.login({email: "tony", password: "curious"});
+  },
+
   render: function () {
 
     var errors = this.state.authErrors.map(function(error, i){
@@ -101,7 +105,9 @@ var App = React.createClass({
             <LoginForm />
             <pre className="alternative">
               Don't have an account? <a onClick={this.openSignupModal}>Sign Up Here</a>
+              <pre>Or <a onClick={this.guestLogin}>login as a guest</a></pre>
             </pre>
+
           </div>
 
         </Modal>
@@ -119,6 +125,7 @@ var App = React.createClass({
             <SignUpForm />
             <pre className="alternative">
                 Have an account? <a onClick={this.openLoginModal}>Log in</a>
+                <pre>Or <a onClick={this.guestLogin}>login as a guest</a></pre>
             </pre>
           </div>
 
