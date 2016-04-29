@@ -153,19 +153,18 @@ FeedMyCuriosity is a web application inspired by Feedly that will be built using
 **Objective** Display a sidebar with the username, collections and their feeds, and other links when logged in, else generic page
 
 - [x] Make a sidebar component
-  - [ ] two cases: logged in or not logged in
   - [ ] displays different things depending on log in state
-- [ ] logged in display  
-  - [ ] username at the bottom, with logout button
+- [x] logged in display  
+  - [x] username at the bottom, with logout button
   - [x] has a "pin" button
     - [x] add functionality to make the side bar keep displayed
     - [x] change text of "pin" to "unpin" and vice versa  
   - [x] has a "Today" link
   - [x] has a "Saved For Later" link
   - [x] has a link to an add content
-  - [ ] `SidebarCollectionIndex` is display (clicks show the collection)
-    - [ ] each `SidebarCollectionindexItem` has a dropdown that displays the feeds (each feed links to `CollectionFeedDetail`);
-  - [ ] has a "organize collections" link (leads to `CollectionIndex`)
+  - [x] `SidebarCollectionIndex` is displayed (clicks show the collection)
+    - [x] each `SidebarCollectionindexItem` has a dropdown that displays the feeds (each feed links to `CollectionFeedDetail`);
+  - [x] has a "organize collections" link (leads to `CollectionIndex`)
 - [ ] logged out display  
   - [ ] has title of website and brief catch phase
   - [ ] has login button

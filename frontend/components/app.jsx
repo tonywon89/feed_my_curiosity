@@ -22,15 +22,15 @@ var modalStyle = {
   },
   content: {
     position        : 'fixed',
-    top             : '100px',
+    top             : '50px',
     left            : '150px',
     right           : '150px',
     bottom          : '100px',
     border          : '1px solid #ccc',
     borderRadius    : '20px',
     padding         : '20px',
-    height          : '50%',
-    width           : '450px',
+    height          : '400px',
+    width           : '400px',
     margin          : '0 auto',
     zIndex          :  11
   }

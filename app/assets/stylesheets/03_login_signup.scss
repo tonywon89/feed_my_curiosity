@@ -19,7 +19,7 @@ div.modal-parent {
 h3.modal-header {
   font-size: 30px;
   font-weight: bold;
-  padding: 30px;
+  padding: 20px;
   color: $green;
 }
 
@@ -37,7 +37,7 @@ div.auth-form {
 
 input[type="text"], input[type="password"] {
   color: green;
-  width: 85%;
+  width: 90%;
   border: 1px solid gray;
   border-radius: 4px;
   padding: 10px;
@@ -58,7 +58,7 @@ pre.alternative {
 
 
 .modal-submit-btn {
-  width: 50%;
+  width: 60%;
   background-color: $green;
   margin: 10px 0 0 0;
 }
