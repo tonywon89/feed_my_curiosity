@@ -34,7 +34,7 @@ var Sidebar = React.createClass({
     } else {
       pinBtnContent = "Pin";
     }
-
+    //TODO refactor out current user
     return (
       <div className={sidebarClass}>
         <i className="fa fa-bars"></i>
@@ -58,7 +58,7 @@ var Sidebar = React.createClass({
             Add Content
           </button>
 
-          <SidebarCollectionIndex />
+          <SidebarCollectionIndex currentUser={this.props.currentUser}/>
         </div>
 
         <SidebarUserInfo />
