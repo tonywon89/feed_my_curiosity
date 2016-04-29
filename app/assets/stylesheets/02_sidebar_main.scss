@@ -8,11 +8,13 @@ $button-green: #2bb24c;
 $button-hover-green: #05A838;
 $proportion: calc(70px / 100%);
 // Main component
-// body {
-//   overflow: hidden;
-// }
 
-div.main {
+body {
+  height: 100%;
+  overflow: hidden;
+}
+
+body .app div.main {
   position: absolute;
   margin-left: 52px;
   left: 75px;
@@ -24,6 +26,8 @@ div.main {
   flex-direction: column;
   align-items: center;
   transition: all 0.4s;
+  height: 100%;
+  overflow: scroll;
 }
 
 // Sidebar
@@ -37,7 +41,7 @@ div.main {
   display: flex;
   flex-direction: column;
   transition: all 0.4s;
-  overflow: scroll;
+  overflow: auto;
 
   &:hover + .main {
     left: 343px;
