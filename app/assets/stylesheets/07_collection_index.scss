@@ -1,0 +1,31 @@
+$green: #38B769;
+$blue: #5999AD;
+
+.collection-header {
+  margin-top: 20px;
+  margin-left: 30px;
+  padding: 0;
+  color: $green;
+  font-size: 30px;
+}
+
+.collection-index {
+  margin-top: 30px;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  border: 1px solid red;
+
+  .collection-index-item {
+    margin: 30px;
+    border: 1px solid gray;
+    padding: 5px;
+    width: 260px;
+    height: 300px;
+
+    .collection-item-title {
+      font-weight: bold;
+    }
+  }
+}

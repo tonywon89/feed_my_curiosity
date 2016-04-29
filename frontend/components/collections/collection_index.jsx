@@ -4,6 +4,8 @@ var hashHistory = require("react-router").hashHistory;
 var CollectionStore = require("../../stores/collection_store");
 var CollectionClientActions = require("../../actions/collection/collection_client_actions");
 
+var CollectionIndexItem = require("./collection_index_item");
+
 var CollectionIndex = React.createClass({
   getInitialState: function () {
     return { collections: CollectionStore.all() };
@@ -43,11 +45,25 @@ var CollectionIndex = React.createClass({
     var currentUser = this.props.currentUser;
 
     if (currentUser) {
-      content = <h1>{currentUser.email}'s Collection</h1>;
+      var collections;
+      if (this.state.collections.length > 0) {
+        collections = this.state.collections.map(function(collection) {
+          return <CollectionIndexItem key={collection.id} collection={collection} />;
+        });
+      }
+
+      content = (
+        <div>
+          <h1 className="collection-header">Organize</h1>
+          <div className="collection-index">
+            {collections}
+          </div>
+        </div>
+      );
     }
 
     return (
-      <div className="collection-index">
+      <div>
        {content}
       </div>
     );
