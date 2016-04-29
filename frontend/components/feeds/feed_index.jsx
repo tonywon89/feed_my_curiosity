@@ -13,7 +13,9 @@ var FeedIndex = React.createClass({
 
   componentDidMount: function () {
     this.listener = FeedStore.addListener(this._onFeedChange);
-    FeedClientActions.fetchFeeds();
+    if (this.state.feeds.length === 0) {
+      FeedClientActions.fetchFeeds();
+    }
   },
 
   componentWillMount: function () {

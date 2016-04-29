@@ -8,7 +8,8 @@ var LoginForm = require("./user_forms/login_form");
 var SignUpForm = require("./user_forms/sign_up_form");
 var CurrentUserStateMixn = require("../mixins/current_user_state_mixin");
 var UserClientActions = require("../actions/user/user_client_actions");
-
+var FeedClientActions = require("../actions/feed/feed_client_actions");
+var FeedStore = require("../stores/feed_store");
 
 var modalStyle = {
   overlay: {
@@ -40,7 +41,21 @@ var App = React.createClass({
   mixins: [CurrentUserStateMixn],
 
   getInitialState: function () {
-    return { loginModalOpen: false, signupModalOpen: false };
+    return { feedLoaded: false, loginModalOpen: false, signupModalOpen: false };
+  },
+
+  componentDidMount: function () {
+
+    this.listener = FeedStore.addListener(this._onFeedLoaded);
+    FeedClientActions.fetchFeeds();
+  },
+
+  componentWillUnmount: function () {
+    this.listener.remove();
+  },
+
+  _onFeedLoaded: function () {
+    this.setState({ feedLoaded: true });
   },
 
   openLoginModal: function (event) {
@@ -78,20 +93,30 @@ var App = React.createClass({
       return <li key={i}>{error.error_message}</li>;
     });
 
-    return (
-      <div className="app">
-        <Sidebar currentUser={this.state.currentUser} openLoginModal={this.openLoginModal}/>
+    var content;
+    if (this.state.feedLoaded) {
+      content = (
+        <div className="app">
+          <Sidebar currentUser={this.state.currentUser} openLoginModal={this.openLoginModal}/>
 
-        <div className="main">
-          {React.cloneElement(
-            this.props.children,
-            {
-              openLoginModal: this.openLoginModal,
-              currentUser: this.state.currentUser,
-              logOut: this.logOut
-            }
-          )}
+          <div className="main">
+            {React.cloneElement(
+              this.props.children,
+              {
+                openLoginModal: this.openLoginModal,
+                currentUser: this.state.currentUser,
+                logOut: this.logOut
+              }
+            )}
+          </div>
         </div>
+      );
+    } else {
+      content = <div className="loading-app"><h2>Hold your curiosity, we are loading your feeds...</h2></div>;
+    }
+    return (
+      <div>
+        {content}
 
         <Modal
           isOpen={this.state.loginModalOpen}
