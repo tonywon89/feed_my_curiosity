@@ -34,10 +34,9 @@ var Sidebar = React.createClass({
     } else {
       pinBtnContent = "Pin";
     }
-    //TODO refactor out current user
-    var content;
+    var sidebarContent;
     if (this.props.currentUser) {
-      content =(
+      sidebarContent =(
         <div>
           <button className="pin-btn" onClick={this.pinClicked}>
             {pinBtnContent}
@@ -65,7 +64,7 @@ var Sidebar = React.createClass({
         </div>
       );
     } else {
-      content = (
+      sidebarContent = (
         <div className="sidebar-content">
           <h2>Welcome to <div>Feed My Curiosity</div> </h2>
           <h3>Get your curiosity satisfied</h3>
@@ -78,7 +77,7 @@ var Sidebar = React.createClass({
     return (
       <div className={sidebarClass}>
         <i className="fa fa-bars"></i>
-        {content}
+        {sidebarContent}
       </div>
     );
   }
