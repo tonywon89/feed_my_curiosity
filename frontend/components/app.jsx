@@ -112,7 +112,12 @@ var App = React.createClass({
         </div>
       );
     } else {
-      content = <div className="loading-app"><h2>Hold your curiosity, we are loading your feeds...</h2></div>;
+      content = (
+        <div className="loading-app">
+          <h2>Hold your curiosity while we set up for you to have an awesome experience...</h2>
+          <i className="fa fa-spinner fa-spin fa-fw loading-icon"></i>
+        </div>
+      );
     }
     return (
       <div>

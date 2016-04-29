@@ -66,5 +66,19 @@ h1.header-text {
 }
 
 div.loading-app {
+  color: $green;
+  font-size: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
+  h2 {
+    font-size: 30px;
+    margin-top: 50px;
+  }
+  
+  .loading-icon {
+    font-size: 30px;
+    padding: 20px;
+  }
 }
