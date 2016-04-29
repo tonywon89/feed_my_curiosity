@@ -1,4 +1,5 @@
 var React = require("react");
+var hashHistory = require("react-router").hashHistory;
 
 var Sidebar = React.createClass({
   getInitialState: function () {
@@ -13,6 +14,11 @@ var Sidebar = React.createClass({
     } else {
       this.setState({ pinned: true });
     }
+  },
+
+  handleAddContentClick: function (event) {
+    event.preventDefault();
+    hashHistory.push("/feeds");
   },
 
   render: function () {
@@ -37,10 +43,15 @@ var Sidebar = React.createClass({
             <i className="fa fa-rss sidebar-icon"></i>
             <div>Today</div>
           </div>
+
           <div className="sidebar-save">
             <i className="fa fa-bookmark-o sidebar-icon"></i>
             <div>Save for later</div>
           </div>
+
+          <button className="sidebar-add-content" onClick={this.handleAddContentClick}>
+            Add Content
+          </button>
         </div>
       </div>
     );

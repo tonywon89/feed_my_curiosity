@@ -101,7 +101,7 @@ div.main {
 }
 
 .sidebar-content {
-  padding: 0;
+  padding-left: 0;
   margin-top: 40px;
   flex-direction: column;
   color: white;
@@ -109,7 +109,7 @@ div.main {
 }
 
 .sidebar-today, .sidebar-save {
-  padding-left: 30px;
+
   width: 96%;
   display: flex;
   padding: 5px;
@@ -120,11 +120,30 @@ div.main {
   .sidebar-icon {
     margin-top: 4px;
     padding-right: 5px;
-    padding-left: 25px;
+    padding-left: 30px;
+
   }
 
   &:hover {
     background-color: rgba(204, 204, 204, 0.5);
     cursor: pointer;
   }
+}
+
+.sidebar-add-content {
+  color: #DBDBDB;
+  font-size: 10px;
+  box-shadow: 0 0 0 white;
+  background-color: Transparent;
+  border: 0.5px solid #DBDBDB;
+  padding: 10px;
+  width: 75%;
+  align-self: center;
+  margin-top: 30px;
+
+  &:hover {
+    color: white;
+    border-color: white;
+  }
+
 }
