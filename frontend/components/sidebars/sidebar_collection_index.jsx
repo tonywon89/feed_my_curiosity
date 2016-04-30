@@ -1,5 +1,6 @@
 var React = require("react");
 var Link = require("react-router").Link;
+var hashHistory = require("react-router").hashHistory;
 
 var CollectionStore = require("../../stores/collection_store");
 var CollectionClientActions = require("../../actions/collection/collection_client_actions");
@@ -30,12 +31,16 @@ var SidebarCollectionIndex = React.createClass({
     this.setState({ collections: CollectionStore.all() });
   },
 
+  _toOrganize: function () {
+    hashHistory.push("/collections");
+  },
+
   render: function () {
     var collections = this.state.collections.map(function(collection) {
       return <SidebarCollectionIndexItem key={collection.id} collection={collection} />;
     });
     var organize = (
-      <div className="sidebar-organize-btn">
+      <div className="sidebar-organize-btn" onClick={this._toOrganize}>
         <Link to="/collections">Organize feeds</Link>
       </div>
     );
