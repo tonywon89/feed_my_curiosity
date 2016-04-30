@@ -87,11 +87,40 @@ $button-hover-green: #05A838;
 
     a {
       &:hover {
-        color: red
+        color: red;
       }
     }
   }
 }
+
+.collection-create-form {
+  form {
+    input[type="text"] {
+      font-size: 12px;
+      border-radius: 0;
+
+      &:focus {
+        box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+        border-color: 1px solid rgba(81, 203, 238, 1);
+      }
+    }
+
+    input[type="submit"] {
+      margin-top: 0;
+      font-size: 12px;
+      padding: 5px;
+      border-radius: 1px;
+      align-self: flex-end;
+      background-color: $green;
+
+      &:hover {
+        background-color: $button-hover-green;
+      }
+    }
+
+  }
+}
+
 .collection-delete-form {
   display: flex;
   flex-direction: column;
@@ -125,9 +154,6 @@ $button-hover-green: #05A838;
     }
     .confirm-delete-btn {
       border-right: 1px solid black;
-    }
-    .cancel-delete-btn {
-
     }
   }
 }

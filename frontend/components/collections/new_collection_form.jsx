@@ -38,14 +38,15 @@ var NewCollectionForm = React.createClass({
     });
 
     return (
-      <div className="collection-index-item">
+      <div className="collection-index-item collection-create-form">
+        <h4>New Collection</h4>
         <ul>{errors}</ul>
         <form onSubmit={this.handleSubmit}>
           <input type="text"
                  placeholder="Name of collection"
                  onChange={this.nameChange}
                  value={this.state.name}/>
-          <input type="submit" value="Create Collection" />
+          <input  className="create-collection-btn" type="submit" value="Create Collection" />
         </form>
       </div>
     );
