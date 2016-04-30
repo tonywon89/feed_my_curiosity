@@ -7,17 +7,18 @@ var NewCollectionForm = React.createClass({
     return { name: "", errors: [] };
   },
 
-  componentDidMount: function () {
-    this.listener = CollectionStore.addListener(this._onErrors);
-  },
+  // componentDidMount: function () {
+  //   alert("Mounted");
+  //   this.listener = CollectionStore.addListener(this.props._onErrors);
+  // },
 
-  componentWillUnmmount: function () {
-    this.listener.remove();
-  },
+  // componentWillUnmmount: function () {
+  //   this.listener.remove();
+  // },
 
-  _onErrors: function () {
-    this.setState({ errors: CollectionStore.errors() });
-  },
+  // _onErrors: function () {
+  //   this.setState({errors: CollectionStore.errors() });
+  // },
 
   nameChange: function (event) {
     this.setState({ name: event.target.value });
@@ -38,7 +39,7 @@ var NewCollectionForm = React.createClass({
     return (
       <div className="collection-index-item collection-create-form">
         <h4>New Collection</h4>
-        <ul>{errors}</ul>
+         <ul>{errors}</ul>
         <form onSubmit={this.handleSubmit}>
           <input type="text"
                  placeholder="Name of collection"
