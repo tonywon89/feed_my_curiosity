@@ -12,8 +12,10 @@ var CollectionItemDeleteForm = React.createClass({
       <div className="collection-delete-form">
         <h1>Confirm Deletion</h1>
         <h3>Are you sure you want to delete "<span>{this.props.collection.name}</span>"?</h3>
-        <button className="confirm-delete-btn" onClick={this.deleteCollection}>Yes</button>
-        <button className="cancel-delete-btn">No</button>
+        <div className="delete-btns">  
+          <button className="confirm-delete-btn" onClick={this.deleteCollection}>Yes</button>
+          <button className="cancel-delete-btn">No</button>
+        </div>
       </div>
     );
   }
