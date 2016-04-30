@@ -26,6 +26,12 @@ $button-hover-green: #05A838;
       display: flex;
       justify-content: space-between;
       font-weight: bold;
+      h2 {
+        &:hover {
+          cursor: pointer;
+          text-decoration: underline;
+        }
+      }
     }
 
     .edit-icons {

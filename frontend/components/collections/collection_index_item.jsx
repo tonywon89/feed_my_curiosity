@@ -68,7 +68,7 @@ var CollectionIndexItem = React.createClass({
     return (
       <div className="collection-index-item">
         <CollectionIndexItemTitle
-          title={this.props.collection.name}
+          collection={this.props.collection}
           openEditModal={this.openEditModal}
           openDeleteModal={this.openDeleteModal} />
 

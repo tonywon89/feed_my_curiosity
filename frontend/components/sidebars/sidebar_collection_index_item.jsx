@@ -1,4 +1,5 @@
 var React = require("react");
+var hashHistory = require("react-router").hashHistory;
 
 var SidebarCollectionItemFeed = require("./sidebar_collection_item_feed");
 

@@ -14,12 +14,14 @@ var App = require("./components/app");
 var Home = require("./components/home");
 var FeedIndex = require("./components/feeds/feed_index");
 var CollectionIndex = require("./components/collections/collection_index");
+var CollectionDetail = require("./components/collections/collection_detail");
 
 var routes = (
   <Route path="/" component={App}>
     <IndexRoute component={Home} />
     <Route path="feeds" component={FeedIndex} />
     <Route path="collections" component={CollectionIndex} />
+    <Route path="collections/:collectionId" component={CollectionDetail}/>
   </Route>
 );
 
