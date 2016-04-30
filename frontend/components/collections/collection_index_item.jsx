@@ -34,6 +34,10 @@ var CollectionIndexItem = React.createClass({
     return { editModalOpen: false, deleteModalOpen: false };
   },
 
+  componentWillReceiveProps: function () {
+    this.setState( { editModalOpen: false });
+  },
+
   closeEditModal: function () {
     this.setState({ editModalOpen: false });
   },
@@ -53,7 +57,7 @@ var CollectionIndexItem = React.createClass({
           style={modalStyle}
         >
           <i className="fa fa-times modal-close-icon" onClick={this.closeEditModal}></i>
-          <CollectionItemTitleEditForm collection={this.props.collection} />
+          <CollectionItemTitleEditForm collection={this.props.collection} handleSubmit={this.handleEditSubmit} />
         </Modal>
 
 

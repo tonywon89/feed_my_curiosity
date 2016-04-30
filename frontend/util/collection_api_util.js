@@ -51,7 +51,10 @@ var CollectionApiUtil = {
     $.ajax({
       type: "PATCH",
       url: "api/collections/" + collection.id,
-      data: { feed: feed },
+      data: { feed: {
+        add: collection.add,
+        remove: collection.remove,
+      }, collection: collection },
       success: function (updatedCollection) {
         CollectionServerActions.receiveUpdatedCollection(updatedCollection);
       },

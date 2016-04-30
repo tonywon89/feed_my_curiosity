@@ -44,15 +44,18 @@ class Api::CollectionsController < ApplicationController
   end
 
   def update
+
     @collection = Collection.find(params[:id])
     feed_to_add = params[:feed][:add]
     feed_to_remove = params[:feed][:remove]
 
-    if feed_to_add
+    if !feed_to_add.empty?
       @collection.collection_feeds.create(feed_id: feed_to_add[:id])
       render :show
-    elsif feed_to_remove
+    elsif !feed_to_remove.empty?
       @collection.collection_feeds.where(feed_id: feed_to_remove[:id]).destroy_all
+      render :show
+    elsif @collection.update!(name: params[:collection][:name])
       render :show
     else
       @errors = ["There is no selected feed"]
