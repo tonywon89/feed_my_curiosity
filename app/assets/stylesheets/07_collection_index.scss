@@ -156,15 +156,18 @@ $button-hover-green: #05A838;
 }
 
 .collection-item-feeds {
-  border: 1px solid blue;
+  border: 1px solid rgba(59, 119, 179, 0.4);
   border-radius: 3px;
   padding: 10px;
   margin-top: 20px;
   height: 250px;
+  transition: all 0.2s;
 
-
+  &:hover {
+    border: 1px solid rgba(59, 119, 179, 1)
+  }
   .collection-feed-item {
-    // border: 1px solid green;
+
     display: flex;
     justify-content: space-between;
     padding: 3px;
