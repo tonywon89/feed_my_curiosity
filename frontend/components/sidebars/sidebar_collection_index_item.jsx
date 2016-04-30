@@ -16,6 +16,10 @@ var SidebarCollectionIndexItem = React.createClass({
     }
   },
 
+  redirectToCollectionDetail: function () {
+    hashHistory.push("/collections/" + this.props.collection.id.toString());
+  },
+
   render: function () {
     var collectionItemIconClass, feeds;
     if (this.state.isOpen) {
@@ -29,9 +33,13 @@ var SidebarCollectionIndexItem = React.createClass({
 
     return (
       <div className="collection-index-item">
-        <div onClick={this.toggleOpen}>
-          <i className={collectionItemIconClass}></i>
-          <h4>{this.props.collection.name}</h4>
+        <div>
+          <i className={collectionItemIconClass}
+             onClick={this.toggleOpen}>
+          </i>
+          <h4 onClick={this.redirectToCollectionDetail}>
+            {this.props.collection.name}
+          </h4>
         </div>
         {feeds}
       </div>
