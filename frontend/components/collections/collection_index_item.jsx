@@ -79,7 +79,9 @@ var CollectionIndexItem = React.createClass({
           style={modalStyle}
         >
           <i className="fa fa-times modal-close-icon" onClick={this.closeDeleteModal}></i>
-          <CollectionItemDeleteForm collection={this.props.collection} />
+          <CollectionItemDeleteForm
+              collection={this.props.collection}
+              closeModal={this.closeDeleteModal} />
         </Modal>
 
 
