@@ -3,7 +3,7 @@ var Modal = require("react-modal");
 
 var CollectionIndexItemTitle = require("./collection_index_item_title");
 var CollectionItemTitleEditForm = require("./collection_item_title_edit_form");
-
+var CollectionItemDeleteForm = require("./collection_item_delete_form");
 var modalStyle = {
   overlay: {
     position        : 'fixed',
@@ -35,7 +35,7 @@ var CollectionIndexItem = React.createClass({
   },
 
   componentWillReceiveProps: function () {
-    this.setState( { editModalOpen: false });
+    this.setState( { editModalOpen: false , deleteModalOpen: false});
   },
 
   closeEditModal: function () {
@@ -46,10 +46,21 @@ var CollectionIndexItem = React.createClass({
     this.setState({ editModalOpen: true });
   },
 
+  closeDeleteModal: function () {
+    this.setState({ deleteModalOpen: false });
+  },
+
+  openDeleteModal: function () {
+    this.setState({ deleteModalOpen: true });
+  },
+
   render: function () {
     return (
       <div className="collection-index-item">
-        <CollectionIndexItemTitle title={this.props.collection.name} openEditModal={this.openEditModal} />
+        <CollectionIndexItemTitle
+          title={this.props.collection.name}
+          openEditModal={this.openEditModal}
+          openDeleteModal={this.openDeleteModal} />
 
         <Modal
           isOpen={this.state.editModalOpen}
@@ -57,7 +68,18 @@ var CollectionIndexItem = React.createClass({
           style={modalStyle}
         >
           <i className="fa fa-times modal-close-icon" onClick={this.closeEditModal}></i>
-          <CollectionItemTitleEditForm collection={this.props.collection} handleSubmit={this.handleEditSubmit} />
+          <CollectionItemTitleEditForm
+              collection={this.props.collection}
+              closeModal={this.closeEditModal} />
+        </Modal>
+
+        <Modal
+          isOpen={this.state.deleteModalOpen}
+          onRequestClose={this.closeDeleteModal}
+          style={modalStyle}
+        >
+          <i className="fa fa-times modal-close-icon" onClick={this.closeDeleteModal}></i>
+          <CollectionItemDeleteForm collection={this.props.collection} />
         </Modal>
 
 

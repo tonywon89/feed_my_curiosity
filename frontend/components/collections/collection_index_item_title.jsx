@@ -8,7 +8,7 @@ var CollectionIndexItemTitle = React.createClass({
         <h2>{this.props.title}</h2>
         <div className="edit-icons">
           <i className="fa fa-pencil pencil" onClick={this.props.openEditModal}></i>
-          <i className="fa fa-times times"></i>
+          <i className="fa fa-times times" onClick={this.props.openDeleteModal}></i>
         </div>
       </div>
     );

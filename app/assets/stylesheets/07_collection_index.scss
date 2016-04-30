@@ -1,6 +1,6 @@
 $green: #38B769;
 $blue: #5999AD;
-
+$button-hover-green: #05A838;
 .collection-header {
   margin-top: 20px;
   margin-left: 30px;
@@ -47,4 +47,51 @@ $blue: #5999AD;
       }
     }
   }
+}
+
+.collection-title-edit-form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  h3 {
+    padding: 15px 0;
+    font-weight: bold;
+  }
+
+  h4 {
+      margin-top: 20px;
+  }
+  form {
+    input[type="text"] {
+      font-size: 12px;
+      border-radius: 0;
+
+      &:focus {
+        box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+        border-color: 1px solid rgba(81, 203, 238, 1);
+      }
+    }
+
+    input[type="submit"] {
+      margin-top: 17px;
+      font-size: 12px;
+      padding: 5px;
+      border-radius: 1px;
+      align-self: flex-end;
+      background-color: $green;
+
+      &:hover {
+        background-color: $button-hover-green;
+      }
+    }
+
+    a {
+      &:hover {
+        color: red
+      }
+    }
+  }
+
+
+
 }

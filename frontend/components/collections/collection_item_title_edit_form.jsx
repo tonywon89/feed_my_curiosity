@@ -22,15 +22,17 @@ var CollectionItemTitleEditForm = React.createClass({
     CollectionClientActions.updateCollection(collection);
   },
 
-
   render: function () {
     return (
-      <div>
+      <div className="collection-title-edit-form">
         <h3>Rename Collection</h3>
+        <h4>What do you want to call your collection?</h4>
         <form onSubmit={this.handleEditSubmit}>
           <input type="text" onChange={this.nameChange} value={this.state.name} />
           <input type="submit" value="Rename Collection" />
+          <span> or <a onClick={this.props.closeModal}>cancel</a> </span>
         </form>
+
       </div>
     );
   }
