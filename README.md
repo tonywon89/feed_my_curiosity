@@ -182,8 +182,8 @@ FeedMyCuriosity is a web application inspired by Feedly that will be built using
 **Objective** Allow user to CRUD functionality for collections and articles through user interface.
 
 - [ ] implement collection components, building out the flux loop as needed
-  - [ ] `CollectionsIndex`
-  - [ ] `CollectionIndexItem`
+  - [x] `CollectionsIndex`
+  - [x] `CollectionIndexItem`
   - [ ] `FeedItem` (will probably rename to `CollectionFeedItem`)
   - [ ] `CollectionArticles`
   - [ ] `CollectionFeedDetail`

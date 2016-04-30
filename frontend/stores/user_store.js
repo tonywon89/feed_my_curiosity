@@ -17,7 +17,11 @@ UserStore.authErrors = function () {
 };
 
 var updateCurrentUser = function (user) {
-  _currentUser = user;
+  if (user.id) {
+    _currentUser = user;
+  } else {
+    _currentUser = undefined;
+  }
   _authErrors = [];
   UserStore.__emitChange();
 };

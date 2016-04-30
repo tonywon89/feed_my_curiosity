@@ -5,8 +5,7 @@ class Api::UsersController < ApplicationController
     if @user
       render :show
     else
-      @errors = ["You are not logged in."]
-      render "api/errors/errors", status: 500
+      render json: {}
     end
   end
 
