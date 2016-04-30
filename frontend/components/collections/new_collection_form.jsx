@@ -16,9 +16,7 @@ var NewCollectionForm = React.createClass({
   },
 
   _onErrors: function () {
-    if (CollectionStore.errors().length > 0) {
-      this.setState({ errors: CollectionStore.errors() });
-    }
+    this.setState({ errors: CollectionStore.errors() });
   },
 
   nameChange: function (event) {

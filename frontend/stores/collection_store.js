@@ -26,11 +26,13 @@ var addCollection = function (collection) {
 
 var removeCollection = function (collection) {
   delete _collections[collection.id];
+  _collectionErrors = [];
   CollectionStore.__emitChange();
 };
 
 var addCollectionDetail = function (collection) {
   _collectionDetail = collection;
+  _collectionErrors = [];
   CollectionStore.__emitChange();
 };
 
