@@ -15,6 +15,7 @@ var Home = require("./components/home");
 var FeedIndex = require("./components/feeds/feed_index");
 var CollectionIndex = require("./components/collections/collection_index");
 var CollectionDetail = require("./components/collections/collection_detail");
+var FeedDetail = require("./components/feeds/feed_detail");
 
 var routes = (
   <Route path="/" component={App}>
@@ -22,6 +23,7 @@ var routes = (
     <Route path="feeds" component={FeedIndex} />
     <Route path="collections" component={CollectionIndex} />
     <Route path="collections/:collectionId" component={CollectionDetail}/>
+    <Route path="feeds/:feedId" component={FeedDetail} />
   </Route>
 );
 
