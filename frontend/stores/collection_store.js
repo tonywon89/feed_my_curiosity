@@ -6,6 +6,7 @@ var ErrorConstants = require("../constants/error_constants");
 var CollectionStore = new Store(AppDispatcher);
 
 var _collections = {};
+var _collectionErrors = [];
 var _collectionDetail;
 
 var resetCollections = function (collections) {
@@ -13,12 +14,13 @@ var resetCollections = function (collections) {
   collections.forEach(function(collection) {
     _collections[collection.id] = collection;
   });
-
+  _collectionErrors = [];
   CollectionStore.__emitChange();
 };
 
 var addCollection = function (collection) {
   _collections[collection.id] = collection;
+  _collectionErrors = [];
   CollectionStore.__emitChange();
 };
 
@@ -32,11 +34,20 @@ var addCollectionDetail = function (collection) {
   CollectionStore.__emitChange();
 };
 
+var updateErrors = function (errors) {
+  _collectionErrors = errors;
+  CollectionStore.__emitChange();
+};
+
 CollectionStore.all = function () {
   return Object.keys(_collections).map(function(id) {
     return _collections[id];
   });
 };
+
+CollectionStore.errors = function () {
+  return _collectionErrors.slice();
+},
 
 CollectionStore.__onDispatch = function (payload) {
   switch (payload.actionType) {
@@ -56,7 +67,7 @@ CollectionStore.__onDispatch = function (payload) {
       removeCollection(payload.collection);
       break;
     case ErrorConstants.COLLECTION_ERRORS_RECEIVED:
-      alert("COLLECTION ERRORS RECEIVED");
+      updateErrors(payload.errors);
       break;
   }
 };

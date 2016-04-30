@@ -26,15 +26,15 @@ class Api::CollectionsController < ApplicationController
         user_id: current_user.id
       )
 
-      @collection.transaction do
-        @collection.save!
-        @collection.collection_feeds.create!(feed_id: params[:collection][:feed_id])
-      end
+      # @collection.transaction do
+      #   @collection.save!
+      #   @collection.collection_feeds.create!(feed_id: params[:collection][:feed_id])
+      # end
 
-      if Collection.find_by(name: @collection.name, user_id: @collection.user_id)
+      if @collection.save
         render :show
       else
-        @errors = ["Save was unsuccessful"]
+        @errors = @collection.errors.full_messages
         render "api/errors/errors", status: 500
       end
     else

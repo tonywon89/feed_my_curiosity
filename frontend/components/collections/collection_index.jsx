@@ -5,6 +5,7 @@ var CollectionStore = require("../../stores/collection_store");
 var CollectionClientActions = require("../../actions/collection/collection_client_actions");
 
 var CollectionIndexItem = require("./collection_index_item");
+var NewCollectionForm = require("./new_collection_form");
 
 var CollectionIndex = React.createClass({
   getInitialState: function () {
@@ -57,6 +58,7 @@ var CollectionIndex = React.createClass({
           <h1 className="collection-header">Organize</h1>
           <div className="collection-index">
             {collections}
+            <NewCollectionForm />
           </div>
         </div>
       );
