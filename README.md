@@ -184,7 +184,7 @@ FeedMyCuriosity is a web application inspired by Feedly that will be built using
 - [ ] implement collection components, building out the flux loop as needed
   - [x] `CollectionsIndex`
   - [x] `CollectionIndexItem`
-  - [ ] `FeedItem` (will probably rename to `CollectionFeedItem`)
+  - [x] `FeedItem` (will probably rename to `CollectionFeedItem`)
   - [ ] `CollectionArticles`
   - [ ] `CollectionFeedDetail`
 - [ ] implement article components
