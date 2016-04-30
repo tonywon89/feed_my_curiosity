@@ -15,11 +15,9 @@ $button-hover-green: #05A838;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  border: 1px solid red;
 
   .collection-index-item {
     margin: 20px;
-    border: 1px solid gray;
     padding: 5px;
     width: 260px;
     height: 300px;
@@ -154,5 +152,22 @@ $button-hover-green: #05A838;
     .confirm-delete-btn {
       border-right: 1px solid black;
     }
+  }
+}
+
+.collection-item-feeds {
+  border: 1px solid blue;
+  border-radius: 3px;
+  padding: 10px;
+  margin-top: 20px;
+  height: 250px;
+
+
+  .collection-feed-item {
+    // border: 1px solid green;
+    display: flex;
+    justify-content: space-between;
+    padding: 3px;
+    font-size: 12px;
   }
 }

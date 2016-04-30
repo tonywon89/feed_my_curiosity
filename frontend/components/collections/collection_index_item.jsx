@@ -2,8 +2,10 @@ var React = require("react");
 var Modal = require("react-modal");
 
 var CollectionIndexItemTitle = require("./collection_index_item_title");
+var CollectionFeedItem = require("./collection_feed_item");
 var CollectionItemTitleEditForm = require("./collection_item_title_edit_form");
 var CollectionItemDeleteForm = require("./collection_item_delete_form");
+
 var modalStyle = {
   overlay: {
     position        : 'fixed',
@@ -55,12 +57,21 @@ var CollectionIndexItem = React.createClass({
   },
 
   render: function () {
+
+    var feeds = this.props.collection.feeds.map(function (feed) {
+      return <CollectionFeedItem key={feed.id} feed={feed} />;
+    });
+
     return (
       <div className="collection-index-item">
         <CollectionIndexItemTitle
           title={this.props.collection.name}
           openEditModal={this.openEditModal}
           openDeleteModal={this.openDeleteModal} />
+
+        <div className="collection-item-feeds">
+          {feeds}
+        </div>
 
         <Modal
           isOpen={this.state.editModalOpen}
