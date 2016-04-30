@@ -3,7 +3,7 @@ $blue: #5999AD;
 $button-hover-green: #05A838;
 .collection-header {
   margin-top: 20px;
-  margin-left: 30px;
+  margin-left: 20px;
   padding: 0;
   color: $green;
   font-size: 30px;
@@ -18,7 +18,7 @@ $button-hover-green: #05A838;
   border: 1px solid red;
 
   .collection-index-item {
-    margin: 30px;
+    margin: 20px;
     border: 1px solid gray;
     padding: 5px;
     width: 260px;
@@ -117,7 +117,6 @@ $button-hover-green: #05A838;
         background-color: $button-hover-green;
       }
     }
-
   }
 }
 
