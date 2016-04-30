@@ -16,7 +16,7 @@ var CollectionDetail = React.createClass({
     }
   },
 
-  render: function () { 
+  render: function () {
     var collection = CollectionStore.find(this.props.params.collectionId);
 
     var collectionName;
@@ -25,7 +25,7 @@ var CollectionDetail = React.createClass({
     }
 
     return (
-      <div>
+      <div className="collection-detail">
         {collectionName}
       </div>
     );

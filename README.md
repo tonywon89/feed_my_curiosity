@@ -185,10 +185,10 @@ FeedMyCuriosity is a web application inspired by Feedly that will be built using
   - [x] `CollectionsIndex`
   - [x] `CollectionIndexItem`
   - [x] `FeedItem` (will probably rename to `CollectionFeedItem`)
-  - [ ] `CollectionArticles`
-  - [ ] `CollectionFeedDetail`
+  - [ ] `CollectionDetail`
+  - [ ] `FeedDetail`
 - [ ] implement article components
-  - [ ] `ArticleDateIndex`
+  - [ ] `ArticleIndex` (can make into ArticleDateIndex Later)
   - [ ] `ArticleItem`
 - [ ] set up React Router based on component hierarchy diagram
 - [ ] test all routes
@@ -197,23 +197,7 @@ FeedMyCuriosity is a web application inspired by Feedly that will be built using
   - [ ] should have sufficient seed data to emulate a real user
 - [ ] deploy to Heroku
 
-
-### Phase 7: PopOutDetails (1.5 days)
-
-**Objective** Have a overlying window with for individual articles and feeds when clicked
-
-- [ ] make `FeedDetail` component
-  - [ ] `FeedHeader`
-  - [ ] `ArticleDateIndex`
-- [ ] style `FeedDetail`
-- [ ] make it appear in `PopOutDetails`
-
-- [ ] make `ArticleDetail`
-- [ ] style `ArticleDetail`
-- [ ] make it appear in `PopOutDetails`
-- [ ] deploy to Heroku
-
-### Phase 8: AddFeedSidebar (1 day)
+### Phase 7: AddFeedSidebar (1 day)
 
 **Objective** Emulate Feedly's sidebar for adding feeds
 
@@ -230,6 +214,21 @@ FeedMyCuriosity is a web application inspired by Feedly that will be built using
       - [ ] Test collections to make sure it has a feed
 - [ ] Style it to make it resemble feedly
   - [ ] Sidebar appears on top of everything else
+- [ ] deploy to Heroku
+
+### Phase 8: PopOutDetails (1.5 days)
+
+**Objective** Have a overlying window with for individual articles and feeds when clicked
+
+- [ ] make `FeedDetail` component
+  - [ ] `FeedHeader`
+  - [ ] `ArticleDateIndex`
+- [ ] style `FeedDetail`
+- [ ] make it appear in `PopOutDetails`
+
+- [ ] make `ArticleDetail`
+- [ ] style `ArticleDetail`
+- [ ] make it appear in `PopOutDetails`
 - [ ] deploy to Heroku
 
 ### Phase 9: Clean up code (1 day)

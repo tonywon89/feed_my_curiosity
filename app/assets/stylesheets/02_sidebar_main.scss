@@ -180,6 +180,9 @@ div.main {
       h4 {
         font-weight: 800;
         font-size: 14px;
+        &:hover {
+          cursor: pointer;
+        }
       }
       .collection-index-item-icon {
         font-size: 20px;
@@ -190,12 +193,13 @@ div.main {
 
         &:hover {
           opacity: 1;
+          cursor: pointer;
         }
       }
 
       &:hover {
         background-color: rgba(204, 204, 204, 0.5);
-        cursor: pointer;
+
       }
     }
 
