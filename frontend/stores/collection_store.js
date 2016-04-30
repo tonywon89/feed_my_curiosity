@@ -45,9 +45,13 @@ CollectionStore.all = function () {
   });
 };
 
+CollectionStore.find = function (id) {
+  return _collections[id];
+};
+
 CollectionStore.errors = function () {
   return _collectionErrors.slice();
-},
+};
 
 CollectionStore.__onDispatch = function (payload) {
   switch (payload.actionType) {
