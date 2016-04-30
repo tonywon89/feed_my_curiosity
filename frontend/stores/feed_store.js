@@ -29,6 +29,10 @@ FeedStore.feedDetail = function () {
   return _feedDetail;
 };
 
+FeedStore.find = function (id) {
+  return _feeds[id];
+};
+
 FeedStore.__onDispatch = function (payload) {
   switch (payload.actionType) {
     case FeedConstants.FEEDS_RECEIVED:

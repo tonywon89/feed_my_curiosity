@@ -1,0 +1,11 @@
+.article-index {
+  border: 1px solid black;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+  margin: 10px;
+
+  .article-index-item {
+    border: 1px solid red;
+  }
+}

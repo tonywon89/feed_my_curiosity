@@ -189,7 +189,7 @@ FeedMyCuriosity is a web application inspired by Feedly that will be built using
   - [ ] `FeedDetail`
 - [ ] implement article components
   - [ ] `ArticleIndex` (can make into ArticleDateIndex Later)
-  - [ ] `ArticleItem`
+  - [ ] `ArticleIndexItem`
 - [ ] set up React Router based on component hierarchy diagram
 - [ ] test all routes
 - [x] create a Demo user that can sign in with data
