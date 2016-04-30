@@ -13,7 +13,6 @@ var ArticleIndex = React.createClass({
       });
       content = (
         <div>
-          <h1>{feed.title}</h1>
           {entries}
         </div>
       );

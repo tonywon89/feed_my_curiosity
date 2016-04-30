@@ -1,11 +1,24 @@
-.article-index {
-  border: 1px solid black;
-  display: flex;
-  flex-wrap: wrap;
-  padding: 20px;
-  margin: 10px;
+div.article-index {
+  div {
+    border: 1px solid black;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    margin: 10px;
 
-  .article-index-item {
-    border: 1px solid red;
+    div.article-index-item {
+      border: 1px solid #B3DABF;
+      width: 250px;
+      padding: 10px;
+      margin: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: #87D269;
+      transition: all 0.75s;
+    }
   }
+
+
+
 }
