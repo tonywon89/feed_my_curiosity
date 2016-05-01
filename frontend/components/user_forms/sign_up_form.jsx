@@ -4,11 +4,11 @@ var UserStore = require("../../stores/user_store");
 
 var SignUpForm = React.createClass({
   getInitialState: function () {
-    return { email: "", password: "" };
+    return { username: "", password: "" };
   },
 
-  emailChange: function (event) {
-    this.setState({ email: event.target.value });
+  usernameChange: function (event) {
+    this.setState({ username: event.target.value });
   },
 
   passwordChange: function (event) {
@@ -19,7 +19,7 @@ var SignUpForm = React.createClass({
     event.preventDefault();
 
     var user = {
-      email: this.state.email,
+      username: this.state.username,
       password: this.state.password
     };
 
@@ -31,9 +31,9 @@ var SignUpForm = React.createClass({
       <div className="auth-form">
         <form onSubmit={this.handleSubmit}>
           <input type="text"
-                 placeholder="Email"
-                 onChange={this.emailChange}
-                 value={this.state.email}/>
+                 placeholder="Username"
+                 onChange={this.usernameChange}
+                 value={this.state.username}/>
           <input type="password"
                  placeholder="Password"
                  onChange={this.passwordChange}

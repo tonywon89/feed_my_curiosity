@@ -1,9 +1,9 @@
 
-curious_user = User.create!(email: "CuriousUser", password: "curious")
-User.create!(email: "albert", password: "curious")
-walid = User.create!(email: "walid", password: "curious")
-User.create!(email: "ian", password: "curious")
-User.create!(email: "jeremy", password: "curious")
+curious_user = User.create!(username: "CuriousUser", password: "curious")
+User.create!(username: "albert", password: "curious")
+walid = User.create!(username: "walid", password: "curious")
+User.create!(username: "ian", password: "curious")
+User.create!(username: "jeremy", password: "curious")
 
 engadget = Feed.create!(name: "Engadget", url: "http://www.engadget.com/rss.xml")
 lifehacker = Feed.create!(name: "Lifehacker", url: "http://lifehacker.com/rss")

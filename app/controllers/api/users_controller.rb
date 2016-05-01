@@ -21,7 +21,7 @@ class Api::UsersController < ApplicationController
   end
 
   def destroy
-    @user = User.find_by(email: params[:user][:email]);
+    @user = User.find_by(username: params[:user][:username]);
 
     if @user
       @user.destroy
@@ -35,7 +35,7 @@ class Api::UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:email, :password)
+    params.require(:user).permit(:username, :password)
   end
 
 end

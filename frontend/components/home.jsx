@@ -13,7 +13,7 @@ var Home = React.createClass({
     if (currentUser) {
       content = (
         <div>
-          Welcome, {currentUser.email}!
+          Welcome, {currentUser.username}!
         </div>
       );
     } else {
