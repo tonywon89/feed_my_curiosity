@@ -23,13 +23,7 @@ div.article-index {
       filter: grayscale(90%);
     transition: all 0.75s;
     color: gray;
-    .image-wrapper {
 
-      max-height: 200px;
-      width: 100%;
-      border: 0;
-
-    }
 
     .wrapper {
       -webkit-column-width: 150px;
@@ -68,3 +62,13 @@ div.article-index {
         color: black;
     }
   }
+
+
+div.image-wrapper {
+  max-height: 180px;
+  min-height: 180px;
+  width: 100%;
+  border: 0;
+  overflow: hidden;
+
+}
