@@ -22,30 +22,62 @@ var ArticleIndexItem = React.createClass({
   }
 });
 
-
 var getContent = function (entry) {
-  var dummyEl = document.createElement('div');
   var content;
+  content = getDiv(entry);
+  if (!content) {
+    content = getParagraph(entry);
+  }
+  return content;
+};
 
+var getParagraph = function (entry) {
+  var paragraph;
   if (entry.summary) {
-    dummyEl.innerHTML = entry.summary;
-    var paragraphs = dummyEl.getElementsByTagName('p');
-    if (paragraphs.length !== 0) {
-      content = paragraphs[0].innerText.length >= paragraphs[1].innerText.length ? paragraphs[0].innerText : paragraphs[1].innerText;
-    } else {
+    paragraph = getInnerText(entry.summary, 'p');
+    if (!paragraph) {
       if (entry.content) {
-        dummyEl.innerHTML = entry.content;
-        paragraphs = dummyEl.getElementsByTagName('p');
+        paragraph = getInnerText(entry.content, 'p');
+      }
+    }
+  }
+  return paragraph;
+};
 
-        if (paragraphs.length !== 0) {
+var getDiv = function (entry) {
+  var div;
+  if (entry.summary) {
+    div = getInnerText(entry.summary, 'div');
 
-          content = paragraphs[0].innerText.length >= paragraphs[1].innerText.length ? paragraphs[0].innerText : paragraphs[1].innerText;
-        }
+    if (!div) {
+      if (entry.content) {
+        div = getInnerText(entry.content, 'div');
       }
     }
   }
 
-  return content;
+  return div;
+};
+
+var getInnerText = function (htmlString, selector) {
+  var dummyEl = document.createElement('div');
+  dummyEl.innerHTML = htmlString;
+  if (selector === 'div') {
+    return dummyEl.innerText;
+  } else {
+    var result = dummyEl.getElementsByTagName(selector);
+  }
+
+
+  var innerText;
+  if (result.length > 1) {
+    innerText = result[0].innerText.length >= result[1].innerText.length ? result[0].innerText : result[1].innerText;
+  } else if (result.length > 0) {
+    innerText = result[0].innerText;
+  }
+  debugger;
+
+  return innerText;
 };
 
 var getImageUrl = function (entry) {
