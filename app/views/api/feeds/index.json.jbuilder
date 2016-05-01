@@ -1,13 +1,12 @@
-require 'uri'
-
 json.array! @feedjira_feeds do |feedjira_feed|
   json.id feedjira_feed[:id]
   json.title feedjira_feed[:feed].title
 
-  address = feedjira_feed[:feed].url
-  uri = URI.parse(address)
+  # address = feedjira_feed[:feed].url
+  # uri = URI.parse(address)
 
-  json.url  "#{uri.scheme}://#{uri.host}"
+  # json.url  "#{uri.scheme}://#{uri.host}"
+  json.url feedjira_feed[:feed].url
 
   description = feedjira_feed[:feed].description
 
