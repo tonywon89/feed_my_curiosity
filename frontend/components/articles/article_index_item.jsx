@@ -12,11 +12,15 @@ var ArticleIndexItem = React.createClass({
 
     return (
       <div className="article-index-item">
-        <div>
+        <div className="image-wrapper">
           {image}
         </div>
-        <h4>{entry.title}</h4>
-        <p>{content}</p>
+        <div className="wrapper">
+          <h4>{entry.title}</h4>
+        </div>
+        <div className="wrapper">
+          <p>{content}</p>
+        </div>
       </div>
     );
   }

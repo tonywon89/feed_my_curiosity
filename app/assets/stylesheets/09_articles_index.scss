@@ -2,6 +2,7 @@ div.article-index {
   padding: 0;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 
@@ -22,25 +23,39 @@ div.article-index {
       filter: grayscale(90%);
     transition: all 0.75s;
     color: gray;
-    div {
+    .image-wrapper {
 
       max-height: 200px;
       width: 100%;
       border: 0;
-      overflow: hidden;
+
     }
 
+    .wrapper {
+      -webkit-column-width: 150px;
+      column-width: 150px;
+      height: 100%;
+      overflow: hidden;
+
+    }
     h4, p {
       min-height: 50px;
       max-height: 100px;
       padding-left: 10px;
       padding-right: 10px;
       margin-top: 10px;
+      margin-bottom: 10px;
       font-size: 15px;
-      overflow: hidden;
+
+    }
+
+    h4 {
+      font-weight: bold;
     }
     p {
       font-size: 12px;
+      margin-top: 0;
+
     }
 
     &:hover {
