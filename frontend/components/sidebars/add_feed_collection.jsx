@@ -32,9 +32,9 @@ var AddFeedCollection = React.createClass({
 
     var icon;
     if (this.state.hasFeed) {
-      icon = <i className="fa fa-check-square-o"></i>;
+      icon = <i className="fa fa-check-square-o check-icon"></i>;
     } else {
-      icon = <i className="fa fa-square-o"></i>;
+      icon = <i className="fa fa-square-o checkbox-icon"></i>;
     }
 
     return (

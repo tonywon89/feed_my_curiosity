@@ -8,7 +8,7 @@ $green: #38B769;
   top: 0px;
   position: fixed;
   min-height: initial;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(0, 0, 0, 0.5);
 
 
 }
@@ -46,6 +46,28 @@ $green: #38B769;
 .add-feed-sidebar.shown {
   left: 0px;
   transition: all 1s;
+
+  h4 {
+    margin-right: 30px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid black;
+  }
+
+  h2 {
+    margin-top: 15px;
+  }
+}
+
+.add-feed-collection {
+  padding: 10px;
+  .check-icon, .checkbox-icon {
+    padding: 0 10px;
+  }
+
+  &:hover {
+    cursor: pointer;
+    background-color: rgba(204, 204, 204, 0.5);
+  }
 }
 
 .add-feed-collection.has-feed {
