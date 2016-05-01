@@ -181,21 +181,21 @@ FeedMyCuriosity is a web application inspired by Feedly that will be built using
 
 **Objective** Allow user to CRUD functionality for collections and articles through user interface.
 
-- [ ] implement collection components, building out the flux loop as needed
+- [x] implement collection components, building out the flux loop as needed
   - [x] `CollectionsIndex`
   - [x] `CollectionIndexItem`
   - [x] `FeedItem` (will probably rename to `CollectionFeedItem`)
-  - [ ] `CollectionDetail`
-  - [ ] `FeedDetail`
-- [ ] implement article components
-  - [ ] `ArticleIndex` (can make into ArticleDateIndex Later)
-  - [ ] `ArticleIndexItem`
-- [ ] set up React Router based on component hierarchy diagram
-- [ ] test all routes
+  - [x] `CollectionDetail`
+  - [x] `FeedDetail`
+- [x] implement article components
+  - [x] `ArticleIndex` (can make into ArticleDateIndex Later)
+  - [x] `ArticleIndexItem`
+- [x] set up React Router based on component hierarchy diagram
+- [x] test all routes
 - [x] create a Demo user that can sign in with data
   - [x] should have a link that automatically signs them up
-  - [ ] should have sufficient seed data to emulate a real user
-- [ ] deploy to Heroku
+  - [x] should have sufficient seed data to emulate a real user
+- [x] deploy to Heroku
 
 ### Phase 7: AddFeedSidebar (1 day)
 
