@@ -6,10 +6,13 @@ var Modal = require('react-modal');
 var Sidebar = require("./sidebars/sidebar");
 var LoginForm = require("./user_forms/login_form");
 var SignUpForm = require("./user_forms/sign_up_form");
+var AddFeedSidebar = require("./sidebars/add_feed_sidebar");
+
 var CurrentUserStateMixn = require("../mixins/current_user_state_mixin");
 var UserClientActions = require("../actions/user/user_client_actions");
 var FeedClientActions = require("../actions/feed/feed_client_actions");
 var FeedStore = require("../stores/feed_store");
+
 
 var modalStyle = {
   overlay: {
@@ -41,7 +44,13 @@ var App = React.createClass({
   mixins: [CurrentUserStateMixn],
 
   getInitialState: function () {
-    return { feedLoaded: false, loginModalOpen: false, signupModalOpen: false };
+    return {
+      feedLoaded: false,
+      loginModalOpen: false,
+      signupModalOpen: false,
+      addFeedDisplayed: false,
+      toAddFeedId: undefined
+    };
   },
 
   componentDidMount: function () {
@@ -87,12 +96,15 @@ var App = React.createClass({
     UserClientActions.login({username: "CuriousUser", password: "curious"});
   },
 
+  displayAddFeed: function (feedId) {
+    this.setState({ addFeedDisplayed: true, toAddFeedId: feedId });
+  },
+
   render: function () {
 
     var errors = this.state.authErrors.map(function(error, i){
       return <li key={i}>{error.error_message}</li>;
     });
-
     var content;
     if (this.state.feedLoaded) {
       content = (
@@ -105,10 +117,12 @@ var App = React.createClass({
               {
                 openLoginModal: this.openLoginModal,
                 currentUser: this.state.currentUser,
-                logOut: this.logOut
+                logOut: this.logOut,
+                displayAddFeed: this.displayAddFeed
               }
             )}
           </div>
+          <AddFeedSidebar isDisplayed={this.state.addFeedDisplayed} toAddFeedId={this.state.toAddFeedId}/>
         </div>
       );
     } else {

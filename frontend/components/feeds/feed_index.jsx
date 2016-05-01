@@ -43,8 +43,9 @@ var FeedIndex = React.createClass({
     var content;
 
     if (feeds.length !== 0) {
+      var self = this;
       content = feeds.map(function(feed) {
-        return <FeedIndexItem key={feed.id} feed={feed} />;
+        return <FeedIndexItem key={feed.id} feed={feed} displayAddFeed={self.props.displayAddFeed} />;
       });
     } else {
       content = "Fetching feeds...";
