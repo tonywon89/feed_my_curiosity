@@ -44,6 +44,10 @@ var getParagraph = function (entry) {
         paragraph = getInnerText(entry.content, 'p');
       }
     }
+  } else {
+    if (entry.content) {
+      paragraph = getInnerText(entry.content, 'p');
+    }
   }
   return paragraph;
 };
@@ -58,6 +62,10 @@ var getDiv = function (entry) {
         div = getInnerText(entry.content, 'div');
       }
     }
+  } else {
+    if (entry.content) {
+      div = getInnerText(entry.content, 'div');
+    }
   }
 
   return div;
@@ -71,7 +79,6 @@ var getInnerText = function (htmlString, selector) {
   } else {
     var result = dummyEl.getElementsByTagName(selector);
   }
-
 
   var innerText;
   if (result.length > 1) {

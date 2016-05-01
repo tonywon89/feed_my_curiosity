@@ -10,14 +10,12 @@ var FeedDetail = React.createClass({
 
     var content;
     if (feed) {
-
       content = (
         <div className="feed-detail">
-          <h1><a>{feed.title}</a></h1>
+          <h1><a href={feed.url}>{feed.title}</a></h1>
           <ArticleIndex feed={feed} />
         </div>
       );
-
     }
 
     return (
