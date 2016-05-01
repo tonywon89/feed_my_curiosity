@@ -6,7 +6,7 @@ class Api::FeedsController < ApplicationController
     @feedjira_feeds = feeds.map do |feed|
       feed.parse
     end
-
+ 
     render :index
   end
 

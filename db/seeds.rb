@@ -7,7 +7,7 @@ User.create!(username: "jeremy", password: "curious")
 
 mashable= Feed.create!(name: "Mashable", url: "http://feeds.mashable.com/Mashable")
 lifehacker = Feed.create!(name: "Lifehacker", url: "http://lifehacker.com/rss")
-make_use_of = Feed.create!(name: "MakeUseOf", url: "	http://feeds.feedburner.com/Makeuseof")
+make_use_of = Feed.create!(name: "MakeUseOf", url: "http://feeds.feedburner.com/Makeuseof")
 wired_science = Feed.create!(name: "Wired Science", url: "http://www.wired.com/category/science/feed/")
 codrops = Feed.create!(name: "Codrops", url: "http://tympanus.net/codrops/feed/")
 ars_technica = Feed.create!(name: "Ars Technica", url: "http://feeds.arstechnica.com/arstechnica/science")
