@@ -1,6 +1,12 @@
+require 'uri'
+
 json.id @feedjira_feed[:id]
 json.title @feedjira_feed[:feed].title
-json.url  @feedjira_feed[:feed].url
+
+address = @feedjira_feed[:feed].url
+uri = uri = URI.parse(address)
+
+json.url  "#{uri.scheme}://#{uri.host}"
 
 description = @feedjira_feed[:feed].description
 

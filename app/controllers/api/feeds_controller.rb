@@ -12,6 +12,7 @@ class Api::FeedsController < ApplicationController
 
   def show
     @feedjira_feed = Feed.find(params[:id]).parse
+    render :show
   end
 
 end
