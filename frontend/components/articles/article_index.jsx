@@ -12,14 +12,14 @@ var ArticleIndex = React.createClass({
         return <ArticleIndexItem key={i} entry={entry} />;
       });
       content = (
-        <div>
+        <div className="article-index">
           {entries}
         </div>
       );
     }
 
     return (
-      <div className="article-index">
+      <div>
         {content}
       </div>
     );
