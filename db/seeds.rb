@@ -23,7 +23,7 @@ walid_3 = Collection.create!(name: "Walid Collection 2", user_id: 3)
 
 tony_1.collection_feeds.create!(feed_id: 1)
 tony_1.collection_feeds.create!(feed_id: 2)
-tony_1.collection_feeds.create!(feed_id: 3)
+tony_1.collection_feeds.create!(feed_id: 5)
 tony_1.collection_feeds.create!(feed_id: 4)
 
 tony_2.collection_feeds.create!(feed_id: 5)
