@@ -3,6 +3,7 @@ var hashHistory = require("react-router").hashHistory;
 
 var CollectionStore = require("../../stores/collection_store");
 var ArticleIndex = require("../articles/article_index");
+var FeedDetail = require("../feeds/feed_detail");
 
 var CollectionDetail = React.createClass({
   componentWillMount: function () {
@@ -24,8 +25,11 @@ var CollectionDetail = React.createClass({
     if (collection) {
       collectionName = <h1>{collection.name}</h1>;
       content = collection.feeds.map(function(feed) {
-        return <ArticleIndex key={feed.id} feed={feed} />;
+        return (
+          <FeedDetail key={feed.id} feed={feed} />
+        );
       });
+
     }
 
     return (

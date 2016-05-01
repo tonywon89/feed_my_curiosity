@@ -5,14 +5,15 @@ var ArticleIndex = require("../articles/article_index");
 
 var FeedDetail = React.createClass({
   render: function () {
-    var feed = FeedStore.find(this.props.params.feedId);
+    var feedId = this.props.feed ? this.props.feed.id : this.props.params.feedId;
+    var feed = FeedStore.find(feedId);
 
     var content;
     if (feed) {
 
       content = (
-        <div>
-          <h1>{feed.title}</h1>
+        <div className="feed-detail">
+          <h1><a>{feed.title}</a></h1>
           <ArticleIndex feed={feed} />
         </div>
       );
@@ -20,7 +21,7 @@ var FeedDetail = React.createClass({
     }
 
     return (
-      <div class="feed-detail">
+      <div>
         {content}
       </div>
     );
