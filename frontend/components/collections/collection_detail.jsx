@@ -38,7 +38,7 @@ var CollectionDetail = React.createClass({
       if (todayEntries.length !== 0) {
         content = <ArticleIndex entries={todayEntries} />;
       } else {
-        content = <p>There are no articles for today in this collection.</p>;
+        content = <p className="no-articles">There are no articles for today in this collection.</p>;
       }
     }
 
