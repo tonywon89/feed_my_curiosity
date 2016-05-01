@@ -37,7 +37,7 @@ var AddFeedSidebar = React.createClass({
 
     var feedTitle;
     if (feed) {
-      feedTitle = <p>{feed.title}</p>;
+      feedTitle = <h3>{feed.title}</h3>;
     }
     var collections = this.state.collections.map(function(collection) {
       return <p key={collection.id}>{collection.name}</p>;
@@ -59,6 +59,7 @@ var AddFeedSidebar = React.createClass({
           <div className={addFeedSidebarClass}>
             {feedTitle}
             {collections}
+            <button>Close</button>
           </div>
         </div>
       </div>

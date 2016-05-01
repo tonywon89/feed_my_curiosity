@@ -1,5 +1,6 @@
+$green: #38B769;
+
 .add-feed-main {
-  visibility: visible;
   display: none;
   width: 100%;
   height: 100%;
@@ -8,7 +9,8 @@
   position: fixed;
   min-height: initial;
   background-color: rgba(255, 255, 255, 0.5);
-  transition: all 1s;
+
+
 }
 
 .add-feed-main.shown {
@@ -17,7 +19,10 @@
 
 
 .add-feed-sidebar {
-  visibility: visible;
+  display: flex;
+  flex-direction: column;
+  padding-left: 30px;
+  padding-top: 20px;
   width: 268px;
   height: 100%;
   left: -268px;
@@ -26,7 +31,16 @@
   min-height: initial;
   background-color: rgb(255, 255, 255);
   transition: all 1s;
+  border-right: 1px solid gray;
 
+  h3 {
+    font-size: 20px;
+    color: $green;
+
+     &:hover {
+
+     }
+   }
 }
 
 .add-feed-sidebar.shown {

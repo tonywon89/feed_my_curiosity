@@ -40,7 +40,7 @@ div.main {
   overflow: auto;
 
   &:hover + .main {
-    left: 343px;
+    left: 291px;
     transition: all 0.4s;
 
   }
@@ -104,12 +104,12 @@ div.main {
     display: block;
   }
   &:hover + .main {
-    left: 75px;
+    left: 291px;
   }
 }
 
 .sidebar.pinned + .main {
-  margin-left: 268px;
+  left: 291px;
 }
 
 .sidebar-content {
