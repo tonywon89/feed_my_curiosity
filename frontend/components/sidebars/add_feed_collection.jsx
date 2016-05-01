@@ -15,15 +15,18 @@ var AddFeedCollection = React.createClass({
       'has-feed': this.state.hasFeed
     });
 
-    var check;
+    var icon;
     if (this.state.hasFeed) {
-      check = <i className="fa fa-check-square-o"></i>;
+      icon = <i className="fa fa-check-square-o"></i>;
+    } else {
+      icon = <i className="fa fa-square-o"></i>;
     }
 
     return (
       <li className={hasFeedClass}>
+        {icon}
         {this.props.collection.name}
-        {check}
+
       </li>
     );
   }
