@@ -13,8 +13,15 @@ div.article-index {
 
     width: 270px;
     height: 320px;
-    border: 1px solid black;
+    border: 1px solid rgba(0, 0, 0, 0.3);
 
+    -webkit-filter: grayscale(90%);
+    -moz-filter: grayscale(90%);
+    -o-filter: grayscale(90%);
+    -ms-filter: grayscale(90%);
+      filter: grayscale(90%);
+    transition: all 0.75s;
+    color: gray;
     div {
 
       max-height: 200px;
@@ -23,7 +30,7 @@ div.article-index {
       overflow: hidden;
     }
 
-    h4 {
+    h4, p {
       min-height: 50px;
       max-height: 100px;
       padding-left: 10px;
@@ -31,5 +38,18 @@ div.article-index {
       margin-top: 10px;
       font-size: 15px;
       overflow: hidden;
+    }
+    p {
+      font-size: 12px;
+    }
+
+    &:hover {
+      border: 1px solid rgba(0, 0, 0, 1);
+      -webkit-filter: grayscale(0);
+      -moz-filter: grayscale(0);
+      -o-filter: grayscale(0);
+      -ms-filter: grayscale(0);
+        filter: grayscale(0);
+        color: black;
     }
   }
