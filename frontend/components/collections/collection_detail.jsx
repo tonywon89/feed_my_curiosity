@@ -35,16 +35,19 @@ var CollectionDetail = React.createClass({
       feeds.forEach(function (feed) {
         todayEntries = todayEntries.concat(getTodayEntries(feed));
       });
-
-      content = <ArticleIndex entries={todayEntries} />;
-
+      if (todayEntries.length !== 0) {
+        content = <ArticleIndex entries={todayEntries} />;
+      } else {
+        content = <p>There are no articles for today in this collection.</p>;
+      }
     }
 
     return (
       <div className="collection-detail">
         {collectionName}
+        <h3>TODAY</h3>
         <div className="collection-detail-articles">
-          <h3>TODAY</h3>
+
           {content}
         </div>
       </div>
@@ -63,13 +66,13 @@ var getTodayEntries = function (feed) {
     }
   }
   return todayEntries;
-}
+};
 
 var isToday = function (date) {
   var today = new Date();
   return (today.getMonth() === date.getMonth() &&
       today.getDay() === date.getDay() &&
       today.getYear() === date.getYear());
-}
+};
 
 module.exports = CollectionDetail;
