@@ -16,6 +16,15 @@ var ArticleIndex = React.createClass({
           {entries}
         </div>
       );
+    } else if (this.props.entries) {
+      entries = this.props.entries.map(function(entry, i) {
+        return <ArticleIndexItem key={i} entry={entry} />;
+      });
+      content = (
+        <div className="article-index">
+          {entries}
+        </div>
+      );
     }
 
     return (

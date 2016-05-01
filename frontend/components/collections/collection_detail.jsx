@@ -2,6 +2,8 @@ var React = require("react");
 var hashHistory = require("react-router").hashHistory;
 
 var CollectionStore = require("../../stores/collection_store");
+var FeedStore = require("../../stores/feed_store");
+
 var ArticleIndex = require("../articles/article_index");
 var FeedDetail = require("../feeds/feed_detail");
 
@@ -21,14 +23,20 @@ var CollectionDetail = React.createClass({
   render: function () {
     var collection = CollectionStore.find(this.props.params.collectionId);
 
-    var collectionName, content;
+    var collectionName, content, feeds;
     if (collection) {
       collectionName = <h1>{collection.name}</h1>;
-      content = collection.feeds.map(function(feed) {
-        return (
-          <FeedDetail key={feed.id} feed={feed} />
-        );
+      feeds = collection.feeds.map(function(feed) {
+        return FeedStore.find(feed.id);
       });
+
+      var todayEntries = [];
+
+      feeds.forEach(function (feed) {
+        todayEntries = todayEntries.concat(getTodayEntries(feed));
+      });
+
+      content = <ArticleIndex entries={todayEntries} />;
 
     }
 
@@ -36,11 +44,32 @@ var CollectionDetail = React.createClass({
       <div className="collection-detail">
         {collectionName}
         <div className="collection-detail-articles">
+          <h3>Today's Articles</h3>
           {content}
         </div>
       </div>
     );
   }
 });
+
+var getTodayEntries = function (feed) {
+  var todayEntries = [];
+  var entries = feed.entries;
+  for (var i = 0; i < entries.length; i++) {
+    if (isToday(new Date(entries[i].published))) {
+      todayEntries.push(entries[i]);
+    } else {
+      break;
+    }
+  }
+  return todayEntries;
+}
+
+var isToday = function (date) {
+  var today = new Date();
+  return (today.getMonth() === date.getMonth() &&
+      today.getDay() === date.getDay() &&
+      today.getYear() === date.getYear());
+}
 
 module.exports = CollectionDetail;
