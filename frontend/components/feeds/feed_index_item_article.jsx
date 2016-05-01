@@ -37,8 +37,15 @@ var getImageUrl = function (entry) {
         }
       }
     }
-  }
+  } else {
+    if (entry.content) {
+      imageUrl = entry.content.match(imgRegex);
 
+      if (imageUrl) {
+        imageUrl = imageUrl[1];
+      }
+    }
+  }
   return imageUrl;
 };
 
