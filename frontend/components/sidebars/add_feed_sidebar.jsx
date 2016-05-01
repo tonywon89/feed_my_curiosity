@@ -33,8 +33,9 @@ var AddFeedSidebar = React.createClass({
   },
 
   handleCloseClick: function (event) {
-      event.preventDefault();
+    if (event.target === event.currentTarget) {
       this.props.closeAddFeed();
+    }
   },
 
   render: function () {
@@ -43,7 +44,7 @@ var AddFeedSidebar = React.createClass({
 
     var feedTitle, collections;
     if (feed) {
-      feedTitle = <h3>{feed.title}</h3>;
+      feedTitle = <h1>{feed.title}</h1>;
       collections = this.state.collections.map(function(collection) {
         return <AddFeedCollection key={collection.id} collection={collection} feed={feed} />;
       });
@@ -63,11 +64,11 @@ var AddFeedSidebar = React.createClass({
 
     return (
       <div>
-        <div className={addFeedSidebarOverlayClass}>
+        <div className={addFeedSidebarOverlayClass} onClick={this.handleCloseClick}>
           <div className={addFeedSidebarClass}>
             <i className="fa fa-times close-icon" onClick={this.handleCloseClick}></i>
-            <h4>Select a new collection to add this site to your curious feed.</h4>
-            <h2>{feedTitle}</h2>
+            <span>Select a new collection to add this site to your curious feed.</span>
+            {feedTitle}
             <ul>{collections}</ul>
           </div>
         </div>
