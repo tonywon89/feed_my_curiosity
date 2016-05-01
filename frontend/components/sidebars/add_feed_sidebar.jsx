@@ -6,6 +6,8 @@ var CollectionStore = require("../../stores/collection_store");
 var CollectionClientActions = require("../../actions/collection/collection_client_actions");
 var UserStore = require("../../stores/user_store");
 
+var AddFeedCollection = require("./add_feed_collection");
+
 var AddFeedSidebar = React.createClass({
   getInitialState: function () {
     return { collections: CollectionStore.all() };
@@ -39,13 +41,15 @@ var AddFeedSidebar = React.createClass({
     var content;
     var feed = FeedStore.find(this.props.toAddFeedId);
 
-    var feedTitle;
+    var feedTitle, collections;
     if (feed) {
       feedTitle = <h3>{feed.title}</h3>;
+      collections = this.state.collections.map(function(collection) {
+        return <AddFeedCollection key={collection.id} collection={collection} feed={feed} />;
+      });
     }
-    var collections = this.state.collections.map(function(collection) {
-      return <p key={collection.id}>{collection.name}</p>;
-    });
+
+
 
     var addFeedSidebarClass = classNames({
       'add-feed-sidebar': true,
@@ -62,7 +66,7 @@ var AddFeedSidebar = React.createClass({
         <div className={addFeedSidebarOverlayClass}>
           <div className={addFeedSidebarClass}>
             {feedTitle}
-            {collections}
+            <ul>{collections}</ul>
             <button onClick={this.handleCloseClick}>Close</button>
           </div>
         </div>
