@@ -1,23 +1,35 @@
-// .add-feed-main {
-//   visibility: visible;
-//   display: block;
-//   width: 268px;
-//   height: 100%;
-//   left: 0px;
-//   top: 0px;
-//   position: fixed;
-//   min-height: initial;
-//   background-color: rgb(255, 255, 255);
-// }
-
-.add-feed-sidebar {
+.add-feed-main {
   visibility: visible;
-  display: block;
-  width: 268px;
+  display: none;
+  width: 100%;
   height: 100%;
   left: 0px;
   top: 0px;
   position: fixed;
   min-height: initial;
+  background-color: rgba(255, 255, 255, 0.5);
+  transition: all 1s;
+}
+
+.add-feed-main.shown {
+  display: block;
+}
+
+
+.add-feed-sidebar {
+  visibility: visible;
+  width: 268px;
+  height: 100%;
+  left: -268px;
+  top: 0px;
+  position: fixed;
+  min-height: initial;
   background-color: rgb(255, 255, 255);
+  transition: all 1s;
+
+}
+
+.add-feed-sidebar.shown {
+  left: 0px;
+  transition: all 1s;
 }

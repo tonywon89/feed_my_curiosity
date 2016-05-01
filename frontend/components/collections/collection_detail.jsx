@@ -47,7 +47,6 @@ var CollectionDetail = React.createClass({
         {collectionName}
         <h3>TODAY</h3>
         <div className="collection-detail-articles">
-
           {content}
         </div>
       </div>

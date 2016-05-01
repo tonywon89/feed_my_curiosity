@@ -122,7 +122,9 @@ var App = React.createClass({
               }
             )}
           </div>
-          <AddFeedSidebar isDisplayed={this.state.addFeedDisplayed} toAddFeedId={this.state.toAddFeedId}/>
+          <AddFeedSidebar isDisplayed={this.state.addFeedDisplayed}
+                          toAddFeedId={this.state.toAddFeedId}
+                          currentUser={this.state.currentUser}/>
         </div>
       );
     } else {
