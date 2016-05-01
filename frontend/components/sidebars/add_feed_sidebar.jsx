@@ -65,10 +65,10 @@ var AddFeedSidebar = React.createClass({
       <div>
         <div className={addFeedSidebarOverlayClass}>
           <div className={addFeedSidebarClass}>
+            <i className="fa fa-times close-icon" onClick={this.handleCloseClick}></i>
             <h4>Select a new collection to add this site to your curious feed.</h4>
             <h2>{feedTitle}</h2>
             <ul>{collections}</ul>
-            <button onClick={this.handleCloseClick}>Close</button>
           </div>
         </div>
       </div>

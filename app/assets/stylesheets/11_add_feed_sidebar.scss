@@ -48,6 +48,7 @@ $green: #38B769;
   transition: all 1s;
 
   h4 {
+    margin-top: 40px;
     margin-right: 30px;
     padding-bottom: 15px;
     border-bottom: 1px solid black;
@@ -56,10 +57,21 @@ $green: #38B769;
   h2 {
     margin-top: 15px;
   }
+
+  .close-icon {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    &:hover {
+      cursor: pointer;
+      color: red;
+    }
+  }
 }
 
 .add-feed-collection {
   padding: 10px;
+
   .check-icon, .checkbox-icon {
     padding: 0 10px;
   }
