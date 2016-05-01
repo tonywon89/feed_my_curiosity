@@ -84,7 +84,7 @@ var App = React.createClass({
   },
 
   guestLogin: function () {
-    UserClientActions.login({email: "tony", password: "curious"});
+    UserClientActions.login({email: "CuriousUser", password: "curious"});
   },
 
   render: function () {
