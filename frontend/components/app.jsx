@@ -100,6 +100,10 @@ var App = React.createClass({
     this.setState({ addFeedDisplayed: true, toAddFeedId: feedId });
   },
 
+  closeAddFeed: function () {
+    this.setState( { addFeedDisplayed: false, toAddFeedId: undefined });
+  },
+
   render: function () {
 
     var errors = this.state.authErrors.map(function(error, i){
@@ -124,7 +128,8 @@ var App = React.createClass({
           </div>
           <AddFeedSidebar isDisplayed={this.state.addFeedDisplayed}
                           toAddFeedId={this.state.toAddFeedId}
-                          currentUser={this.state.currentUser}/>
+                          currentUser={this.state.currentUser}
+                          closeAddFeed={this.closeAddFeed}/>
         </div>
       );
     } else {

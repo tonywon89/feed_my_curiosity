@@ -30,6 +30,10 @@ var AddFeedSidebar = React.createClass({
     this.setState({ collections: CollectionStore.all() });
   },
 
+  handleCloseClick: function (event) {
+      event.preventDefault();
+      this.props.closeAddFeed();
+  },
 
   render: function () {
     var content;
@@ -59,7 +63,7 @@ var AddFeedSidebar = React.createClass({
           <div className={addFeedSidebarClass}>
             {feedTitle}
             {collections}
-            <button>Close</button>
+            <button onClick={this.handleCloseClick}>Close</button>
           </div>
         </div>
       </div>
