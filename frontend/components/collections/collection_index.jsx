@@ -48,8 +48,11 @@ var CollectionIndex = React.createClass({
     if (currentUser) {
       var collections;
       if (this.state.collections.length > 0) {
+        var self = this;
         collections = this.state.collections.map(function(collection) {
-          return <CollectionIndexItem key={collection.id} collection={collection} />;
+          return <CollectionIndexItem key={collection.id}
+                                      collection={collection}
+                                      displayAddFeed={self.props.displayAddFeed} />;
         });
       }
 

@@ -1,12 +1,27 @@
 var React = require("react");
 var classNames = require("classnames");
 
-var ColletionClientActions = require("../../actions/collection/collection_client_actions");
+var CollectionClientActions = require("../../actions/collection/collection_client_actions");
 
 var AddFeedCollection = React.createClass({
   getInitialState: function () {
     var hasFeed = hasFeedInCollection(this.props.collection, this.props.feed);
     return { hasFeed: hasFeed };
+  },
+
+  handleClick: function (event) {
+    var collection = this.props.collection;
+    if (this.state.hasFeed) {
+      collection.add = "";
+      collection.remove = this.props.feed;
+      CollectionClientActions.updateCollection(collection);
+      this.setState({ hasFeed : false });
+    } else {
+      collection.add = this.props.feed;
+      collection.remove = "";
+      CollectionClientActions.updateCollection(collection);
+      this.setState({ hasFeed : true });
+    }
   },
 
   render: function () {
@@ -23,7 +38,7 @@ var AddFeedCollection = React.createClass({
     }
 
     return (
-      <li className={hasFeedClass}>
+      <li className={hasFeedClass} onClick={this.handleClick}>
         {icon}
         {this.props.collection.name}
 

@@ -62,7 +62,8 @@ var CollectionIndexItem = React.createClass({
       return <CollectionFeedItem
                   key={feed.id}
                   feed={feed}
-                  collection={self.props.collection} />;
+                  collection={self.props.collection}
+                  displayAddFeed={self.props.displayAddFeed} />;
     });
 
     return (

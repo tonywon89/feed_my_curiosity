@@ -9,12 +9,16 @@ var CollectionFeedItem = React.createClass({
     CollectionClientActions.updateCollection(collection);
   },
 
+  displayAddFeed: function () {
+    this.props.displayAddFeed(this.props.feed.id);
+  },
+
   render: function () {
     return (
       <div className="collection-feed-item">
         {this.props.feed.name}
         <div className="edit-icons">
-          <i className="fa fa-pencil pencil"></i>
+          <i className="fa fa-pencil pencil" onClick={this.displayAddFeed}></i>
           <i className="fa fa-times times" onClick={this.removeFeed}></i>
         </div>
       </div>
