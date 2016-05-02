@@ -6,10 +6,7 @@ $close-btn-hover-color: #FF5C35;
 
 $button-green: #2bb24c;
 $button-hover-green: #05A838;
-
-body {
-  overflow: hidden;
-}
+$main-size: calc(100% - 50px);
 
 ::-webkit-scrollbar {
   -webkit-appearance: none;
@@ -22,17 +19,36 @@ body {
     -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, .5);
 }
 
+.app {
+  background-color: white;
+  height: 100%;
+  // overflow-x: hidden;
+}
+
 div.main {
-  position: absolute;
-  margin-left: 52px;
-  left: 75px;
+  // position: relative;
+  padding-left: 77px;
+  margin-left: -50px;
+  margin-right: -50px;
+  // left: 51px;
   padding-bottom: 102px;
   display: flex;
   flex-direction: column;
   align-items: center;
   transition: all 0.4s;
-  height: 80%;
+  height: 100%;
+  width: $main-size;
+
   overflow-y: auto;
+
+  .home {
+    // width: $main-size;
+    width: 100%;
+    background-color: gray;
+    height: 100%;
+    // margin-left: -50px;
+    // margin-right: -50px;
+  }
 }
 
 // Sidebar
@@ -50,9 +66,8 @@ div.main {
   overflow-y: auto;
 
   &:hover + .main {
-    left: 291px;
+    padding-left: 291px;
     transition: all 0.4s;
-
   }
 
   &:hover {
@@ -114,12 +129,12 @@ div.main {
     display: block;
   }
   &:hover + .main {
-    left: 291px;
+    padding-left: 291px;
   }
 }
 
 .sidebar.pinned + .main {
-  left: 291px;
+  padding-left: 291px;
 }
 
 .sidebar-content {

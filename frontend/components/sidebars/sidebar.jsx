@@ -24,6 +24,14 @@ var Sidebar = React.createClass({
     hashHistory.push("/feeds");
   },
 
+  stopBodyScroll: function (event) {
+    $('body').css("overflow", "hidden");
+  },
+
+  enableBodyScroll: function (event) {
+    $('body').css("overflow", "auto");
+  },
+
   render: function () {
     var pinBtnContent;
     var sidebarClass = "sidebar";
@@ -75,7 +83,8 @@ var Sidebar = React.createClass({
     }
 
     return (
-      <div className={sidebarClass}>
+      <div className={sidebarClass} onMouseEnter={this.stopBodyScroll}
+                                    onMouseLeave={this.enableBodyScroll}>
         <i className="fa fa-bars"></i>
         {sidebarContent}
       </div>
