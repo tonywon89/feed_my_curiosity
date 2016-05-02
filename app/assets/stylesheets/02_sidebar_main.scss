@@ -13,8 +13,8 @@ body {
 }
 
 ::-webkit-scrollbar {
-    -webkit-appearance: none;
-    width: 1px;
+  -webkit-appearance: none;
+  width: 1px;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -28,13 +28,12 @@ div.main {
   margin-left: 52px;
   left: 75px;
   padding-bottom: 102px;
-  margin-bottom: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
   transition: all 0.4s;
   height: 80%;
-  overflow: scroll;
+  overflow-y: scroll;
 }
 
 // Sidebar
@@ -49,7 +48,7 @@ div.main {
   flex-direction: column;
   transition: all 0.4s;
   overflow-x:hidden;
-  overflow: scroll;
+  overflow-y: scroll;
 
   &:hover + .main {
     left: 291px;
@@ -96,7 +95,7 @@ div.main {
     color: white;
     font-size: 22px;
     position: absolute;
-    right: 18px;
+    right: 14px;
     top: 40px;
   }
 }
@@ -278,6 +277,7 @@ div.main {
 }
 
 .sidebar {
+  height: 100%;
   button.getting-started {
     background-color: #9FABA1;
     margin-top: 100px;
