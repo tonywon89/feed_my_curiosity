@@ -1,3 +1,12 @@
+$green: #38B769;
+$blue: #5999AD;
+$header-background-color: #D6F8D6;
+$close-btn-color: #7D807F;
+$close-btn-hover-color: #FF5C35;
+
+$button-green: #2bb24c;
+$button-hover-green: #05A838;
+
 .pop-out-main {
   display: none;
   width: 100%;
@@ -53,5 +62,37 @@
 
 .pop-out-close-icon.shown {
   right: 930px;
+}
 
+.feed-pop-out-detail {
+  margin-left: 30px;
+  .feed-pop-out-header {
+    padding: 20px;
+    border: 1px solid black;
+    h1 {
+      font-size: 20px;
+      color: $green;
+      margin-top: 20px;
+
+      &:hover {
+        cursor: pointer;
+        text-decoration: underline;
+      }
+    }
+    h3 {
+      margin: 10px;
+      margin-top: 30px;
+      a {
+        font-size: 13px;
+        color: black;
+        text-decoration: none;
+        transition: all 1s;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
+    }
+  }
 }

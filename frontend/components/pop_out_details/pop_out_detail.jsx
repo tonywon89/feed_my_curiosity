@@ -32,7 +32,7 @@ var PopOutDetail = React.createClass({
     var popOutItem = this.props.popOutItem;
     if (popOutItem) {
       if (popOutItem.type === "feed") {
-        content = <FeedPopOutDetail feed={popOutItem.content}/>;
+        content = <FeedPopOutDetail feed={popOutItem.content} closePopOutDetail={this.props.closePopOutDetail}/>;
       } else {
         content = "This is the PopOutDetail";
       }

@@ -1,9 +1,13 @@
 var React = require("react");
 
+var FeedPopOutHeader = require("./feed_pop_out_header");
+
 var FeedPopOutDetail = React.createClass({
   render: function () {
     return (
-      <div>{this.props.feed.title}</div>
+      <div className="feed-pop-out-detail">
+        <FeedPopOutHeader feed={this.props.feed} closePopOutDetail={this.props.closePopOutDetail}/>
+      </div>
     );
   }
 });
