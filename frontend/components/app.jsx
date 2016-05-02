@@ -7,7 +7,7 @@ var Sidebar = require("./sidebars/sidebar");
 var LoginForm = require("./user_forms/login_form");
 var SignUpForm = require("./user_forms/sign_up_form");
 var AddFeedSidebar = require("./sidebars/add_feed_sidebar");
-var PopOutDetail = require("./pop_out_detail");
+var PopOutDetail = require("./pop_out_details/pop_out_detail");
 
 var CurrentUserStateMixn = require("../mixins/current_user_state_mixin");
 var UserClientActions = require("../actions/user/user_client_actions");
@@ -51,12 +51,12 @@ var App = React.createClass({
       signupModalOpen: false,
       addFeedDisplayed: false,
       toAddFeedId: undefined,
-      popOutDetailDisplayed: false
+      popOutDetailDisplayed: false,
+      popOutItem: undefined
     };
   },
 
   componentDidMount: function () {
-
     this.listener = FeedStore.addListener(this._onFeedLoaded);
     FeedClientActions.fetchFeeds();
   },
@@ -107,11 +107,11 @@ var App = React.createClass({
   },
 
   displayPopOutDetail: function (item) {
-    this.setState({ popOutDetailDisplayed: true });
+    this.setState({ popOutDetailDisplayed: true, popOutItem: item });
   },
 
   closePopOutDetail: function () {
-    this.setState({ popOutDetailDisplayed: false });
+    this.setState({ popOutDetailDisplayed: false, popOutItem: undefined });
   },
 
   render: function () {
@@ -142,7 +142,8 @@ var App = React.createClass({
                           currentUser={this.state.currentUser}
                           closeAddFeed={this.closeAddFeed}/>
           <PopOutDetail isDisplayed={this.state.popOutDetailDisplayed}
-                        closePopOutDetail={this.closePopOutDetail} />
+                        closePopOutDetail={this.closePopOutDetail}
+                        popOutItem={this.state.popOutItem}/>
 
         </div>
       );

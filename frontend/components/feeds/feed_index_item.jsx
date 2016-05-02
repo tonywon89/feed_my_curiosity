@@ -8,7 +8,8 @@ var FeedIndexItem = React.createClass({
   },
 
   handlePopOutClick: function (event) {
-    this.props.displayPopOutDetail(this.props.feed);
+    var popOutItem = {type: "feed", content: this.props.feed};
+    this.props.displayPopOutDetail(popOutItem);
   },
 
   render: function () {
