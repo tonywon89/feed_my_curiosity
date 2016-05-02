@@ -14,13 +14,13 @@ body {
 
 ::-webkit-scrollbar {
   -webkit-appearance: none;
-  width: 1px;
+  width: 3px;
 }
 
 ::-webkit-scrollbar-thumb {
     border-radius: 4px;
     background-color: rgba(0, 0, 0 ,.5);
-    -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
+    -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, .5);
 }
 
 div.main {
@@ -95,7 +95,7 @@ div.main {
     color: white;
     font-size: 22px;
     position: absolute;
-    right: 14px;
+    right: 17px;
     top: 40px;
   }
 }
