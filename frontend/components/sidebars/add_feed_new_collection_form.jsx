@@ -16,11 +16,12 @@ var AddFeedNewCollectionForm = React.createClass({
     var collection = {name: this.state.name };
     CollectionClientActions.createCollection(collection);
     this.setState({ name: "" });
+    this.props.closeForm();
   },
 
   render: function () {
     return (
-      <li className="add-feed-collection new-collection-form">
+      <li className="new-collection-form">
         <form onSubmit={this.handleSubmit}>
           <input type="text"
                  placeholder="Name of collection"

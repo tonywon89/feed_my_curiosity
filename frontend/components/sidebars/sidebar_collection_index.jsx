@@ -41,7 +41,7 @@ var SidebarCollectionIndex = React.createClass({
     });
     var organize = (
       <div className="sidebar-organize-btn" onClick={this._toOrganize}>
-        <Link to="/collections">Organize feeds</Link>
+        <Link to="/collections">Organize</Link>
       </div>
     );
     return (
