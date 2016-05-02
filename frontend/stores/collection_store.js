@@ -47,6 +47,11 @@ CollectionStore.all = function () {
   });
 };
 
+CollectionStore.mostRecent = function () {
+  var keys = Object.keys(_collections);
+  return _collections[keys[keys.length - 1]];
+};
+
 CollectionStore.find = function (id) {
   return _collections[id];
 };

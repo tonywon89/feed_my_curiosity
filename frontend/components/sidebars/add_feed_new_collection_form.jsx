@@ -1,6 +1,7 @@
 var React = require("react");
 
 var CollectionClientActions = require("../../actions/collection/collection_client_actions");
+var CollectionStore = require("../../stores/collection_store");
 
 var AddFeedNewCollectionForm = React.createClass({
   getInitialState: function () {
@@ -13,7 +14,7 @@ var AddFeedNewCollectionForm = React.createClass({
 
   handleSubmit: function (event) {
     event.preventDefault();
-    var collection = {name: this.state.name };
+    var collection = {name: this.state.name, feed_id: this.props.feed.id};
     CollectionClientActions.createCollection(collection);
     this.setState({ name: "" });
     this.props.closeForm();

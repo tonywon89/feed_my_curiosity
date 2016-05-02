@@ -26,16 +26,19 @@ class Api::CollectionsController < ApplicationController
         user_id: current_user.id
       )
 
-      # @collection.transaction do
-      #   @collection.save!
-      #   @collection.collection_feeds.create!(feed_id: params[:collection][:feed_id])
-      # end
-
-      if @collection.save
+      if params[:collection][:feed_id]
+        @collection.transaction do
+          @collection.save!
+          @collection.collection_feeds.create!(feed_id: params[:collection][:feed_id])
+        end
         render :show
       else
-        @errors = @collection.errors.full_messages
-        render "api/errors/errors", status: 500
+        if @collection.save
+          render :show
+        else
+          @errors = @collection.errors.full_messages
+          render "api/errors/errors", status: 500
+        end
       end
     else
       @errors = ["You are not logged in"]

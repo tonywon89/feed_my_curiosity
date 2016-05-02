@@ -71,7 +71,7 @@ var AddFeedSidebar = React.createClass({
 
     var newCollection;
     if (this.state.newCollectionFormOpen) {
-      newCollection = <AddFeedNewCollectionForm closeForm={this.closeNewCollectionForm} />;
+      newCollection = <AddFeedNewCollectionForm closeForm={this.closeNewCollectionForm} feed={feed} />;
     } else {
       newCollection = (
         <li className="add-feed-collection new-collection" onClick={this.openNewCollectionForm}>
