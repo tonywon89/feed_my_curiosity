@@ -66,11 +66,12 @@ $button-hover-green: #05A838;
 
 .feed-pop-out-detail {
   margin-left: 30px;
+  margin-right: 30px;
   .feed-pop-out-header {
     padding: 20px;
-    border: 1px solid black;
+    border-bottom: 1px solid black;
     h1 {
-      font-size: 20px;
+      font-size: 40px;
       color: $green;
       margin-top: 20px;
 
@@ -84,7 +85,7 @@ $button-hover-green: #05A838;
       margin-top: 30px;
       a {
         font-size: 13px;
-        color: black;
+        color: gray;
         text-decoration: none;
         transition: all 1s;
 

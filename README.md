@@ -220,7 +220,7 @@ FeedMyCuriosity is a web application inspired by Feedly that will be built using
 
 **Objective** Have a overlying window with for individual articles and feeds when clicked
 
-- [ ] make `PopOutDetails` component
+- [x] make `PopOutDetails` component
 - [ ] make `FeedDetail` component
   - [ ] `FeedHeader`
   - [ ] `ArticleDateIndex`
