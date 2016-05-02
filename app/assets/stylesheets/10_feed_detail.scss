@@ -1,16 +1,15 @@
 $green: #38B769;
 
 .feed-detail {
-  margin-left: 60px;
+  margin-left: 100px;
   display: flex;
   flex-direction: column;
   // align-items: center;
-  width: 90%;
 
   h1 {
     align-self: flex-start;
     margin-top: 30px;
-    margin-left: 60px;
+    margin-left: 50px;
     a {
       padding: 0;
       color: $green;
