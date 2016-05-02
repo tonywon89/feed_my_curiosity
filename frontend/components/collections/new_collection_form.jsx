@@ -7,18 +7,17 @@ var NewCollectionForm = React.createClass({
     return { name: "", errors: [] };
   },
 
-  // componentDidMount: function () {
-  //   alert("Mounted");
-  //   this.listener = CollectionStore.addListener(this.props._onErrors);
-  // },
+  componentDidMount: function () {
+    this.listener = CollectionStore.addListener(this._onErrors);
+  },
 
-  // componentWillUnmmount: function () {
-  //   this.listener.remove();
-  // },
+  componentWillUnmmount: function () {
+    this.listener.remove();
+  },
 
-  // _onErrors: function () {
-  //   this.setState({errors: CollectionStore.errors() });
-  // },
+  _onErrors: function () {
+    this.setState({errors: CollectionStore.errors() });
+  },
 
   nameChange: function (event) {
     this.setState({ name: event.target.value });

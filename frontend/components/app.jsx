@@ -110,6 +110,10 @@ var App = React.createClass({
     this.setState({ popOutDetailDisplayed: true });
   },
 
+  closePopOutDetail: function () {
+    this.setState({ popOutDetailDisplayed: false });
+  },
+
   render: function () {
 
     var errors = this.state.authErrors.map(function(error, i){
@@ -137,13 +141,15 @@ var App = React.createClass({
                           toAddFeedId={this.state.toAddFeedId}
                           currentUser={this.state.currentUser}
                           closeAddFeed={this.closeAddFeed}/>
-          <PopOutDetail isDisplayed={this.state.popOutDetailDisplayed}/>
+          <PopOutDetail isDisplayed={this.state.popOutDetailDisplayed}
+                        closePopOutDetail={this.closePopOutDetail} />
+
         </div>
       );
     } else {
       content = (
         <div className="loading-app">
-          <h2>Hold your curiosity while we set up for you to have an awesome experience...</h2>
+          <h2>Loading curious feeds...</h2>
           <i className="fa fa-spinner fa-spin fa-fw loading-icon"></i>
         </div>
       );

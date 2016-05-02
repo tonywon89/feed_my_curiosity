@@ -29,5 +29,29 @@
 }
 
 .pop-out-detail.shown {
-  right: 0px;
+  right: 0;
+}
+
+.pop-out-close-icon {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  padding: 10px;
+  background-color: white;
+  position: fixed;
+  right: -940px;
+  margin: 0;
+  border-left: 1px solid gray;
+
+  border-bottom: 1px solid gray;
+  border-right: 1px solid white;
+  z-index: 2;
+
+  &:hover {
+    color: red;
+  }
+}
+
+.pop-out-close-icon.shown {
+  right: 930px;
+
 }

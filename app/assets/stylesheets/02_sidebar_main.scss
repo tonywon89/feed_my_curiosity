@@ -33,7 +33,7 @@ div.main {
   align-items: center;
   transition: all 0.4s;
   height: 80%;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 // Sidebar
@@ -48,7 +48,7 @@ div.main {
   flex-direction: column;
   transition: all 0.4s;
   overflow-x:hidden;
-  overflow-y: scroll;
+  overflow-y: auto;
 
   &:hover + .main {
     left: 291px;
