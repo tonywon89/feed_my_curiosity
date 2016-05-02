@@ -3,24 +3,22 @@ $blue: #5999AD;
 $button-hover-green: #05A838;
 
 .collection-index-main {
+  margin-left: 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 .collection-header {
+  margin-left: 20px;
   margin-top: 20px;
-  margin-left: 30px;
   padding: 0;
   color: $green;
   font-size: 30px;
-  width: 90%;
-  // align-self: flex-start;
+  align-self: flex-start;
 }
 
 .collection-index {
-  width: 90%;
-  margin-left: 30px;
   // margin-right: 100px;
   margin-top: 30px;
   padding: 0;
