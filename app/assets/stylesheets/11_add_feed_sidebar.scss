@@ -1,4 +1,6 @@
 $green: #38B769;
+$blue: #5999AD;
+$button-hover-green: #05A838;
 
 .add-feed-main {
   display: none;
@@ -9,14 +11,11 @@ $green: #38B769;
   position: fixed;
   min-height: initial;
   background-color: rgba(0, 0, 0, 0.5);
-
-
 }
 
 .add-feed-main.shown {
   display: block;
 }
-
 
 .add-feed-sidebar {
   display: flex;
@@ -33,7 +32,35 @@ $green: #38B769;
   transition: all 1s;
   border-right: 1px solid gray;
 
+  .new-collection-form {
+    padding: 5px;
+    form {
+      display: flex;
+      align-items: center;
 
+      input[type="text"] {
+        font-size: 12px;
+        border-radius: 0;
+        padding: 5px;
+        width: 200px;
+        &:focus {
+          box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+          border-color: 1px solid rgba(81, 203, 238, 1);
+        }
+      }
+      input[type="submit"] {
+        font-size: 12px;
+        padding: 5px;
+        border-radius: 1px;
+        background-color: $green;
+        margin-left: 10px;
+
+        &:hover {
+          background-color: $button-hover-green;
+        }
+      }
+    }
+  }
 }
 
 .add-feed-sidebar.shown {
@@ -68,7 +95,7 @@ $green: #38B769;
 .add-feed-collection {
   padding: 10px;
 
-  .check-icon, .checkbox-icon {
+  .check-icon, .checkbox-icon, .plus-icon {
     padding: 0 10px;
   }
 
@@ -80,4 +107,12 @@ $green: #38B769;
 
 .add-feed-collection.has-feed {
   color: green;
+}
+
+.new-collection {
+  color: gray;
+
+  &:hover {
+    color: black;
+  }
 }

@@ -7,10 +7,11 @@ var CollectionClientActions = require("../../actions/collection/collection_clien
 var UserStore = require("../../stores/user_store");
 
 var AddFeedCollection = require("./add_feed_collection");
+var AddFeedNewCollectionForm = require("./add_feed_new_collection_form");
 
 var AddFeedSidebar = React.createClass({
   getInitialState: function () {
-    return { collections: CollectionStore.all() };
+    return { collections: CollectionStore.all(), newCollectionFormOpen: false };
   },
 
   componentDidMount: function () {
@@ -38,6 +39,14 @@ var AddFeedSidebar = React.createClass({
     }
   },
 
+  openNewCollectionForm: function () {
+    this.setState({ newCollectionFormOpen: true });
+  },
+
+  closeNewCollectionForm: function () {
+    this.setState({ newCollectionFormOpen: false});
+  },
+
   render: function () {
     var content;
     var feed = FeedStore.find(this.props.toAddFeedId);
@@ -50,8 +59,6 @@ var AddFeedSidebar = React.createClass({
       });
     }
 
-
-
     var addFeedSidebarClass = classNames({
       'add-feed-sidebar': true,
       'shown': this.props.isDisplayed
@@ -62,6 +69,18 @@ var AddFeedSidebar = React.createClass({
         'shown': this.props.isDisplayed
       });
 
+    var newCollection;
+    if (this.state.newCollectionFormOpen) {
+      newCollection = <AddFeedNewCollectionForm />;
+    } else {
+      newCollection = (
+        <li className="add-feed-collection new-collection" onClick={this.openNewCollectionForm}>
+          <i className="fa fa-plus plus-icon"></i>
+          New Collection
+        </li>
+      );
+    }
+
     return (
       <div>
         <div className={addFeedSidebarOverlayClass} onClick={this.handleCloseClick}>
@@ -69,7 +88,10 @@ var AddFeedSidebar = React.createClass({
             <i className="fa fa-times close-icon" onClick={this.handleCloseClick}></i>
             <span>Select a new collection to add this site to your curious feed.</span>
             {feedTitle}
-            <ul>{collections}</ul>
+            <ul>
+              {newCollection}
+              {collections}
+            </ul>
           </div>
         </div>
       </div>
