@@ -10,7 +10,7 @@ $main-size: calc(100% - 50px);
 
 ::-webkit-scrollbar {
   -webkit-appearance: none;
-  width: 3px;
+  width: 1px;;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -22,23 +22,23 @@ $main-size: calc(100% - 50px);
 .app {
   background-color: white;
   height: 100%;
-  // overflow-x: hidden;
+  overflow-x: hidden;
 }
 
 div.main {
   // position: relative;
-  padding-left: 77px;
-  margin-left: -50px;
-  margin-right: -50px;
+  margin-left: 50px;
+  // margin-left: -50px;
+  // margin-right: -50px;
   // left: 51px;
   padding-bottom: 102px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  // display: flex;
+  // flex-direction: column;
+  // align-items: center;
   transition: all 0.4s;
   height: 100%;
-  width: $main-size;
-
+  // width: $main-size;
+  overflow-x: scroll;
   overflow-y: auto;
 
   .home {
@@ -66,7 +66,7 @@ div.main {
   overflow-y: auto;
 
   &:hover + .main {
-    padding-left: 291px;
+    margin-left: 268px;
     transition: all 0.4s;
   }
 
@@ -129,12 +129,12 @@ div.main {
     display: block;
   }
   &:hover + .main {
-    padding-left: 291px;
+    margin-left: 268px;;
   }
 }
 
 .sidebar.pinned + .main {
-  padding-left: 291px;
+  margin-left: 268px;;
 }
 
 .sidebar-content {

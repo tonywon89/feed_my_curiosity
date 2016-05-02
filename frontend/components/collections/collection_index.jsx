@@ -57,7 +57,7 @@ var CollectionIndex = React.createClass({
       }
 
       content = (
-        <div>
+        <div className="collection-index-main">
           <h1 className="collection-header">Organize</h1>
           <div className="collection-index">
             {collections}
