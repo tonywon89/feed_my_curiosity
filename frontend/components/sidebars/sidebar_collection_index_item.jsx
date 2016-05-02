@@ -5,7 +5,7 @@ var SidebarCollectionItemFeed = require("./sidebar_collection_item_feed");
 
 var SidebarCollectionIndexItem = React.createClass({
   getInitialState: function () {
-    return { isOpen: false };
+    return { isOpen: true };
   },
 
   toggleOpen: function () {
