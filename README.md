@@ -22,11 +22,11 @@ FeedMyCuriosity is a web application inspired by Feedly that will be built using
 - [x] Log in/ Log out
 - [x] Log in as a Guest/Demo User
 - [x] Provide feeds for the user to choose from
-- [ ] Make and delete collections
-- [ ] Display user's feeds and collections
-- [ ] Add and remove feeds from collections
+- [x] Make and delete collections
+- [x] Display user's feeds and collections
+- [x] Add and remove feeds from collections
 - [x] Provides link to go to feed's website
-- [ ] Feeds display recent articles
+- [x] Feeds display recent articles
 - [ ] Displays specific feeds
 - [ ] Displays specific articles
 
@@ -201,25 +201,26 @@ FeedMyCuriosity is a web application inspired by Feedly that will be built using
 
 **Objective** Emulate Feedly's sidebar for adding feeds
 
-- [ ] `AddFeedSidebar` component
-  - [ ] new collection Link that turns into a form
-    - [ ] write form to create new collection
-      - [ ] write out flux cycle for form
-      - [ ] test to make sure new collection was created with added feed
-  - [ ] `AddFeedCollectionIndex` component
-    - [ ] `AddFeedCollectionIndexItem` component
-      - [ ] can click on it to add a feed to the collection
-      - [ ] build out flux cycle for it
-      - [ ] updates with a check mark after being added
-      - [ ] Test collections to make sure it has a feed
-- [ ] Style it to make it resemble feedly
-  - [ ] Sidebar appears on top of everything else
+- [x] `AddFeedSidebar` component
+  - [x] new collection Link that turns into a form
+    - [x] write form to create new collection
+      - [x] write out flux cycle for form
+      - [x] test to make sure new collection was created with added feed
+  - [x] `AddFeedCollectionIndex` component
+    - [x] `AddFeedCollectionIndexItem` component
+      - [x] can click on it to add a feed to the collection
+      - [x] build out flux cycle for it
+      - [x] updates with a check mark after being added
+      - [x] Test collections to make sure it has a feed
+- [x] Style it to make it resemble feedly
+  - [x] Sidebar appears on top of everything else
 - [ ] deploy to Heroku
 
 ### Phase 8: PopOutDetails (1.5 days)
 
 **Objective** Have a overlying window with for individual articles and feeds when clicked
 
+- [ ] make `PopOutDetails` component
 - [ ] make `FeedDetail` component
   - [ ] `FeedHeader`
   - [ ] `ArticleDateIndex`
@@ -236,6 +237,7 @@ FeedMyCuriosity is a web application inspired by Feedly that will be built using
 **Objective** Finish everything up and make it presentable as an MVP before moving on to the other features.
 
 - [ ] write production README
+- [ ] Style Splash Page
 - [ ] deploy to Heroku and make sure everything is working
 - [ ] finalize styling touches
 - [x] add favicon
