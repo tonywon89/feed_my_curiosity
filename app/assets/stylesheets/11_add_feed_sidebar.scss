@@ -11,6 +11,7 @@ $button-hover-green: #05A838;
   position: fixed;
   min-height: initial;
   background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2;
 }
 
 .add-feed-main.shown {
@@ -31,6 +32,7 @@ $button-hover-green: #05A838;
   background-color: rgb(255, 255, 255);
   transition: all 1s;
   border-right: 1px solid gray;
+  z-index: 2;
 
   .new-collection-form {
     padding: 5px;

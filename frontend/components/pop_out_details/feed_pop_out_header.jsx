@@ -7,13 +7,26 @@ var FeedPopOutHeader = React.createClass({
     hashHistory.push("/feeds/" + this.props.feed.id);
   },
 
+  handleAddClick: function (event) {
+    event.preventDefault();
+    this.props.displayAddFeed(event.target.value);
+  },
+
   render: function () {
     var feed = this.props.feed;
 
     return (
       <div className="feed-pop-out-header">
-        <h1 onClick={this.handleRedirect}>{feed.title}</h1>
+        <div>
+          <h1 onClick={this.handleRedirect}>{feed.title}</h1>
+          <button onClick={this.handleAddClick}
+                  value={feed.id}
+                  className="add-feed-btn">
+              Add Feed
+          </button>
+        </div>
         <h3><a href={feed.url}>{feed.description}</a></h3>
+
       </div>
     );
   }

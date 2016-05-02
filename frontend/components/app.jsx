@@ -143,7 +143,8 @@ var App = React.createClass({
                           closeAddFeed={this.closeAddFeed}/>
           <PopOutDetail isDisplayed={this.state.popOutDetailDisplayed}
                         closePopOutDetail={this.closePopOutDetail}
-                        popOutItem={this.state.popOutItem}/>
+                        popOutItem={this.state.popOutItem}
+                        displayAddFeed={this.displayAddFeed}/>
 
         </div>
       );

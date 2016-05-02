@@ -70,6 +70,11 @@ $button-hover-green: #05A838;
   .feed-pop-out-header {
     padding: 20px;
     border-bottom: 1px solid black;
+    div {
+      display: flex;
+      justify-content: space-between;
+    }
+
     h1 {
       font-size: 40px;
       color: $green;
@@ -94,6 +99,22 @@ $button-hover-green: #05A838;
         }
       }
 
+    }
+    .add-feed-btn {
+      width: 20%;
+      margin: 10px;
+      margin-top: 30px;
+      font-size: 12px;
+      font: 5px;
+      padding: 5px;
+      border: 2px solid $button-green;
+      color: $button-green;
+      background-color: white;
+      font-weight: bold;
+
+      &:hover {
+        background-color: #B3DABF;
+      }
     }
   }
 }
