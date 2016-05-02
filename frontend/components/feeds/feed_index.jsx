@@ -48,7 +48,8 @@ var FeedIndex = React.createClass({
         return (
           <FeedIndexItem key={feed.id}
                          feed={feed}
-                         displayAddFeed={self.props.displayAddFeed} />
+                         displayAddFeed={self.props.displayAddFeed}
+                         displayPopOutDetail={self.props.displayPopOutDetail}/>
         );
       });
     } else {

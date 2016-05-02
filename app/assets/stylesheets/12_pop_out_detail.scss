@@ -1,0 +1,33 @@
+.pop-out-main {
+  display: none;
+  width: 100%;
+  height: 100%;
+  left: 0px;
+  top: 0px;
+  position: fixed;
+  min-height: initial;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.pop-out-main.shown {
+  display: block;
+}
+
+.pop-out-detail {
+  display: flex;
+  flex-direction: column;
+  padding-left: 30px;
+  padding-top: 20px;
+  width: 900px;
+  height: 100%;
+  right: -900px;
+  top: 0px;
+  position: fixed;
+  min-height: initial;
+  background-color: rgb(255, 255, 255);
+  border-left: 1px solid gray;
+}
+
+.pop-out-detail.shown {
+  right: 0px;
+}

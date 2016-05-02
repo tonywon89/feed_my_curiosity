@@ -7,6 +7,7 @@ var Sidebar = require("./sidebars/sidebar");
 var LoginForm = require("./user_forms/login_form");
 var SignUpForm = require("./user_forms/sign_up_form");
 var AddFeedSidebar = require("./sidebars/add_feed_sidebar");
+var PopOutDetail = require("./pop_out_detail");
 
 var CurrentUserStateMixn = require("../mixins/current_user_state_mixin");
 var UserClientActions = require("../actions/user/user_client_actions");
@@ -49,7 +50,8 @@ var App = React.createClass({
       loginModalOpen: false,
       signupModalOpen: false,
       addFeedDisplayed: false,
-      toAddFeedId: undefined
+      toAddFeedId: undefined,
+      popOutDetailDisplayed: false
     };
   },
 
@@ -104,6 +106,10 @@ var App = React.createClass({
     this.setState( { addFeedDisplayed: false, toAddFeedId: undefined });
   },
 
+  displayPopOutDetail: function (item) {
+    this.setState({ popOutDetailDisplayed: true });
+  },
+
   render: function () {
 
     var errors = this.state.authErrors.map(function(error, i){
@@ -122,7 +128,8 @@ var App = React.createClass({
                 openLoginModal: this.openLoginModal,
                 currentUser: this.state.currentUser,
                 logOut: this.logOut,
-                displayAddFeed: this.displayAddFeed
+                displayAddFeed: this.displayAddFeed,
+                displayPopOutDetail: this.displayPopOutDetail
               }
             )}
           </div>
@@ -130,6 +137,7 @@ var App = React.createClass({
                           toAddFeedId={this.state.toAddFeedId}
                           currentUser={this.state.currentUser}
                           closeAddFeed={this.closeAddFeed}/>
+          <PopOutDetail isDisplayed={this.state.popOutDetailDisplayed}/>
         </div>
       );
     } else {

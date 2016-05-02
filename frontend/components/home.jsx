@@ -21,7 +21,7 @@ var Home = React.createClass({
     }
 
     return (
-      <div>
+      <div className="home">
         <header>
           <h1 className="header-text">Feed My Curiosity</h1>
           {content}
