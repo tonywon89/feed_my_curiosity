@@ -4,12 +4,20 @@ var ArticlePopOutDetail = React.createClass({
   render: function () {
     var entry = this.props.entry;
     var datePublished = parseDate(entry.published);
+    var content;
+    if (entry.content) {
+      content = entry.content;
+    } else {
+      content = entry.summary;
+    }
     return (
       <div className="article-pop-out-detail">
         <div className="article-pop-out-header">
           <h1 className="article-pop-out-header">{entry.title}</h1>
           <h6>By {entry.author} / Published: {datePublished}</h6>
         </div>
+        <div className="article-content" dangerouslySetInnerHTML={{ __html: content }} />
+        <a className="article-url" href={entry.url}>Visit Website</a>
       </div>
     );
   }

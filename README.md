@@ -27,7 +27,7 @@ FeedMyCuriosity is a web application inspired by Feedly that will be built using
 - [x] Add and remove feeds from collections
 - [x] Provides link to go to feed's website
 - [x] Feeds display recent articles
-- [ ] Displays specific feeds
+- [x] Displays specific feeds
 - [ ] Displays specific articles
 
 ### Expected Features
