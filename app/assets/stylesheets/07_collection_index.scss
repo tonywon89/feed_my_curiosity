@@ -7,6 +7,22 @@ $button-hover-green: #05A838;
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-bottom: 30px;
+  .sidebar-add-content {
+    color: black;
+    font-size: 10px;
+    box-shadow: 0 0 0 white;
+    background-color: Transparent;
+    border: 0.5px solid black;
+    padding: 10px;
+    width: 75%;
+    opacity: 0.5;
+
+    &:hover {
+      opacity: 1;
+      background-color: #8CD783;
+    }
+  }
 }
 
 .collection-header {

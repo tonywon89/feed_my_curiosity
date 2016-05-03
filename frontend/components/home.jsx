@@ -12,8 +12,9 @@ var Home = React.createClass({
 
     if (currentUser) {
       content = (
-        <div>
+        <div className="logged-in-splash">
           <h3>Welcome, {currentUser.username}!</h3>
+          <p>Head over to the side bar on the left to get started!</p>
         </div>
       );
     } else {
