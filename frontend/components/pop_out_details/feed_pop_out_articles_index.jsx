@@ -12,9 +12,12 @@ var FeedPopOutArticlesIndex = React.createClass({
     }
 
     return (
-      <ul className="feed-pop-out-article-index">
-        {displayEntries}
-      </ul>
+      <div className="feed-pop-out-article-index">
+        <h3>RECENT ARTICLES</h3>
+        <ul>
+          {displayEntries}
+        </ul>
+      </div>
     );
   }
 });

@@ -123,24 +123,54 @@ $button-hover-green: #05A838;
 .feed-pop-out-article-index {
   display: flex;
   flex-direction: column;
-  align-items: center;
   padding-bottom: 30px;
+  padding-left: 15px;
+  // border: 1px solid green;
+  h3 {
+    font-size: 15px;
+    opacity: 0.4;
+    margin-left: 5px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    padding: 0;
+    align-self: flex-start;
+  }
 }
 
 .feed-article-item {
   display: flex;
-  width: 600px;
-  border: 1px solid red;
+  width: 650px;
   padding: 10px;
   margin: 10px;
-  div {
+  .article-image {
     min-width: 200px;
-    min-height: 100px;
+    min-height: 120px;
     max-width: 200px;
-    max-height: 100px;
+    max-height: 120px;
     display: flex;
     img {
       object-fit: contain;
     }
+  }
+  .article-info {
+    margin-left: 10px;
+    h4 {
+      font-weight: bold;
+    }
+    p {
+      margin-top: 5px;
+      font-size: 12px;
+      opacity: 0.6;
+      min-height: 45px;
+      max-height: 45px;
+      overflow: hidden;
+    }
+    h6 {
+      margin: 0;
+    }
+  }
+  &:hover {
+    background-color: #E5FCCE;
+    cursor: pointer;
   }
 }

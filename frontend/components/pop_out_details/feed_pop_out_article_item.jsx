@@ -13,10 +13,14 @@ var FeedPopOutArticleItem = React.createClass({
     var content = ParseHTML.getContent(entry);
     return (
       <li className="feed-article-item">
-        <div>
+        <div className="article-image">
           {image}
         </div>
-        {this.props.entry.title}
+        <div className="article-info">
+          <h4>{entry.title}</h4>
+          <p>{content}</p>
+          <h6>by {entry.author}</h6>
+        </div>
       </li>
     );
   }
