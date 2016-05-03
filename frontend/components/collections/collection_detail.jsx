@@ -35,9 +35,9 @@ var CollectionDetail = React.createClass({
       feeds.forEach(function (feed) {
         todayEntries = todayEntries.concat(getTodayEntries(feed));
       });
-      
+
       if (todayEntries.length !== 0) {
-        content = <ArticleIndex entries={todayEntries} />;
+        content = <ArticleIndex entries={todayEntries} displayPopOutDetail={this.props.displayPopOutDetail} />;
       } else {
         content = <p className="no-articles">There are no articles for today in this collection.</p>;
       }

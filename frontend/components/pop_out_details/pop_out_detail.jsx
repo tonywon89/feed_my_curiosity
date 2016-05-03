@@ -2,6 +2,7 @@ var React = require("react");
 var classNames = require("classnames");
 
 var FeedPopOutDetail = require("./feed_pop_out_detail");
+var ArticlePopOutDetail = require("./article_pop_out_detail");
 
 var PopOutDetail = React.createClass({
   handleCloseClick: function (event) {
@@ -34,9 +35,12 @@ var PopOutDetail = React.createClass({
       if (popOutItem.type === "feed") {
         content = <FeedPopOutDetail feed={popOutItem.content}
                                     closePopOutDetail={this.props.closePopOutDetail}
-                                    displayAddFeed={this.props.displayAddFeed}/>;
+                                    displayAddFeed={this.props.displayAddFeed}
+                                    displayPopOutDetail={this.props.displayPopOutDetail}/>;
       } else {
-        content = "This is the PopOutDetail";
+        content = <ArticlePopOutDetail entry={popOutItem.content}
+                                       closePopOutDetail={this.props.closePopOutDetail} />;
+
       }
     }
 

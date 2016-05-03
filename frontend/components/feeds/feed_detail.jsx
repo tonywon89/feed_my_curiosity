@@ -7,13 +7,12 @@ var FeedDetail = React.createClass({
   render: function () {
     var feedId = this.props.feed ? this.props.feed.id : this.props.params.feedId;
     var feed = FeedStore.find(feedId);
-
     var content;
     if (feed) {
       content = (
         <div className="feed-detail">
           <h1><a href={feed.url}>{feed.title}</a></h1>
-          <ArticleIndex feed={feed} />
+          <ArticleIndex feed={feed} displayPopOutDetail={this.props.displayPopOutDetail} />
         </div>
       );
     }
