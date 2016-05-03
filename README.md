@@ -28,7 +28,7 @@ FeedMyCuriosity is a web application inspired by Feedly that will be built using
 - [x] Provides link to go to feed's website
 - [x] Feeds display recent articles
 - [x] Displays specific feeds
-- [ ] Displays specific articles
+- [x] Displays specific articles
 
 ### Expected Features
 - [ ] Users can save articles
@@ -221,16 +221,16 @@ FeedMyCuriosity is a web application inspired by Feedly that will be built using
 **Objective** Have a overlying window with for individual articles and feeds when clicked
 
 - [x] make `PopOutDetails` component
-- [ ] make `FeedDetail` component
-  - [ ] `FeedHeader`
-  - [ ] `ArticleDateIndex`
-- [ ] style `FeedDetail`
-- [ ] make it appear in `PopOutDetails`
+- [x] make `FeedDetail` component
+  - [x] `FeedHeader`
+  - [x] `ArticleDateIndex`
+- [x] style `FeedDetail`
+- [x] make it appear in `PopOutDetails`
 
-- [ ] make `ArticleDetail`
-- [ ] style `ArticleDetail`
-- [ ] make it appear in `PopOutDetails`
-- [ ] deploy to Heroku
+- [x] make `ArticleDetail`
+- [x] style `ArticleDetail`
+- [x] make it appear in `PopOutDetails`
+- [x] deploy to Heroku
 
 ### Phase 9: Clean up code (1 day)
 

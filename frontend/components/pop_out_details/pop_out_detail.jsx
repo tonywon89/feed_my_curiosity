@@ -34,14 +34,15 @@ var PopOutDetail = React.createClass({
 
     if (popOutItem) {
       if (popOutItem.type === "feed") {
-        content = <FeedPopOutDetail feed={popOutItem.content}
-                                    closePopOutDetail={this.props.closePopOutDetail}
-                                    displayAddFeed={this.props.displayAddFeed}
-                                    displayPopOutDetail={this.props.displayPopOutDetail}/>;
+        content = <FeedPopOutDetail
+                    feed={popOutItem.content}
+                    closePopOutDetail={this.props.closePopOutDetail}
+                    displayAddFeed={this.props.displayAddFeed}
+                    displayPopOutDetail={this.props.displayPopOutDetail}/>;
       } else {
-        content = <ArticlePopOutDetail entry={popOutItem.content}
-                                       closePopOutDetail={this.props.closePopOutDetail} />;
-
+        content = <ArticlePopOutDetail
+                    entry={popOutItem.content}
+                    closePopOutDetail={this.props.closePopOutDetail} />;
       }
     }
 

@@ -53,16 +53,49 @@ header {
   display: flex;
   align-items: center;
   flex-direction: column;
-  height: 300px;
   margin: 0;
+  text-shadow: 1px 1px gray;
+  color: white;
+
+  h3 {
+    padding: 20px;
+    font-size: 20px;
+  }
+
+  $quote-color: #C4E0FC;
+  .quote {
+    color: $quote-color;
+    font-size: 25px;
+    font-style: italic;
+    width: 600px;
+  }
+
+  .author {
+    color: $quote-color;
+    margin: 0;
+    font-size: 20px;
+    align-self: flex-end;
+  }
+
+  .info {
+    padding: 20px;
+    font-size: 18px;
+  }
+}
+
+.splash-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 h1.header-text {
   padding: 10px;
-  text-shadow: 2px 2px teal;
-  color: $green;
-  font-size: 50px;
+  text-shadow: 2px 2px gray;
+  color: white;
+  font-size: 75px;
   text-align: center;
+  border-bottom: 1px solid white;
 }
 
 div.loading-app {
@@ -76,7 +109,7 @@ div.loading-app {
     font-size: 30px;
     margin-top: 50px;
   }
-  
+
   .loading-icon {
     font-size: 30px;
     padding: 20px;

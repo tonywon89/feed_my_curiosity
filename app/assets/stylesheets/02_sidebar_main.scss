@@ -20,13 +20,13 @@ $main-size: calc(100% - 50px);
 }
 
 .app {
-  background-color: white;
   height: 100%;
   overflow-x: hidden;
 
 }
 
 .app.on-splash {
+  background-color: gray;
   background-size: cover;
   background-image: url("https://images.unsplash.com/reserve/JjdWbOCTlemWMuvC0BeF_DSC_0867edit.jpg?crop=entropy&dpr=2&fit=crop&fm=jpg&h=750&ixjsv=2.1.0&ixlib=rb-0.3.5&q=50&w=1450");
 }
