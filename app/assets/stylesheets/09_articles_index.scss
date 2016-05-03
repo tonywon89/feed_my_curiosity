@@ -21,7 +21,7 @@ div.article-index {
     // -o-filter: grayscale(90%);
     // -ms-filter: grayscale(90%);
     //   filter: grayscale(90%);
-    transition: all 0.75s;
+    transition: all 0.4s;
     color: gray;
 
 
@@ -59,7 +59,9 @@ div.article-index {
       -o-filter: grayscale(0);
       -ms-filter: grayscale(0);
         filter: grayscale(0);
+        background-color:#E5FCCE;
         color: black;
+        cursor: pointer;
     }
   }
 
