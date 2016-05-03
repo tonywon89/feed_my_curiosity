@@ -210,7 +210,6 @@ $button-hover-green: #05A838;
   }
 
   .article-url {
-    $green: #38B769;
     font-size: 18px;
     align-self: center;
     border: 1px solid rgba(0, 0, 0, 0.5);
@@ -221,7 +220,7 @@ $button-hover-green: #05A838;
     opacity: 0.5;
     padding: 5px 30px;
     &:hover {
-      background-color: $green;
+      background-color:#8CD783;
 
     }
   }
