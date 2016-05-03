@@ -26,7 +26,6 @@ var Home = React.createClass({
           <h1 className="header-text">Feed My Curiosity</h1>
           {content}
         </header>
-
       </div>
     );
   }

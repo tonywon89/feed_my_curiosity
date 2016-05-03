@@ -2,6 +2,7 @@ var React = require('react');
 var ReactRouter = require('react-router');
 var Link = ReactRouter.Link;
 var Modal = require('react-modal');
+var classNames = require("classnames");
 
 var Sidebar = require("./sidebars/sidebar");
 var LoginForm = require("./user_forms/login_form");
@@ -120,13 +121,20 @@ var App = React.createClass({
 
   render: function () {
 
+    var onSplash = this.props.location.pathname === "/";
+    var appClass = classNames({
+      'app': true,
+      'on-splash': onSplash
+    });
+
+
     var errors = this.state.authErrors.map(function(error, i){
       return <li key={i}>{error.error_message}</li>;
     });
     var content;
     if (this.state.feedLoaded) {
       content = (
-        <div className="app">
+        <div className={appClass}>
           <Sidebar currentUser={this.state.currentUser} openLoginModal={this.openLoginModal}/>
 
           <div className="main">

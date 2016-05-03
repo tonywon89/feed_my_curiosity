@@ -23,39 +23,32 @@ $main-size: calc(100% - 50px);
   background-color: white;
   height: 100%;
   overflow-x: hidden;
+
+}
+
+.app.on-splash {
+  background-size: cover;
+    background-image: url("grass.jpg");
 }
 
 div.main {
-  // position: relative;
   margin-left: 50px;
-
-  // margin-left: -50px;
-  // margin-right: -50px;
-  // left: 51px;
-  padding-bottom: 102px;
-  // display: flex;
-  // flex-direction: column;
-  // align-items: center;
   transition: all 0.4s;
-  height: 100%;
-  // width: $main-size;
+  height: 100vh;
+
   overflow-x: auto;
   overflow-y: auto;
 
   .home {
-    // width: $main-size;
     width: 100%;
-    background-color: gray;
-    height: 100%;
-    // margin-left: -50px;
-    // margin-right: -50px;
+    height: 100vh;
   }
 }
 
 // Sidebar
 .sidebar {
   margin-top: 0;
-  height: 100%;
+  height: 100vh;
   width: 268px;
   position: fixed;
   background-color: $green;
@@ -134,14 +127,14 @@ div.main {
     display: block;
   }
   &:hover + .main {
-    margin-left: 268px;
-    margin-right: 3px;
+    margin-left: 245px;
+
   }
 }
 
 .sidebar.pinned + .main {
-  margin-left: 268px;;
-  margin-right: 3px;
+  margin-left: 245px;;
+
 }
 
 .sidebar-content {

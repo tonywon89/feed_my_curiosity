@@ -10,7 +10,7 @@ FeedMyCuriosity is a web application inspired by Feedly that will be built using
 
 - [x] New account creation, login, and guest/demo login
 - [ ] Smooth, bug-free navigation
-- [ ] Adequate seed data to demonstrate the site's features
+- [x] Adequate seed data to demonstrate the site's features
 - [ ] The minimally necessary features for a Feedly-inspired site: CRUD collections, displaying the feeds of the user, and providing feeds for the user to choose from
 - [x] Hosting on Heroku
 - [x] CSS styling that is satisfactorily visually appealing
