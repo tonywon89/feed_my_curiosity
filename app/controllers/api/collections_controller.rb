@@ -15,7 +15,7 @@ class Api::CollectionsController < ApplicationController
       render :show
     else
       @errors = ["Collection cannot be found"]
-      render "api/errors/errors", status: 500
+      render "api/errors/errors", status: 404
     end
   end
 
@@ -37,17 +37,16 @@ class Api::CollectionsController < ApplicationController
           render :show
         else
           @errors = @collection.errors.full_messages
-          render "api/errors/errors", status: 500
+          render "api/errors/errors", status: 422
         end
       end
     else
       @errors = ["You are not logged in"]
-      render "api/errors/errors", status: 500
+      render "api/errors/errors", status: 403
     end
   end
 
   def update
-
     @collection = Collection.find(params[:id])
     feed_to_add = params[:feed][:add]
     feed_to_remove = params[:feed][:remove]
@@ -62,7 +61,7 @@ class Api::CollectionsController < ApplicationController
       render :show
     else
       @errors = ["There is no selected feed"]
-      render "api/errors/errors", status: 500
+      render "api/errors/errors", status: 404
     end
   end
 
@@ -74,7 +73,7 @@ class Api::CollectionsController < ApplicationController
       render :show
     else
       @errors = ["Collection not found. Cannot delete"]
-      render "api/errors/errors", status: 500
+      render "api/errors/errors", status: 404
     end
   end
 

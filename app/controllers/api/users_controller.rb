@@ -16,7 +16,7 @@ class Api::UsersController < ApplicationController
       render :show
     else
       @errors = @user.errors.full_messages
-      render "api/errors/errors", status: 500
+      render "api/errors/errors", status: 422
     end
   end
 
@@ -28,7 +28,7 @@ class Api::UsersController < ApplicationController
       render :show
     else
       @errors = ["There is no such user to delete."]
-      render "api/errors/errors", status: 500
+      render "api/errors/errors", status: 404
     end
   end
 

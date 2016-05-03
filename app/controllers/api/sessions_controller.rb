@@ -10,7 +10,7 @@ class Api::SessionsController < ApplicationController
       render "api/users/show"
     else
       @errors = ["Invalid username or password"]
-      render "api/errors/errors", status: 500
+      render "api/errors/errors", status: 422
     end
   end
 
@@ -20,7 +20,7 @@ class Api::SessionsController < ApplicationController
       render json: {}
     else
       @errors = ["There is no logged in user to log out"]
-      render "api/errors/errors", status: 500
+      render "api/errors/errors", status: 404
     end
   end
 

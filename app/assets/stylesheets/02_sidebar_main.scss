@@ -28,6 +28,7 @@ $main-size: calc(100% - 50px);
 div.main {
   // position: relative;
   margin-left: 50px;
+
   // margin-left: -50px;
   // margin-right: -50px;
   // left: 51px;
@@ -84,6 +85,10 @@ div.main {
     .sidebar-user-info {
       display: block;
     }
+    body {
+      overflow-y: hidden;
+    }
+
   }
 
   .pin-btn {
@@ -129,12 +134,14 @@ div.main {
     display: block;
   }
   &:hover + .main {
-    margin-left: 268px;;
+    margin-left: 268px;
+    margin-right: 3px;
   }
 }
 
 .sidebar.pinned + .main {
   margin-left: 268px;;
+  margin-right: 3px;
 }
 
 .sidebar-content {

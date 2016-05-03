@@ -1,5 +1,6 @@
 var React = require('react');
 var UserClientActions = require('../../actions/user/user_client_actions');
+var ErrorServerActions = require("../../actions/error/error_server_actions");
 var UserStore = require("../../stores/user_store");
 
 var SignUpForm = React.createClass({
@@ -18,12 +19,21 @@ var SignUpForm = React.createClass({
   handleSubmit: function (event) {
     event.preventDefault();
 
-    var user = {
-      username: this.state.username,
-      password: this.state.password
-    };
+    var error;
+    if (this.state.username === "") {
+      error = [{error_message: "Username cannot be blank"}];
+    } else if (this.state.password.length < 6) {
+      error = [{error_message: "Password is too short (minimum is 6 characters)"}];
+      ErrorServerActions.receiveUserErrors(error);
+   } else {
+      var user = {
+        username: this.state.username,
+        password: this.state.password
+      };
 
-    UserClientActions.createUser(user);
+      UserClientActions.createUser(user);
+    }
+
   },
 
   render: function () {
