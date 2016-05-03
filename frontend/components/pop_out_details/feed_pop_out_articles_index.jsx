@@ -8,7 +8,7 @@ var FeedPopOutArticlesIndex = React.createClass({
 
     var displayEntries = [];
     for (var i = 0; i < 5; i++) {
-      displayEntries.push(<FeedPopOutArticleItem key={i} entry={entries[i]}/>);
+      displayEntries.push(<FeedPopOutArticleItem key={i} entry={entries[i]} displayPopOutDetail={this.props.displayPopOutDetail}/>);
     }
 
     return (

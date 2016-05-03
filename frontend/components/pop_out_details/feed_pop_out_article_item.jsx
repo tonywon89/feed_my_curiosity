@@ -3,6 +3,12 @@ var React = require("react");
 var ParseHTML = require("../../mixins/parse_html_mixin");
 
 var FeedPopOutArticleItem = React.createClass({
+
+  handlePopOutClick: function (event) {
+    var popOutItem = {type: "article", content: this.props.entry};
+    this.props.displayPopOutDetail(popOutItem);
+  },
+
   render: function () {
     var entry = this.props.entry;
     var imageUrl = ParseHTML.getImageUrl(entry);
@@ -12,7 +18,7 @@ var FeedPopOutArticleItem = React.createClass({
 
     var content = ParseHTML.getContent(entry);
     return (
-      <li className="feed-article-item">
+      <li className="feed-article-item" onClick={this.handlePopOutClick}>
         <div className="article-image">
           {image}
         </div>
