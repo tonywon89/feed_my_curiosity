@@ -1,6 +1,7 @@
 var React = require("react");
 
 var FeedPopOutHeader = require("./feed_pop_out_header");
+var FeedPopOutArticlesIndex = require("./feed_pop_out_articles_index");
 
 var FeedPopOutDetail = React.createClass({
   render: function () {
@@ -9,6 +10,7 @@ var FeedPopOutDetail = React.createClass({
         <FeedPopOutHeader feed={this.props.feed}
                           closePopOutDetail={this.props.closePopOutDetail}
                           displayAddFeed={this.props.displayAddFeed}/>
+        <FeedPopOutArticlesIndex articles={this.props.feed.entries}/>
       </div>
     );
   }

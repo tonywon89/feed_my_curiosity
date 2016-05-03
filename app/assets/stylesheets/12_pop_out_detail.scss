@@ -27,14 +27,15 @@ $button-hover-green: #05A838;
   flex-direction: column;
   padding-left: 30px;
   padding-top: 20px;
-  width: 900px;
+  width: 800px;
   height: 100%;
-  right: -900px;
+  right: -800px;
   top: 0px;
   position: fixed;
   min-height: initial;
   background-color: rgb(255, 255, 255);
   border-left: 1px solid gray;
+  overflow-y: auto;
 }
 
 .pop-out-detail.shown {
@@ -47,7 +48,7 @@ $button-hover-green: #05A838;
   padding: 10px;
   background-color: white;
   position: fixed;
-  right: -940px;
+  right: -840px;
   margin: 0;
   border-left: 1px solid gray;
 
@@ -61,7 +62,7 @@ $button-hover-green: #05A838;
 }
 
 .pop-out-close-icon.shown {
-  right: 930px;
+  right: 830px;
 }
 
 .feed-pop-out-detail {
