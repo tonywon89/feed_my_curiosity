@@ -10,7 +10,7 @@ var FeedPopOutDetail = React.createClass({
         <FeedPopOutHeader feed={this.props.feed}
                           closePopOutDetail={this.props.closePopOutDetail}
                           displayAddFeed={this.props.displayAddFeed}/>
-        <FeedPopOutArticlesIndex articles={this.props.feed.entries}/>
+        <FeedPopOutArticlesIndex entries={this.props.feed.entries}/>
       </div>
     );
   }

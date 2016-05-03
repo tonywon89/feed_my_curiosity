@@ -119,3 +119,28 @@ $button-hover-green: #05A838;
     }
   }
 }
+
+.feed-pop-out-article-index {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 30px;
+}
+
+.feed-article-item {
+  display: flex;
+  width: 600px;
+  border: 1px solid red;
+  padding: 10px;
+  margin: 10px;
+  div {
+    min-width: 200px;
+    min-height: 100px;
+    max-width: 200px;
+    max-height: 100px;
+    display: flex;
+    img {
+      object-fit: contain;
+    }
+  }
+}
