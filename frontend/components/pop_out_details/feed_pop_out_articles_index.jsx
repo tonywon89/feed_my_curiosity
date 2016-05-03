@@ -4,7 +4,7 @@ var FeedPopOutArticleItem = require("./feed_pop_out_article_item");
 
 var FeedPopOutArticlesIndex = React.createClass({
   render: function () {
-    var entries = this.props.entries;
+    var entries = this.props.feed.entries;
 
     var displayEntries = [];
     for (var i = 0; i < 5; i++) {
@@ -17,6 +17,7 @@ var FeedPopOutArticlesIndex = React.createClass({
         <ul>
           {displayEntries}
         </ul>
+
       </div>
     );
   }
