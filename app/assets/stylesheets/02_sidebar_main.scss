@@ -39,7 +39,7 @@ div.main {
   transition: all 0.4s;
   height: 100%;
   // width: $main-size;
-  overflow-x: scroll;
+  overflow-x: auto;
   overflow-y: auto;
 
   .home {

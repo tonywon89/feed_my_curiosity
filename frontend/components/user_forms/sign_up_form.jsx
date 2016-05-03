@@ -22,6 +22,7 @@ var SignUpForm = React.createClass({
     var error;
     if (this.state.username === "") {
       error = [{error_message: "Username cannot be blank"}];
+      ErrorServerActions.receiveUserErrors(error);
     } else if (this.state.password.length < 6) {
       error = [{error_message: "Password is too short (minimum is 6 characters)"}];
       ErrorServerActions.receiveUserErrors(error);

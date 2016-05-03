@@ -99,19 +99,23 @@ var App = React.createClass({
   },
 
   displayAddFeed: function (feedId) {
+    $('body').css("overflow", "hidden");
     this.setState({ addFeedDisplayed: true, toAddFeedId: feedId });
   },
 
   closeAddFeed: function () {
+    $('body').css("overflow", "auto");
     this.setState( { addFeedDisplayed: false, toAddFeedId: undefined });
   },
 
   displayPopOutDetail: function (item) {
+    $('body').css("overflow", "hidden");
     this.setState({ popOutDetailDisplayed: true, popOutItem: item });
   },
 
   closePopOutDetail: function () {
     this.setState({ popOutDetailDisplayed: false, popOutItem: undefined });
+    $('body').css("overflow", "auto");
   },
 
   render: function () {
