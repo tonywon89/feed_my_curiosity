@@ -10,13 +10,15 @@ var ArticlePopOutDetail = React.createClass({
     } else {
       content = entry.summary;
     }
+    var clean = DOMPurify.sanitize(content);
+
     return (
       <div className="article-pop-out-detail">
         <div className="article-pop-out-header">
           <h1 className="article-pop-out-header">{entry.title}</h1>
           <h6>By {entry.author} / Published: {datePublished}</h6>
         </div>
-        <div className="article-content" dangerouslySetInnerHTML={{ __html: content }} />
+        <div className="article-content" dangerouslySetInnerHTML={{ __html: clean }} />
         <a className="article-url" href={entry.url}>Visit Website</a>
       </div>
     );
