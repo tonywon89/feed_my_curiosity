@@ -24,7 +24,10 @@ var FeedDetail = React.createClass({
     if (feed) {
       content = (
         <div className="feed-detail">
-          <h1><a href={feed.url}>{feed.title}</a></h1>
+          <div className="feed-detail-info">
+            <h1><a href={feed.url}>{feed.title}</a></h1>
+            <a href={feed.url} className="article-url">Visit Website</a>
+          </div>
           <ArticleIndex feed={feed} displayPopOutDetail={this.props.displayPopOutDetail} />
         </div>
       );

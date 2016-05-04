@@ -6,19 +6,41 @@ $green: #38B769;
   flex-direction: column;
   // align-items: center;
 
-  h1 {
-    align-self: flex-start;
-    margin-top: 30px;
-    margin-left: 50px;
-    a {
-      padding: 0;
-      color: $green;
-      font-size: 30px;
-      text-decoration: none;
+  .feed-detail-info {
+    display: flex;
+    h1 {
+      align-self: flex-start;
+      margin-top: 30px;
+      margin-left: 50px;
+      a {
+        padding: 0;
+        color: $green;
+        font-size: 30px;
+        text-decoration: none;
+      }
+
+      &:hover {
+        text-decoration: underline;
+      }
     }
 
-    &:hover {
-      text-decoration: underline;
+    .article-url {
+      font-size: 15px;
+      align-self: center;
+      border: 1px solid rgba(0, 0, 0, 0.5);
+      border-radius: 2px;
+      color: black;
+      text-decoration: none;
+      transition: all 0.3s;
+      opacity: 0.5;
+      padding: 5px 30px;
+      margin-top: 32px;
+      margin-left: 20px;
+      &:hover {
+        background-color:#8CD783;
+
+      }
     }
   }
+
 }
