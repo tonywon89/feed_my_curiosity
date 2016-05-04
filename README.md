@@ -237,9 +237,9 @@ FeedMyCuriosity is a web application inspired by Feedly that will be built using
 **Objective** Finish everything up and make it presentable as an MVP before moving on to the other features.
 
 - [ ] write production README
-- [ ] Style Splash Page
+- [x] Style Splash Page
 - [ ] deploy to Heroku and make sure everything is working
-- [ ] finalize styling touches
+- [x] finalize styling touches
 - [x] add favicon
 - [ ] buy a domain name, and set it up
 - [ ] upgrade Heroku account
