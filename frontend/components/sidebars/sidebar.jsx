@@ -41,10 +41,10 @@ var Sidebar = React.createClass({
     var sidebarClass = "sidebar";
 
     if (this.state.pinned){
-      pinBtnContent = "Unpin";
+      pinBtnContent = "Don't Keep Open";
       sidebarClass = "sidebar pinned";
     } else {
-      pinBtnContent = "Pin";
+      pinBtnContent = "Keep Open";
     }
     var sidebarContent;
     if (this.props.currentUser) {

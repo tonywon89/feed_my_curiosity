@@ -4,7 +4,7 @@ var ParseHTML = require("../../mixins/parse_html_mixin");
 
 var ArticleIndexItem = React.createClass({
   getInitialState: function () {
-    return { isSaved: false };
+    return { isSaved: false};
   },
 
   handlePopOutClick: function (event) {
@@ -13,7 +13,7 @@ var ArticleIndexItem = React.createClass({
   },
 
   handleSaveClick: function (event) {
-    event.preventDefault();
+    alert("Hello");
   },
 
   render: function () {
@@ -27,21 +27,23 @@ var ArticleIndexItem = React.createClass({
 
     var saveBtn;
     if (this.state.isSaved) {
-      saveBtn = <button className="unsave-btn" onClick={this.handleSaveClick}>Unsave</button>;
+      saveBtn = <div className="unsave-btn" onClick={this.handleSaveClick}>Unsave</div>;
     } else {
-      saveBtn = <button className="save-btn" onClick={this.handleSaveClick}>Save</button>;
+      saveBtn = <div className="save-btn" onClick={this.handleSaveClick}>Save</div>;
     }
 
     return (
-      <div className="article-index-item" onClick={this.handlePopOutClick}>
-        <div className="image-wrapper">
-          {image}
-        </div>
-        <div className="wrapper">
-          <h4>{entry.title}</h4>
-        </div>
-        <div className="wrapper">
-          <p>{content}</p>
+      <div className="article-index-item" >
+        <div className="article-details" onClick={this.handlePopOutClick}>
+          <div className="image-wrapper">
+            {image}
+          </div>
+          <div className="header-wrapper">
+            <h4>{entry.title}</h4>
+          </div>
+          <div className="wrapper">
+            <p className="article-content">{content}</p>
+          </div>
         </div>
         {saveBtn}
       </div>

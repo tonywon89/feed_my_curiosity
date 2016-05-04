@@ -24,7 +24,6 @@ div.article-index {
     transition: all 0.4s;
     color: gray;
 
-
     .wrapper {
       -webkit-column-width: 150px;
       column-width: 150px;
@@ -32,7 +31,14 @@ div.article-index {
       overflow: hidden;
 
     }
-    h4, p {
+
+    .header-wrapper {
+      -webkit-column-width: 150px;
+      column-width: 150px;
+      height: 50px;
+      overflow: hidden;
+    }
+    h4, .article-content {
       min-height: 50px;
       max-height: 80px;
       padding-left: 10px;
@@ -47,19 +53,19 @@ div.article-index {
       min-height: 30px;
       font-weight: bold;
     }
-    p {
+    .article-content {
       font-size: 12px;
-      margin-top: 0;
+      margin-top: 5px;;
 
     }
 
     &:hover {
       border: 1px solid rgba(0, 0, 0, 1);
-      -webkit-filter: grayscale(0);
-      -moz-filter: grayscale(0);
-      -o-filter: grayscale(0);
-      -ms-filter: grayscale(0);
-        filter: grayscale(0);
+      // -webkit-filter: grayscale(0);
+      // -moz-filter: grayscale(0);
+      // -o-filter: grayscale(0);
+      // -ms-filter: grayscale(0);
+      //   filter: grayscale(0);
         background-color:#E5FCCE;
         color: black;
         cursor: pointer;
@@ -76,14 +82,45 @@ div.image-wrapper {
 
 }
 
+.article-details {
+  height: 320px;
+  padding-bottom: 10px;
+}
+
 .save-btn {
-  padding: 1px;
+  text-align: center;
+  width: 100%;
+  border-top: 1px solid gray;
+  // margin-top: 10px;
+  padding-top: 6px;
+  height: 100%;
+  color: black;
+  padding-left: 0;
+  padding-right: 0;
   font-size: 12px;
-  background-color: green;
+  opacity: 0.5;
+
+  &:hover {
+    opacity: 1;
+    background-color: #68BD13;
+  }
 }
 
 .unsave-btn {
-  padding: 1px;
+  text-align: center;
+  width: 100%;
+  border-top: 1px solid gray;
+  // margin-top: 10px;
+  padding-top: 6px;
+  height: 100%;
+  color: black;
+  padding-left: 0;
+  padding-right: 0;
   font-size: 12px;
-  background-color: red;
+  opacity: 0.5;
+
+  &:hover {
+    opacity: 1;
+    background-color: #FA7A7A;
+  }
 }
