@@ -5,11 +5,11 @@ var SavedArticleClientActions = {
     SavedArticleApiUtil.fetchArticles();
   },
 
-  createArticle: function (article) {
+  saveArticle: function (article) {
     SavedArticleApiUtil.createArticle(article);
   },
 
-  deleteArticle: function (id) {
+  unsaveArticle: function (id) {
     SavedArticleApiUtil.deleteArticle(id);
   }
 };

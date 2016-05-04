@@ -59,6 +59,8 @@ var App = React.createClass({
   componentDidMount: function () {
     this.listener = FeedStore.addListener(this._onFeedLoaded);
     FeedClientActions.fetchFeeds();
+
+
   },
 
   componentWillUnmount: function () {

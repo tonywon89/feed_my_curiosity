@@ -1,6 +1,7 @@
 var React = require('react');
 var UserClientActions = require('../../actions/user/user_client_actions');
 var UserStore = require("../../stores/user_store");
+var SavedArticleClientActions = require("../../actions/saved_article/saved_article_client_actions");
 
 var LoginForm = React.createClass({
   getInitialState: function () {
@@ -24,6 +25,7 @@ var LoginForm = React.createClass({
     };
 
     UserClientActions.login(user);
+    // SavedArticleClientActions.fetchArticles();
   },
 
   render: function () {

@@ -1,4 +1,5 @@
 var React = require("react");
+var hashHistory = require("react-router").hashHistory;
 
 var ArticleStore = require("../../stores/article_store");
 var SavedArticleClientActions = require("../../actions/saved_article/saved_article_client_actions");
@@ -16,6 +17,18 @@ var SavedArticleIndex = React.createClass({
 
   componentWillUnmount: function () {
     this.listener.remove();
+  },
+
+  componentWillMount: function () {
+    if (!this.props.currentUser) {
+      hashHistory.push("/");
+    }
+  },
+
+  componentWillReceiveProps: function (newProps) {
+    if (!newProps.currentUser) {
+      hashHistory.push("/");
+    }
   },
 
   _onChange: function () {

@@ -1,10 +1,27 @@
 var React = require("react");
 
 var ParseHTML = require("../../mixins/parse_html_mixin");
+var SavedArticleClientActions = require("../../actions/saved_article/saved_article_client_actions");
+var ArticleStore = require("../../stores/article_store");
 
 var ArticleIndexItem = React.createClass({
+  isArticleSaved: function (article, savedArticles) {
+    if (savedArticles) {
+      for (var i = 0; i < savedArticles.length; i++) {
+        if (article.url === savedArticles[i].url) {
+          return true;
+        }
+      }
+    }
+    return false;
+  },
+
   getInitialState: function () {
-    return { isSaved: false};
+    return { isSaved: this.isArticleSaved(this.props.entry, this.props.savedArticles)};
+  },
+
+  componentWillReceiveProps: function (newProps) {
+    this.setState({ isSaved: this.isArticleSaved(newProps.entry, newProps.savedArticles) });
   },
 
   handlePopOutClick: function (event) {
@@ -13,7 +30,19 @@ var ArticleIndexItem = React.createClass({
   },
 
   handleSaveClick: function (event) {
-    alert("Hello");
+    var article = this.props.entry;
+
+    if (this.state.isSaved) {
+
+      for (var i = 0; i < this.props.savedArticles.length; i++) {
+        if (article.url === this.props.savedArticles[i].url) {
+          article.id = this.props.savedArticles[i].id
+        }
+      }
+      SavedArticleClientActions.unsaveArticle(article.id);
+    } else {
+      SavedArticleClientActions.saveArticle(article);
+    }
   },
 
   render: function () {
@@ -29,7 +58,7 @@ var ArticleIndexItem = React.createClass({
     if (this.state.isSaved) {
       saveBtn = <div className="unsave-btn" onClick={this.handleSaveClick}>Unsave</div>;
     } else {
-      saveBtn = <div className="save-btn" onClick={this.handleSaveClick}>Save</div>;
+      saveBtn = <div className="save-btn" onClick={this.handleSaveClick}>Save For Later</div>;
     }
 
     return (
