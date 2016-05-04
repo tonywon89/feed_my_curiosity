@@ -19,7 +19,10 @@ var FeedIndexItem = React.createClass({
       <div className="feed-index-item">
         <a className="feed-index-item-title" onClick={this.handlePopOutClick}>{feed.title}</a>
         <p className="feed-index-item-description" onClick={this.handlePopOutClick}>{feed.description}</p>
-        <button onClick={this.handleAddClick} value={feed.id} className="feed-index-add-btn">Add Feed</button>
+        <div className="feed-index-item-btns">
+          <button onClick={this.handleAddClick} value={feed.id} className="feed-index-add-btn">Add Feed</button>
+          <button onClick={this.handlePopOutClick} className="feed-index-detail-btn">Details</button>
+        </div>
         <FeedIndexItemArticle entry={feed.entries[0]} displayPopOutDetail={this.props.displayPopOutDetail} />
       </div>
     );

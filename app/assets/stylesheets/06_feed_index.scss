@@ -67,8 +67,12 @@ div.feed-index-item {
     }
   }
 
+  .feed-index-item-btns {
+    display: flex;
+  }
+
   .feed-index-add-btn {
-    width: 40%;
+    width: 60%;
     margin: 10px;
     font-size: 12px;
     font: 5px;
@@ -80,6 +84,21 @@ div.feed-index-item {
 
     &:hover {
       background-color: #B3DABF;
+    }
+  }
+
+  .feed-index-detail-btn {
+    width: 60px;
+    margin: 10px;
+    font-size: 12px;
+    font: 5px;
+    padding: 5px;
+    border: 1px solid $gray;
+    color: gray;
+    background-color: white;
+    font-weight: bold;
+    &:hover {
+      background-color: #DDD9D9;
     }
   }
 
