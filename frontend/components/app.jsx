@@ -15,6 +15,8 @@ var UserClientActions = require("../actions/user/user_client_actions");
 var FeedClientActions = require("../actions/feed/feed_client_actions");
 var FeedStore = require("../stores/feed_store");
 
+window.SavedArticleClientActions = require("../actions/saved_article/saved_article_client_actions");
+window.ArticleStore = require("../stores/article_store.js");
 
 var modalStyle = {
   overlay: {
