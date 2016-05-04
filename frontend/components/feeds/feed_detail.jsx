@@ -1,9 +1,22 @@
 var React = require("react");
+var hashHistory= require("react-router").hashHistory;
 
 var FeedStore = require("../../stores/feed_store");
 var ArticleIndex = require("../articles/article_index");
 
 var FeedDetail = React.createClass({
+
+  componentWillMount: function () {
+    if (!this.props.currentUser) {
+      hashHistory.push("/");
+    }
+  },
+
+  componentWillReceiveProps: function (newProps) {
+    if (!newProps.currentUser) {
+      hashHistory.push("/");
+    }
+  },
   render: function () {
     var feedId = this.props.feed ? this.props.feed.id : this.props.params.feedId;
     var feed = FeedStore.find(feedId);

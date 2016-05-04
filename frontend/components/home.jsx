@@ -28,7 +28,7 @@ var Home = React.createClass({
       content = (
         <div className="splash-content">
           <div className="info">
-            A place to store, read, and organize the content that you are curious about.
+            A place to store, read, and organize the content you are curious about.
           </div>
 
           <p className="quote">"{quoteString}"</p>
