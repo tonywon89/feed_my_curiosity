@@ -1,5 +1,6 @@
 var ErrorServerActions = require("../actions/error/error_server_actions");
 var SavedArticleServerActions = require("../actions/saved_article/saved_article_server_actions");
+
 var SavedArticleApiUtil = {
   fetchArticles: function () {
     $.ajax({

@@ -16,6 +16,7 @@ var FeedIndex = require("./components/feeds/feed_index");
 var CollectionIndex = require("./components/collections/collection_index");
 var CollectionDetail = require("./components/collections/collection_detail");
 var FeedDetail = require("./components/feeds/feed_detail");
+var SavedArticleIndex = require("./components/saved_articles/saved_article_index");
 
 var routes = (
   <Route path="/" component={App}>
@@ -24,6 +25,7 @@ var routes = (
     <Route path="collections" component={CollectionIndex} />
     <Route path="collections/:collectionId" component={CollectionDetail}/>
     <Route path="feeds/:feedId" component={FeedDetail} />
+    <Route path="saved_articles" component={SavedArticleIndex} />
   </Route>
 );
 
