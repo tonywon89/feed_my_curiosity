@@ -2,7 +2,7 @@
 
 [Heroku link][heroku] FeedMyCuriosity
 
-[heroku]: http://feedmycuriosity.herokuapp.com/
+[heroku]: http://www.feedmycuriosity.site/
 
 ## Minimum Viable Product
 
@@ -238,14 +238,15 @@ FeedMyCuriosity is a web application inspired by Feedly that will be built using
 
 - [ ] write production README
 - [x] Style Splash Page
-- [ ] deploy to Heroku and make sure everything is working
+- [x] deploy to Heroku and make sure everything is working
 - [x] finalize styling touches
 - [x] add favicon
-- [ ] buy a domain name, and set it up
+- [x] buy a domain name, and set it up
 - [ ] upgrade Heroku account
 
 ### Bonus (TBD)
 
+- [ ] can save articles
 - [ ] FeedIndexItem has number of readers, number of articles/Week
 - [ ] FeedIndexItem photo is black and white initially, then fades into color
 - [ ] Modals can have multiple tabs
