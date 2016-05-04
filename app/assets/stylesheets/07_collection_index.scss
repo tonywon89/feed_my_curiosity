@@ -8,21 +8,6 @@ $button-hover-green: #05A838;
   flex-direction: column;
   align-items: center;
   padding-bottom: 30px;
-  .sidebar-add-content {
-    color: black;
-    font-size: 10px;
-    box-shadow: 0 0 0 white;
-    background-color: Transparent;
-    border: 0.5px solid black;
-    padding: 10px;
-    width: 75%;
-    opacity: 0.5;
-
-    &:hover {
-      opacity: 1;
-      background-color: #8CD783;
-    }
-  }
 }
 
 .collection-header {
@@ -35,12 +20,10 @@ $button-hover-green: #05A838;
 }
 
 .collection-index {
-  // margin-right: 100px;
   margin-top: 30px;
   padding: 0;
   display: flex;
   flex-wrap: wrap;
-  // justify-content: center;
 
   .collection-index-item {
     margin: 20px;
@@ -129,6 +112,8 @@ $button-hover-green: #05A838;
 
 .collection-create-form {
   form {
+    display: flex;
+    flex-direction: column;
     input[type="text"] {
       font-size: 12px;
       border-radius: 0;
@@ -149,6 +134,22 @@ $button-hover-green: #05A838;
 
       &:hover {
         background-color: $button-hover-green;
+      }
+    }
+
+
+    .sidebar-add-content-collection-index {
+      color: black;
+      font-size: 10px;
+      box-shadow: 0 0 0 white;
+      background-color: white;
+      border: 0.5px solid black;
+      padding: 5px 20px;
+      opacity: 0.5;
+      margin: 0;
+      margin-left: 30px;
+      &:hover {
+        background-color: #8CD783;
       }
     }
   }

@@ -41,10 +41,6 @@ var CollectionIndex = React.createClass({
     hashHistory.push("/");
   },
 
-  handleAddContentClick: function () {
-    hashHistory.push("/feeds");
-  },
-
   render: function () {
     var content;
     var currentUser = this.props.currentUser;
@@ -66,10 +62,9 @@ var CollectionIndex = React.createClass({
           <div className="collection-index">
             {collections}
             <NewCollectionForm />
+
           </div>
-          <button className="sidebar-add-content" onClick={this.handleAddContentClick}>
-            Add Content
-          </button>
+
         </div>
       );
     }

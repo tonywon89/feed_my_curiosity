@@ -1,4 +1,5 @@
 var React = require("react");
+var hashHistory = require("react-router").hashHistory;
 var CollectionClientActions = require("../../actions/collection/collection_client_actions");
 var CollectionStore = require("../../stores/collection_store");
 
@@ -7,17 +8,17 @@ var NewCollectionForm = React.createClass({
     return { name: "", errors: [] };
   },
 
-  componentDidMount: function () {
-    this.listener = CollectionStore.addListener(this._onErrors);
-  },
-
-  componentWillUnmmount: function () {
-    this.listener.remove();
-  },
-
-  _onErrors: function () {
-    this.setState({errors: CollectionStore.errors() });
-  },
+  // componentDidMount: function () {
+  //   this.listener = CollectionStore.addListener(this._onErrors);
+  // },
+  //
+  // componentWillUnmmount: function () {
+  //   this.listener.remove();
+  // },
+  //
+  // _onErrors: function () {
+  //   this.setState({errors: CollectionStore.errors() });
+  // },
 
   nameChange: function (event) {
     this.setState({ name: event.target.value });
@@ -28,6 +29,11 @@ var NewCollectionForm = React.createClass({
     var collection = { name: this.state.name };
     CollectionClientActions.createCollection(collection);
     this.setState({ name: "" });
+  },
+
+  handleAddContentClick: function (event) {
+    event.preventDefault();
+    hashHistory.push("/feeds");
   },
 
   render: function () {
@@ -44,8 +50,14 @@ var NewCollectionForm = React.createClass({
                  placeholder="Name of collection"
                  onChange={this.nameChange}
                  value={this.state.name}/>
-          <input  className="create-collection-btn" type="submit" value="Create Collection" />
+          <div>
+            <input  className="create-collection-btn" type="submit" value="Create Collection" />
+            <button className="sidebar-add-content-collection-index" onClick={this.handleAddContentClick}>
+              Add Content
+            </button>
+          </div>
         </form>
+
       </div>
     );
   }
