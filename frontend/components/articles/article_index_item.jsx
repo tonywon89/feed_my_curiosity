@@ -31,12 +31,11 @@ var ArticleIndexItem = React.createClass({
 
   handleSaveClick: function (event) {
     var article = this.props.entry;
-
     if (this.state.isSaved) {
 
       for (var i = 0; i < this.props.savedArticles.length; i++) {
         if (article.url === this.props.savedArticles[i].url) {
-          article.id = this.props.savedArticles[i].id
+          article.id = this.props.savedArticles[i].id;
         }
       }
       SavedArticleClientActions.unsaveArticle(article.id);

@@ -57,7 +57,8 @@ class Api::ArticlesController < ApplicationController
       :published,
       :entry_id,
       :summary,
-      :author,
+      :content,
+      :author
     )
   end
 
