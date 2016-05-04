@@ -42,7 +42,11 @@ var ArticleIndex = React.createClass({
       );
     } else if (this.props.entries) {
       entries = this.props.entries.map(function(entry, i) {
-        return <ArticleIndexItem key={i} entry={entry} displayPopOutDetail={self.props.displayPopOutDetail} />;
+        return <ArticleIndexItem
+                  key={i} 
+                  entry={entry}
+                  displayPopOutDetail={self.props.displayPopOutDetail}
+                  savedArticles={self.state.savedArticles} />;
       });
       content = (
         <div className="article-index">
