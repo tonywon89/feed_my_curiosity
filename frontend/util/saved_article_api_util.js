@@ -12,6 +12,20 @@ var SavedArticleApiUtil = {
         ErrorServerActions.receiveCollectionErrors(errors.responseJSON);
       }
     });
+  },
+
+  createArticle: function (article) {
+    $.ajax({
+      type: "POST",
+      url: "api/articles",
+      data: { article: article},
+      success: function (savedArticle) {
+        SavedArticleServerActions.receiveSavedArticle(savedArticle);
+      },
+      error: function (errors) {
+        ErrorServerActions.receiveCollectionErrors(errors.responseJSON);
+      }
+    });
   }
 };
 

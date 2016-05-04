@@ -7,6 +7,13 @@ var SavedArticleServerActions = {
       actionType: SavedArticleConstants.SAVED_ARTICLES_RECEIVED,
       articles: articles
     });
+  },
+
+  receiveSavedArticle: function (article) {
+    AppDispatcher.dispatch({
+      actionType: SavedArticleConstants.ARTICLE_RECEIVED,
+      article: article
+    });
   }
 };
 
