@@ -13,7 +13,7 @@ div.article-index {
     margin: 30px;
 
     width: 270px;
-    height: 320px;
+    height: 350px;
     border: 1px solid rgba(0, 0, 0, 0.3);
 
     // -webkit-filter: grayscale(90%);
@@ -28,13 +28,13 @@ div.article-index {
     .wrapper {
       -webkit-column-width: 150px;
       column-width: 150px;
-      height: 100%;
+      height: 80px;
       overflow: hidden;
 
     }
     h4, p {
       min-height: 50px;
-      max-height: 100px;
+      max-height: 80px;
       padding-left: 10px;
       padding-right: 10px;
       margin-top: 10px;
@@ -44,6 +44,7 @@ div.article-index {
     }
 
     h4 {
+      min-height: 30px;
       font-weight: bold;
     }
     p {
@@ -73,4 +74,16 @@ div.image-wrapper {
   border: 0;
   overflow: hidden;
 
+}
+
+.save-btn {
+  padding: 1px;
+  font-size: 12px;
+  background-color: green;
+}
+
+.unsave-btn {
+  padding: 1px;
+  font-size: 12px;
+  background-color: red;
 }

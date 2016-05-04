@@ -17,13 +17,22 @@ var ParseHTMLMixin = {
       imageUrl = entry.summary.match(imgRegex);
 
       if (imageUrl) {
-        imageUrl = imageUrl[1];
+
+        if (imageUrl[1].indexOf("http://feeds.feedburner.com/") === -1) {
+          imageUrl = imageUrl[1];
+        } else {
+          imageUrl = undefined;
+        }
       } else {
         if (entry.content) {
           imageUrl = entry.content.match(imgRegex);
 
           if (imageUrl) {
-            imageUrl = imageUrl[1];
+            if (imageUrl[1].indexOf("http://feeds.feedburner.com/") === -1) {
+              imageUrl = imageUrl[1];
+            } else {
+              imageUrl = undefined;
+            }
           }
         }
       }
@@ -32,7 +41,11 @@ var ParseHTMLMixin = {
         imageUrl = entry.content.match(imgRegex);
 
         if (imageUrl) {
-          imageUrl = imageUrl[1];
+          if (imageUrl[1].indexOf("http://feeds.feedburner.com/") === -1) {
+            imageUrl = imageUrl[1];
+          } else {
+            imageUrl = undefined;
+          }
         }
       }
     }

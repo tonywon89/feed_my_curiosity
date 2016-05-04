@@ -26,7 +26,7 @@ var SavedArticleIndex = React.createClass({
     return (
       <div className="saved-article-index">
         <h1>SAVED ARTICLES</h1>
-        <ArticleIndex entries={this.state.articles} />
+        <ArticleIndex entries={this.state.articles} displayPopOutDetail={this.props.displayPopOutDetail} />
       </div>
     );
   }
