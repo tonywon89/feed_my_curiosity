@@ -14,6 +14,13 @@ var SavedArticleServerActions = {
       actionType: SavedArticleConstants.ARTICLE_RECEIVED,
       article: article
     });
+  },
+
+  removeSavedArticle: function (article) {
+    AppDispatcher.dispatch({
+      actionType: SavedArticleConstants.ARTICLE_DESTROYED,
+      article: article
+    });
   }
 };
 

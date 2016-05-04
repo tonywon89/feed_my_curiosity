@@ -7,6 +7,10 @@ var SavedArticleClientActions = {
 
   createArticle: function (article) {
     SavedArticleApiUtil.createArticle(article);
+  },
+
+  deleteArticle: function (id) {
+    SavedArticleApiUtil.deleteArticle(id);
   }
 };
 

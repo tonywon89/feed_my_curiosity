@@ -19,6 +19,11 @@ var updateArticle = function (article) {
   ArticleStore.__emitChange();
 };
 
+var destroyArticle = function (article) {
+  delete _articles[article.id];
+  ArticleStore.__emitChange();
+};
+
 ArticleStore.all = function () {
   return Object.keys(_articles).map(function(id) {
     return _articles[id];
@@ -36,6 +41,9 @@ ArticleStore.__onDispatch = function (payload) {
       break;
     case SavedArticleConstants.ARTICLE_RECEIVED:
       updateArticle(payload.article);
+      break;
+    case SavedArticleConstants.ARTICLE_DESTROYED:
+      destroyArticle(payload.article);
       break;
   }
 };

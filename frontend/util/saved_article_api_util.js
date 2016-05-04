@@ -26,6 +26,19 @@ var SavedArticleApiUtil = {
         ErrorServerActions.receiveCollectionErrors(errors.responseJSON);
       }
     });
+  },
+
+  deleteArticle: function (id) {
+    $.ajax({
+      type: "DELETE",
+      url: "api/articles/" + id.toString(),
+      success: function (deletedArticle) {
+        SavedArticleServerActions.removeSavedArticle(deletedArticle);
+      },
+      error: function (errors) {
+        ErrorServerActions.receiveCollectionErrors(errors.responseJSON);
+      }
+    });
   }
 };
 
