@@ -96,7 +96,8 @@ $button-hover-green: #05A838;
 
 .add-feed-collection {
   padding: 10px;
-
+  display: flex;
+  justify-content: space-between;
   .check-icon, .checkbox-icon, .plus-icon {
     padding: 0 10px;
   }
@@ -104,6 +105,10 @@ $button-hover-green: #05A838;
   &:hover {
     cursor: pointer;
     background-color: rgba(204, 204, 204, 0.5);
+  }
+
+  p {
+    margin: 0;
   }
 }
 
@@ -113,7 +118,15 @@ $button-hover-green: #05A838;
 
 .new-collection {
   color: gray;
+  padding: 10px;
+  .plus-icon {
+    padding: 5px 10px;
+  }
 
+  &:hover {
+    cursor: pointer;
+    background-color: rgba(204, 204, 204, 0.5);
+  }
   &:hover {
     color: black;
   }

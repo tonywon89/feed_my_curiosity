@@ -30,17 +30,21 @@ var AddFeedCollection = React.createClass({
       'has-feed': this.state.hasFeed
     });
 
-    var icon;
+    var icon, addedTag;
     if (this.state.hasFeed) {
       icon = <i className="fa fa-check-square-o check-icon"></i>;
+      addedTag = <p>Added</p>;
     } else {
       icon = <i className="fa fa-square-o checkbox-icon"></i>;
     }
 
     return (
       <li className={hasFeedClass} onClick={this.handleClick}>
-        {icon}
-        {this.props.collection.name}
+        <div>
+          {icon}
+          {this.props.collection.name}
+        </div>
+        {addedTag}
 
       </li>
     );
