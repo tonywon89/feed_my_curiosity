@@ -35,10 +35,24 @@ var SidebarCollectionIndex = React.createClass({
     hashHistory.push("/collections");
   },
 
+  _toFeeds: function () {
+    hashHistory.push("/feeds");
+  },
+
   render: function () {
-    var collections = this.state.collections.map(function(collection) {
-      return <SidebarCollectionIndexItem key={collection.id} collection={collection} />;
-    });
+    var collections;
+    if (this.state.collections.length !== 0) {
+      collections = this.state.collections.map(function(collection) {
+        return <SidebarCollectionIndexItem key={collection.id} collection={collection} />;
+      });
+    } else {
+      collections = <div className="sidebar-organize-btn"
+                       onClick={this._toFeeds}>
+                      You have no collections. <br />
+                      Click here to get some!
+                    </div>;
+    }
+
     var organize = (
       <div className="sidebar-organize-btn" onClick={this._toOrganize}>
         <Link to="/collections">Organize</Link>
