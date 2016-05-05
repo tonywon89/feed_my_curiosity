@@ -18,7 +18,7 @@ var ParseHTMLMixin = {
 
       if (imageUrl) {
 
-        if (imageUrl[1].indexOf("http://feeds.feedburner.com/") === -1) {
+        if (imageUrl[1].indexOf("http://feeds.feedburner.com/") === -1 && imageUrl[1].indexOf("youtube") === -1) {
           imageUrl = imageUrl[1];
         } else {
           imageUrl = undefined;
@@ -28,7 +28,8 @@ var ParseHTMLMixin = {
           imageUrl = entry.content.match(imgRegex);
 
           if (imageUrl) {
-            if (imageUrl[1].indexOf("http://feeds.feedburner.com/") === -1) {
+
+            if (imageUrl[1].indexOf("http://feeds.feedburner.com/") === -1 && imageUrl[1].indexOf("youtube") === -1) {
               imageUrl = imageUrl[1];
             } else {
               imageUrl = undefined;
@@ -41,7 +42,7 @@ var ParseHTMLMixin = {
         imageUrl = entry.content.match(imgRegex);
 
         if (imageUrl) {
-          if (imageUrl[1].indexOf("http://feeds.feedburner.com/") === -1) {
+          if (imageUrl[1].indexOf("http://feeds.feedburner.com/") === -1 && imageUrl[1].indexOf("youtube") === -1) {
             imageUrl = imageUrl[1];
           } else {
             imageUrl = undefined;
