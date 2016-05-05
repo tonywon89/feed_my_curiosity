@@ -2,7 +2,7 @@ class Api::CollectionsController < ApplicationController
 
   def index
     if current_user
-      @collections = Collection.includes(:feeds).where(user_id: current_user.id)
+      @collections = Collection.includes(:feeds).includes(:collection_feeds).where(user_id: current_user.id)
       render :index
     else
       render json: []
