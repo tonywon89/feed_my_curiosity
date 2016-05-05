@@ -87,6 +87,28 @@ From logging in to reading articles to adding feeds to collections, FeedMyCurios
 
   ![image of saved articles][saved-articles]
 
+## Future Features
+
+### Number of hits per article
+
+  Will keep track of the number of clicks each articles have and reflect that in the article index item.
+
+### Today's popular articles
+
+  Will display the most popular articles based on the number of hits .
+
+### Hiding articles
+
+  Users have the option to hide specific articles, or hide all of them at once.
+
+### User can import their own feeds
+
+  If the User has a RSS Feed, they can upload it and have it in their personal feeds. I would update the database to have a user_id, so that it optionally belongs to a user.
+
+### Have different categories of feeds
+
+  Each feed will belong to a category, and I can only fetch the feeds of a particular category.
+
   [collection-index]: ./docs/screen-shots/SidebarCollectionIndex.png
   [add-feed-sidebar]: ./docs/screen-shots/AddFeedSidebarCropped.png
   [create-collection]: ./docs/screen-shots/CreateCollection.png
