@@ -25,7 +25,6 @@ var LoginForm = React.createClass({
     };
 
     UserClientActions.login(user);
-    // SavedArticleClientActions.fetchArticles();
   },
 
   render: function () {
