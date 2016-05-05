@@ -8,6 +8,7 @@ var _articles = {};
 var ArticleStore = new Store(AppDispatcher);
 
 var resetArticles = function (articles) {
+  _articles = {};
   articles.forEach(function (article) {
     _articles[article.id] = article;
   });
@@ -22,6 +23,10 @@ var updateArticle = function (article) {
 var destroyArticle = function (article) {
   delete _articles[article.id];
   ArticleStore.__emitChange();
+};
+
+ArticleStore.hardResetArticles = function () {
+  _articles = {};
 };
 
 ArticleStore.all = function () {

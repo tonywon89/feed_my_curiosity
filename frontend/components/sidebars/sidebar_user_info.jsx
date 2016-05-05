@@ -2,19 +2,22 @@ var React = require("react");
 
 var CurrentUserStateMixn = require("../../mixins/current_user_state_mixin");
 var UserClientActions = require("../../actions/user/user_client_actions");
+var ArticleStore = require("../../stores/article_store");
 
 var SidebarUserInfo = React.createClass({
   mixins: [CurrentUserStateMixn],
 
   logout: function (event) {
     event.preventDefault();
+    ArticleStore.hardResetArticles();
     UserClientActions.logout(this.state.currentUser);
+
   },
 
   render: function () {
     var currentUser = this.state.currentUser;
     var content;
-    //TODO REFACTOR THIS LATER
+
     if (currentUser) {
       content = (
         <div>

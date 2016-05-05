@@ -102,25 +102,7 @@ div.image-wrapper {
 
   &:hover {
     opacity: 1;
-    background-color: #68BD13;
-  }
-}
-
-.unsave-btn {
-  text-align: center;
-  width: 100%;
-  border-top: 1px solid gray;
-  // margin-top: 10px;
-  padding-top: 6px;
-  height: 100%;
-  color: black;
-  padding-left: 0;
-  padding-right: 0;
-  font-size: 12px;
-  opacity: 0.5;
-
-  &:hover {
-    opacity: 1;
-    background-color: #FA7A7A;
+    text-decoration: underline;
+    
   }
 }

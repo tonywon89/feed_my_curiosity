@@ -55,7 +55,7 @@ var ArticleIndexItem = React.createClass({
 
     var saveBtn;
     if (this.state.isSaved) {
-      saveBtn = <div className="unsave-btn" onClick={this.handleSaveClick}>Unsave</div>;
+      saveBtn = <div className="save-btn" onClick={this.handleSaveClick}>Unsave</div>;
     } else {
       saveBtn = <div className="save-btn" onClick={this.handleSaveClick}>Save For Later</div>;
     }

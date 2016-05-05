@@ -57,7 +57,7 @@ var Sidebar = React.createClass({
           <div className="sidebar-content">
             <div className="sidebar-save" onClick={this.goToSavedArticles}>
               <i className="fa fa-bookmark-o sidebar-icon"></i>
-              <div>Save for later</div>
+              <div>Saved for later</div>
             </div>
 
             <button className="sidebar-add-content" onClick={this.handleAddContentClick}>

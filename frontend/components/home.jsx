@@ -36,7 +36,7 @@ var Home = React.createClass({
           <button className="getting-started"
                   onClick={this.props.openLoginModal}>
               Get Started
-          </button>;
+          </button>
         </div>
       );
 
