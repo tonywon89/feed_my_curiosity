@@ -1,4 +1,4 @@
-#FeedMyCuriosity
+# FeedMyCuriosity
 
 [FeedMyCuriosity (Live)][heroku]
 
@@ -30,7 +30,7 @@ From logging in to reading articles to adding feeds to collections, FeedMyCurios
 ```
 
 ### Dynamically Generated Content
-  The feed urls for popular websites are stored in the database as a string. Using the gem `Feedjira`, the content from the urls are fetched and parsed into JSON, which is then passed to the frontend. This allows the articles to be up to date with the feed's website articles, so the reader is always getting the most recent content.
+  The feed urls of popular websites are stored in the database as a string. Using the Ruby gem `Feedjira`, the content from the urls are fetched and parsed into JSON, which is then passed to the frontend. This allows the articles to be up-to-date with the website's articles, so the reader is always getting the most recent content.
 
 ### Collections
   Users can have their own collections. A `Collection` is stored in the database with three columns: `id`, `name`, and `user_id`. Through a join table, a `Collection` can have many `Feeds`. These collections are rendered in the `Sidebar` and `CollectionIndex` components.
