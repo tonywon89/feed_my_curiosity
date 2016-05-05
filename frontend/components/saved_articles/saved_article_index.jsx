@@ -36,10 +36,16 @@ var SavedArticleIndex = React.createClass({
   },
 
   render: function () {
+    var content;
+    if (this.state.articles.length !== 0) {
+      content = <ArticleIndex entries={this.state.articles} displayPopOutDetail={this.props.displayPopOutDetail} />;
+    } else {
+      content = <p className="no-articles">You have no saved articles.</p>;
+    }
     return (
       <div className="saved-article-index">
         <h1>SAVED ARTICLES</h1>
-        <ArticleIndex entries={this.state.articles} displayPopOutDetail={this.props.displayPopOutDetail} />
+        {content}
       </div>
     );
   }
