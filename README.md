@@ -34,3 +34,7 @@ From logging in to reading articles to adding feeds to collections, FeedMyCurios
 
 ### Collections
   Users can have their own collections. A `Collection` is stored in the database with three columns: `id`, `name`, and `user_id`. Through a join table, `collection_feeds`, a `Collection` can have many `Feeds`. These collections are rendered in the `Sidebar` and `CollectionIndex` components.
+
+  ![image of collection index](https://github.com/tonywon89/feed_my_curiosity/blob/production-readme/docs/screen-shots/CollectionIndex.png)
+
+  ![image of sidebar](https://github.com/tonywon89/feed_my_curiosity/blob/production-readme/docs/screen-shots/Sidebar.png)
