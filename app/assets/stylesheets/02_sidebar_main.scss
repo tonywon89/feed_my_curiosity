@@ -78,9 +78,6 @@ div.main {
     .sidebar-user-info {
       display: block;
     }
-    body {
-      overflow-y: hidden;
-    }
 
   }
 
@@ -126,10 +123,10 @@ div.main {
   .sidebar-user-info {
     display: block;
   }
-  &:hover + .main {
-    margin-left: 245px;
+    &:hover + .main {
+      margin-left: 245px;
 
-  }
+    }
 }
 
 .sidebar.pinned + .main {

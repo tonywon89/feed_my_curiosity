@@ -73,11 +73,24 @@ From logging in to reading articles to adding feeds to collections, FeedMyCurios
 
   Collections are generally organized into individual `CollectionItem` components, which consist of `FeedItem` components. There are slight variations depending on where the item is being displayed (in the sidebar or in the organize page).
 
+### Articles
+
+  Because the articles provided by the feeds are constantly changing, FeedMyCuriosity has to parse the content it is given. This was done creating a module `ParseHTML` that looks for the general pattern of the content and summary provided by each feed article. To grab the image of the article to display in the `ArticleIndexItem` component, a regex match was used for the `src` attribute of the image tags in the summary or content. To get the actual content, the string HTML was converted to an innerHTML of a created DOM element, and was then selected using `document.getElementsByTagName`.
+
+  ![image of feed detail][feed-detail]
+
+  To display the full content of the article, the HTML string was first purified using "DOMpurify.js", which sanitizes the HTML string. The sanitized HTML string is then set as the innerHTML of a ReactElement div.
+
+  ![image of pop out article][article-detail]
+
+  A user can also save articles to be read later. Because the articles from the feeds are dynamically generated, to save an article, a `Article` model was created, as well as its corresponding controller. When a user clicks "Save For Later", the article information gets passed as form data to the controller, which then creates an article and returns it. When an article is unsaved, it is deleted from the database. Each saved article belongs to a user, so saved articles only appear for that particular user.
+
+  ![image of saved articles][saved-articles]
 
   [collection-index]: ./docs/screen-shots/SidebarCollectionIndex.png
-
-  [add-feed-sidebar]: ./docs/screen-shots/AddFeedSidebar.png
-
+  [add-feed-sidebar]: ./docs/screen-shots/AddFeedSidebarCropped.png
   [create-collection]: ./docs/screen-shots/CreateCollection.png
-
   [create-collection-added]: ./docs/screen-shots/CreateCollectionAdded.png
+  [feed-detail]: ./docs/screen-shots/FeedDetail.png
+  [article-detail]:./docs/screen-shots/ArticleDetail.png
+  [saved-articles]: ./docs/screen-shots/SavedArticles.png
