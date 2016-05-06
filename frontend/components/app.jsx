@@ -143,37 +143,38 @@ var App = React.createClass({
         </div>
       );
     }
+
+    var form, isOpen, requestClose;
+    if (this.state.loginModalOpen) {
+      form = <LoginForm errors={this.state.authErrors}
+                        openSignupModal={this.openSignupModal}/>;
+      isOpen = true;
+      requestClose = this.closeLoginModal;
+    } else if (this.state.signupModalOpen) {
+      form = <SignUpForm errors={this.state.authErrors}
+                         openLoginModal={this.openLoginModal}/>;
+      isOpen = true;
+      requestClose = this.closeSignupModal;
+    }
+
+    var open = this.state.loginModalOpen || this.state.signupModalOpen;
+
     return (
       <div>
         {content}
 
         <Modal
-          isOpen={this.state.loginModalOpen}
-          onRequestClose={this.closeLoginModal}
+          isOpen={open}
+          onRequestClose={requestClose}
           style={modalStyle}
         >
           <div className="modal-parent">
             <i className="fa fa-times modal-close-icon"
-               onClick={this.closeLoginModal} />
-            <LoginForm errors={this.state.authErrors}
-                       openSignupModal={this.openSignupModal}/>
+               onClick={requestClose} />
+            {form}
           </div>
-
         </Modal>
 
-        <Modal
-          isOpen={this.state.signupModalOpen}
-          onRequestClose={this.closeSignupModal}
-          style={modalStyle}
-        >
-
-          <div className="modal-parent">
-            <i className="fa fa-times modal-close-icon" onClick={this.closeSignupModal}></i>
-            <SignUpForm errors={this.state.authErrors}
-                       openLoginModal={this.openLoginModal}/>
-          </div>
-
-        </Modal>
       </div>
     );
   }

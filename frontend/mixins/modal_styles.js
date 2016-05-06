@@ -21,6 +21,7 @@ var ModalStyles = {
       height          : '400px',
       width           : '370px',
       margin          : '0 auto',
+      overflow        : 'hidden',
       zIndex          :  11
     }
   }
