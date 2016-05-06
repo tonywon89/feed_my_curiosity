@@ -25,6 +25,9 @@ h3.modal-header {
 
 // Auth Form
 div.auth-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   position: relative;
   padding: 20px;
   width: 75%;
@@ -32,6 +35,14 @@ div.auth-form {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
+  }
+  pre {
+    margin-top: 5px;
+    padding: 5px;
+  }
+  input[type="submit"] {
+    width: 65%;
   }
 }
 

@@ -27,9 +27,23 @@ var LoginForm = React.createClass({
     UserClientActions.login(user);
   },
 
+  guestLogin: function () {
+    UserClientActions.login({username: "CuriousUser", password: "curious"});
+  },
+
   render: function () {
+    var errors;
+    
+    if (this.props.errors) {
+      errors = this.props.errors.map(function(error, i){
+        return <li key={i}>{error.error_message}</li>;
+      });
+    }
+
     return (
       <div className="auth-form">
+        <h3 className="modal-header">Log In</h3>
+        <ul>{errors}</ul>
         <form onSubmit={this.handleSubmit}>
           <input type="text"
                  placeholder="Username"
@@ -41,6 +55,11 @@ var LoginForm = React.createClass({
                  value={this.state.password}/>
           <input className="modal-submit-btn" type="submit" value="Log In and Begin Feeding" />
         </form>
+
+        <pre className="alternative">
+          Don't have an account? <a onClick={this.props.openSignupModal}>Sign Up Here</a>
+          <pre>Or <a onClick={this.guestLogin}>login as a guest</a></pre>
+        </pre>
       </div>
     );
   }

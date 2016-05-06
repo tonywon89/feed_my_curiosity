@@ -72,10 +72,6 @@ var App = React.createClass({
     UserClientActions.logout();
   },
 
-  guestLogin: function () {
-    UserClientActions.login({username: "CuriousUser", password: "curious"});
-  },
-
   displayAddFeed: function (feedId) {
     $('body').css("overflow", "hidden");
     this.setState({ addFeedDisplayed: true, toAddFeedId: feedId });
@@ -157,15 +153,10 @@ var App = React.createClass({
           style={modalStyle}
         >
           <div className="modal-parent">
-            <i className="fa fa-times modal-close-icon" onClick={this.closeLoginModal}></i>
-            <h3 className="modal-header">Log In</h3>
-            <ul>{errors}</ul>
-            <LoginForm />
-            <pre className="alternative">
-              Don't have an account? <a onClick={this.openSignupModal}>Sign Up Here</a>
-              <pre>Or <a onClick={this.guestLogin}>login as a guest</a></pre>
-            </pre>
-
+            <i className="fa fa-times modal-close-icon"
+               onClick={this.closeLoginModal} />
+            <LoginForm errors={this.state.authErrors}
+                       openSignupModal={this.openSignupModal}/>
           </div>
 
         </Modal>

@@ -19,7 +19,7 @@ var ModalStyles = {
       borderRadius    : '20px',
       padding         : '20px',
       height          : '400px',
-      width           : '400px',
+      width           : '370px',
       margin          : '0 auto',
       zIndex          :  11
     }
