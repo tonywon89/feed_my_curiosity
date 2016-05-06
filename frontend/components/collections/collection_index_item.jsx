@@ -103,6 +103,10 @@ var CollectionIndexItem = React.createClass({
                   displayAddFeed={self.props.displayAddFeed} />;
     });
 
+    if (feeds.length === 0) {
+      feeds = <p className="no-feeds">Click 'Add Content' to get some feeds! Or drag them from other collections.</p>;
+    }
+
     return connectDropTarget(
       <div className="collection-index-item">
         <CollectionIndexItemTitle
