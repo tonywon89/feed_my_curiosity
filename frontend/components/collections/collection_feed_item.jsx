@@ -15,11 +15,13 @@ var feedSource = {
     }
 
     var item = monitor.getItem();
-    var dropResult = monitor.getDropResult();
-    var collection = item.collection;
-    collection.add = "";
-    collection.remove = item.feed;
-    CollectionClientActions.updateCollection(collection);
+    if (monitor.getDropResult().id) {
+      var collection = item.collection;
+      collection.add = "";
+      collection.remove = item.feed;
+      CollectionClientActions.updateCollection(collection);
+    }
+
   }
 };
 

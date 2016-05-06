@@ -38,11 +38,17 @@ var modalStyle = {
 
 var indexItemTarget = {
   drop: function (props, monitor) {
-    var feed = monitor.getItem().feed;
-    var collection = props.collection;
-    collection.add = feed;
-    collection.remove = "";
-    CollectionClientActions.updateCollection(collection);
+    var item = monitor.getItem();
+    var feed = item.feed;
+    if (item.collection.id !== props.collection.id) {
+      var collection = props.collection;
+      collection.add = feed;
+      collection.remove = "";
+      CollectionClientActions.updateCollection(collection);
+      return collection;
+    } else {
+      return undefined;
+    }
   }
 };
 
