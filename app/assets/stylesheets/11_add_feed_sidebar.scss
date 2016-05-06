@@ -3,7 +3,7 @@ $blue: #5999AD;
 $button-hover-green: #05A838;
 
 .add-feed-main {
-  display: none;
+  visibility: hidden;
   width: 100%;
   height: 100%;
   left: 0px;
@@ -15,7 +15,7 @@ $button-hover-green: #05A838;
 }
 
 .add-feed-main.shown {
-  display: block;
+  visibility: visible;;
 }
 
 .add-feed-sidebar {
@@ -25,12 +25,12 @@ $button-hover-green: #05A838;
   padding-top: 20px;
   width: 268px;
   height: 100%;
-  left: -268px;
+  left: -398px;
   top: 0px;
   position: fixed;
   min-height: initial;
   background-color: rgb(255, 255, 255);
-  transition: all 1s;
+  transition: all 0.5s;
   border-right: 1px solid gray;
   z-index: 2;
 
@@ -67,7 +67,6 @@ $button-hover-green: #05A838;
 
 .add-feed-sidebar.shown {
   left: 0px;
-  transition: all 1s;
 
   span {
     margin-top: 40px;
