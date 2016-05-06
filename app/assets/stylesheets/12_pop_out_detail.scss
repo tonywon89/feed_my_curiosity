@@ -8,7 +8,7 @@ $button-green: #2bb24c;
 $button-hover-green: #05A838;
 
 .pop-out-main {
-  display: none;
+  visibility: hidden;
   width: 100%;
   height: 100%;
   left: 0px;
@@ -16,10 +16,11 @@ $button-hover-green: #05A838;
   position: fixed;
   min-height: initial;
   background-color: rgba(0, 0, 0, 0.5);
+  transition: all 0.5s;
 }
 
 .pop-out-main.shown {
-  display: block;
+  visibility: visible
 }
 
 .pop-out-detail {
@@ -29,13 +30,14 @@ $button-hover-green: #05A838;
   padding-top: 20px;
   width: 800px;
   height: 100%;
-  right: -800px;
+  right: -830px;
   top: 0px;
   position: fixed;
   min-height: initial;
   background-color: rgb(255, 255, 255);
   border-left: 1px solid gray;
   overflow-y: auto;
+  transition: all 0.4s;
 }
 
 .pop-out-detail.shown {
@@ -48,12 +50,13 @@ $button-hover-green: #05A838;
   padding: 10px;
   background-color: white;
   position: fixed;
-  right: -840px;
+  right: -830px;
   margin: 0;
   border-left: 1px solid gray;
 
   border-bottom: 1px solid gray;
   border-right: 1px solid white;
+  transition: all 0.4s;
   z-index: 2;
 
   &:hover {
