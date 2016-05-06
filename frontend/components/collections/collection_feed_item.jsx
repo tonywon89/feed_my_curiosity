@@ -21,7 +21,6 @@ var feedSource = {
       collection.remove = item.feed;
       CollectionClientActions.updateCollection(collection);
     }
-
   }
 };
 

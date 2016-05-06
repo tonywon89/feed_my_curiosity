@@ -11,7 +11,7 @@ $button-hover-green: #05A838;
 }
 
 .collection-header {
-  margin-left: 20px;
+  margin-left: 25px;
   margin-top: 20px;
   padding: 0;
   color: $green;
@@ -19,8 +19,16 @@ $button-hover-green: #05A838;
   align-self: flex-start;
 }
 
+.collection-description {
+  align-self: flex-start;
+  margin-left: 25px;
+  margin-top: 20px;
+  padding: 0;
+  opacity: 0.5;
+}
+
 .collection-index {
-  margin-top: 30px;
+  margin-top: 20px;
   padding: 0;
   display: flex;
   flex-wrap: wrap;

@@ -49,6 +49,7 @@ var CollectionIndex = React.createClass({
 
     if (currentUser) {
       var collections;
+      var description = "You have no collections. Create a new one using the form below or in 'Add Content'.";
       if (this.state.collections.length > 0) {
         var self = this;
         collections = this.state.collections.map(function(collection) {
@@ -56,11 +57,13 @@ var CollectionIndex = React.createClass({
                                       collection={collection}
                                       displayAddFeed={self.props.displayAddFeed} />;
         });
+        description = "Drag the feeds in your collections to move them around!";
       }
 
       content = (
         <div className="collection-index-main">
           <h1 className="collection-header">Organize</h1>
+          <p className="collection-description">{description}</p>
           <div className="collection-index">
             {collections}
             <NewCollectionForm />
