@@ -6,7 +6,20 @@ var DragSource = require('react-dnd').DragSource;
 
 var feedSource = {
   beginDrag: function (props) {
-    return { feedId: props.feed.id };
+    return { feed: props.feed, collection: props.collection };
+  },
+
+  endDrag: function (props, monitor, component) {
+    if (!monitor.didDrop()) {
+      return;
+    }
+
+    var item = monitor.getItem();
+    var dropResult = monitor.getDropResult();
+    var collection = item.collection;
+    collection.add = "";
+    collection.remove = item.feed;
+    CollectionClientActions.updateCollection(collection);
   }
 };
 

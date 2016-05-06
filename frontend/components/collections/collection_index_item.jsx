@@ -1,12 +1,15 @@
 var React = require("react");
 var Modal = require("react-modal");
-var DragDropContext = require('react-dnd').DragDropContext;
-var HTML5Backend = require('react-dnd-html5-backend');
+var PropTypes = React.PropTypes;
+var ItemTypes = require('../../draggable/Constants').ItemTypes;
+var DropTarget = require('react-dnd').DropTarget;
 
 var CollectionIndexItemTitle = require("./collection_index_item_title");
 var CollectionFeedItem = require("./collection_feed_item");
 var CollectionItemTitleEditForm = require("./collection_item_title_edit_form");
 var CollectionItemDeleteForm = require("./collection_item_delete_form");
+
+var CollectionClientActions = require("../../actions/collection/collection_client_actions");
 
 var modalStyle = {
   overlay: {
@@ -33,7 +36,29 @@ var modalStyle = {
   }
 };
 
+var indexItemTarget = {
+  drop: function (props, monitor) {
+    var feed = monitor.getItem().feed;
+    var collection = props.collection;
+    collection.add = feed;
+    collection.remove = "";
+    CollectionClientActions.updateCollection(collection);
+  }
+};
+
+function collect(connect, monitor) {
+  return {
+    connectDropTarget: connect.dropTarget(),
+    isOver: monitor.isOver()
+  };
+}
+
 var CollectionIndexItem = React.createClass({
+  propTypes: {
+    collection: PropTypes.object.isRequired,
+    isOver: PropTypes.bool.isRequired
+  },
+
   getInitialState: function () {
     return { editModalOpen: false, deleteModalOpen: false };
   },
@@ -59,6 +84,10 @@ var CollectionIndexItem = React.createClass({
   },
 
   render: function () {
+    var collection = this.props.collection;
+    var connectDropTarget = this.props.connectDropTarget;
+    var isOver = this.props.isOver;
+
     var self = this;
     var feeds = this.props.collection.feeds.map(function (feed) {
       return <CollectionFeedItem
@@ -68,7 +97,7 @@ var CollectionIndexItem = React.createClass({
                   displayAddFeed={self.props.displayAddFeed} />;
     });
 
-    return (
+    return connectDropTarget(
       <div className="collection-index-item">
         <CollectionIndexItemTitle
           collection={this.props.collection}
@@ -107,4 +136,4 @@ var CollectionIndexItem = React.createClass({
   }
 });
 
-module.exports = DragDropContext(HTML5Backend)(CollectionIndexItem);
+module.exports = DropTarget(ItemTypes.FEED, indexItemTarget, collect)(CollectionIndexItem);
