@@ -51,15 +51,9 @@ var LoginForm = React.createClass({
       currentTime += 100;
     });
 
-    var user = {
-      username: this.state.username,
-      password: this.state.password
-    };
-
     setTimeout(function () {
       UserClientActions.login({username: self.state.username, password: self.state.password });
     }, currentTime + 100);
-
   },
 
   render: function () {
