@@ -174,7 +174,6 @@ var App = React.createClass({
             <SignUpForm />
             <pre className="alternative">
                 Have an account? <a onClick={this.openLoginModal}>Log in</a>
-                <pre>Or <a onClick={this.guestLogin}>login as a guest</a></pre>
             </pre>
           </div>
 
