@@ -45,7 +45,7 @@ var parseDate = function (date) {
   var monthIndex = date.getMonth();
   var year = date.getFullYear();
 
-  return (weekdayNames[dayOfWeek] + ", " + monthNames[monthIndex] + " " + dayOfMonth + ", " + year);
+  return (weekdayNames[dayOfWeek - 1] + ", " + monthNames[monthIndex] + " " + dayOfMonth + ", " + year);
 };
 
 module.exports = ArticlePopOutDetail;

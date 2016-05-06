@@ -36,6 +36,19 @@ var CollectionDetail = React.createClass({
         todayEntries = todayEntries.concat(getTodayEntries(feed));
       });
 
+      todayEntries.sort(function (article1, article2) {
+        var date1 = new Date(article1.published);
+        var date2 = new Date(article2.published);
+
+        if (date1 > date2) {
+          return -1;
+        } else if (date1 < date2) {
+          return 1;
+        } else {
+          return 0;
+        }
+      });
+
       if (todayEntries.length !== 0) {
         content = <ArticleIndex entries={todayEntries} displayPopOutDetail={this.props.displayPopOutDetail} />;
       } else {
