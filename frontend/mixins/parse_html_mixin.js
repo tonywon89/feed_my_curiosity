@@ -1,27 +1,3 @@
-var ParseHTMLMixin = {
-  getContent: function (entry) {
-    var content;
-    content = getDiv(entry);
-    if (!content) {
-      content = getParagraph(entry);
-    }
-    return content;
-  },
-
-  getImageUrl: function (entry) {
-    var imgRegex = /src="([^"]+)"/;
-    var imageUrl;
-
-    imageUrl = checkSummary(entry, imgRegex);
-
-    if (!imageUrl) {
-      imageUrl = checkContent(entry, imgRegex);
-    }
-
-    return imageUrl;
-  }
-};
-
 var checkSummary = function (entry, regex) {
   var imageUrl;
 
@@ -32,7 +8,6 @@ var checkSummary = function (entry, regex) {
       imageUrl = checkContent(entry, regex);
     }
   }
-
   return imageUrl;
 };
 
@@ -63,40 +38,41 @@ var setImageUrl = function (imageUrl) {
 };
 
 var getParagraph = function (entry) {
-  var paragraph;
-  if (entry.summary) {
-    paragraph = getInnerText(entry.summary, 'p');
-    if (!paragraph) {
-      if (entry.content) {
-        paragraph = getInnerText(entry.content, 'p');
-      }
-    }
-  } else {
-    if (entry.content) {
-      paragraph =
-      getInnerText(entry.content, 'p');
-    }
+  var p = getSummary(entry, 'p');
+
+  if (!p) {
+    p = getContent(entry, 'p');
   }
-  return paragraph;
+  return p;
 };
 
 var getDiv = function (entry) {
-  var div;
-  if (entry.summary) {
-    div = getInnerText(entry.summary, 'div');
+  var div = getSummary(entry, 'div');
 
-    if (!div) {
-      if (entry.content) {
-        div = getInnerText(entry.content, 'div');
-      }
-    }
-  } else {
-    if (entry.content) {
-      div = getInnerText(entry.content, 'div');
+  if (!div) {
+    div = getContent(entry, 'div');
+  }
+  return div;
+};
+
+var getSummary = function (entry, selector) {
+  var summary;
+  if (entry.summary) {
+    summary = getInnerText(entry.summary, selector);
+
+    if (!summary) {
+      summary = getContent(entry, selector);
     }
   }
+  return summary;
+};
 
-  return div;
+var getContent = function (entry, selector) {
+  var content;
+  if (entry.content) {
+    content = getInnerText(entry.content, selector);
+  }
+  return content;
 };
 
 var getInnerText = function (htmlString, selector) {
@@ -116,6 +92,30 @@ var getInnerText = function (htmlString, selector) {
   }
 
   return innerText;
+};
+
+var ParseHTMLMixin = {
+  getContent: function (entry) {
+    var content;
+    content = getDiv(entry);
+    if (!content) {
+      content = getParagraph(entry);
+    }
+    return content;
+  },
+
+  getImageUrl: function (entry) {
+    var imgRegex = /src="([^"]+)"/;
+    var imageUrl;
+
+    imageUrl = checkSummary(entry, imgRegex);
+
+    if (!imageUrl) {
+      imageUrl = checkContent(entry, imgRegex);
+    }
+
+    return imageUrl;
+  }
 };
 
 module.exports = ParseHTMLMixin;
