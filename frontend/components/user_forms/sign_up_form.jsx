@@ -38,8 +38,18 @@ var SignUpForm = React.createClass({
   },
 
   render: function () {
+    var errors;
+
+    if (this.props.errors) {
+      errors = this.props.errors.map(function(error, i){
+        return <li key={i}>{error.error_message}</li>;
+      });
+    }
+
     return (
       <div className="auth-form">
+      <h3 className="modal-header">Sign Up</h3>
+      <ul>{errors}</ul>
         <form onSubmit={this.handleSubmit}>
           <input type="text"
                  placeholder="Username"
@@ -51,6 +61,9 @@ var SignUpForm = React.createClass({
                  value={this.state.password}/>
           <input className="modal-submit-btn" type="submit" value="Satisfy Thy Curiosity" />
         </form>
+        <pre className="alternative">
+            Have an account? <a onClick={this.props.openLoginModal}>Log in</a>
+        </pre>
       </div>
     );
   }

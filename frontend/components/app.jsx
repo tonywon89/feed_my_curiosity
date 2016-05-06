@@ -169,12 +169,8 @@ var App = React.createClass({
 
           <div className="modal-parent">
             <i className="fa fa-times modal-close-icon" onClick={this.closeSignupModal}></i>
-            <h3 className="modal-header">Sign Up</h3>
-            <ul>{errors}</ul>
-            <SignUpForm />
-            <pre className="alternative">
-                Have an account? <a onClick={this.openLoginModal}>Log in</a>
-            </pre>
+            <SignUpForm errors={this.state.authErrors}
+                       openLoginModal={this.openLoginModal}/>
           </div>
 
         </Modal>
