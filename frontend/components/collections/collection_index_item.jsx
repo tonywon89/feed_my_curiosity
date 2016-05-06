@@ -1,5 +1,7 @@
 var React = require("react");
 var Modal = require("react-modal");
+var DragDropContext = require('react-dnd').DragDropContext;
+var HTML5Backend = require('react-dnd-html5-backend');
 
 var CollectionIndexItemTitle = require("./collection_index_item_title");
 var CollectionFeedItem = require("./collection_feed_item");
@@ -105,4 +107,4 @@ var CollectionIndexItem = React.createClass({
   }
 });
 
-module.exports = CollectionIndexItem;
+module.exports = DragDropContext(HTML5Backend)(CollectionIndexItem);

@@ -1,7 +1,6 @@
 var React = require("react");
 var hashHistory = require("react-router").hashHistory;
-var DragDropContext = require('react-dnd').DragDropContext;
-var HTML5Backend = require('react-dnd-html5-backend');
+
 
 var CollectionStore = require("../../stores/collection_store");
 var CollectionClientActions = require("../../actions/collection/collection_client_actions");
@@ -80,4 +79,4 @@ var CollectionIndex = React.createClass({
 
 });
 
-module.exports = DragDropContext(HTML5Backend)(CollectionIndex);
+module.exports = CollectionIndex;
