@@ -19,6 +19,13 @@ var Sidebar = React.createClass({
     }
   },
 
+  unPin: function () {
+
+    if (this.state.pinned) {
+      this.setState({ pinned : false });
+    }
+  },
+
   handleAddContentClick: function (event) {
     event.preventDefault();
     hashHistory.push("/feeds");
@@ -67,7 +74,7 @@ var Sidebar = React.createClass({
             <SidebarCollectionIndex currentUser={this.props.currentUser}/>
           </div>
 
-          <SidebarUserInfo />
+          <SidebarUserInfo unPin={this.unPin}/>
         </div>
       );
     } else {

@@ -10,6 +10,7 @@ var SidebarUserInfo = React.createClass({
   logout: function (event) {
     event.preventDefault();
     ArticleStore.hardResetArticles();
+    this.props.unPin();
     UserClientActions.logout(this.state.currentUser);
 
   },
