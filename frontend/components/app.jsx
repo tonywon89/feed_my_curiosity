@@ -15,31 +15,9 @@ var UserClientActions = require("../actions/user/user_client_actions");
 var FeedClientActions = require("../actions/feed/feed_client_actions");
 var FeedStore = require("../stores/feed_store");
 
-var modalStyle = {
-  overlay: {
-    position        : 'fixed',
-    top             : 0,
-    left            : 0,
-    right           : 0,
-    bottom          : 0,
-    backgroundColor : 'rgba(100, 123, 124, 0.5)',
-    zIndex          : 10
-  },
-  content: {
-    position        : 'fixed',
-    top             : '50px',
-    left            : '150px',
-    right           : '150px',
-    bottom          : '100px',
-    border          : '1px solid #ccc',
-    borderRadius    : '20px',
-    padding         : '20px',
-    height          : '400px',
-    width           : '400px',
-    margin          : '0 auto',
-    zIndex          :  11
-  }
-};
+var ModalStyles = require("../mixins/modal_styles");
+
+var modalStyle = ModalStyles.authModalStyle;
 
 var App = React.createClass({
   mixins: [CurrentUserStateMixn],
@@ -59,8 +37,6 @@ var App = React.createClass({
   componentDidMount: function () {
     this.listener = FeedStore.addListener(this._onFeedLoaded);
     FeedClientActions.fetchFeeds();
-
-
   },
 
   componentWillUnmount: function () {
@@ -128,7 +104,6 @@ var App = React.createClass({
       'on-splash': onSplash
     });
 
-
     var errors = this.state.authErrors.map(function(error, i){
       return <li key={i}>{error.error_message}</li>;
     });
@@ -150,10 +125,12 @@ var App = React.createClass({
               }
             )}
           </div>
+
           <AddFeedSidebar isDisplayed={this.state.addFeedDisplayed}
                           toAddFeedId={this.state.toAddFeedId}
                           currentUser={this.state.currentUser}
                           closeAddFeed={this.closeAddFeed}/>
+
           <PopOutDetail isDisplayed={this.state.popOutDetailDisplayed}
                         closePopOutDetail={this.closePopOutDetail}
                         popOutItem={this.state.popOutItem}
