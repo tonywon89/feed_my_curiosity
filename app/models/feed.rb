@@ -16,8 +16,7 @@ class Feed < ActiveRecord::Base
   has_many :collections, through: :collection_feeds, source: :collection
 
   def parse
-    xml = Faraday.get(url).body
-    feed = Feedjira::Feed.parse xml
+    feed = Feedjira::Feed.fetch_and_parse url
     {id: id, feed: feed}
   end
 end
