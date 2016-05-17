@@ -56,7 +56,7 @@ var CollectionFeedItem = React.createClass({
       <div className="collection-feed-item"
           style={{
           opacity: isDragging ? 0.5 : 1,
-          backgroundColor: isDragging ? 'yellow' : 'Transparent',
+          backgroundColor: isDragging ? '#F6FF97' : 'Transparent',
           fontWeight: 'bold',
           cursor: 'move'}}>
         {this.props.feed.name}

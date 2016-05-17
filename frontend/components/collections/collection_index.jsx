@@ -67,9 +67,7 @@ var CollectionIndex = React.createClass({
           <div className="collection-index">
             {collections}
             <NewCollectionForm />
-
           </div>
-
         </div>
       );
     }

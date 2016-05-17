@@ -108,15 +108,14 @@ var CollectionIndexItem = React.createClass({
     }
 
     return connectDropTarget(
-      <div className="collection-index-item"
-            >
+      <div className="collection-index-item">
         <CollectionIndexItemTitle
           collection={this.props.collection}
           openEditModal={this.openEditModal}
           openDeleteModal={this.openDeleteModal} />
 
         <div className="collection-item-feeds" style={{
-          backgroundColor: isOver ? '#38B769' : 'Transparent'
+          backgroundColor: isOver ? '#38B769' : '#A9F3A9'
         }}>
           {feeds}
         </div>
