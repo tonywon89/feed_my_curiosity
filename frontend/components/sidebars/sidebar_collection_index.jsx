@@ -31,10 +31,6 @@ var SidebarCollectionIndex = React.createClass({
     this.setState({ collections: CollectionStore.all() });
   },
 
-  _toOrganize: function () {
-    hashHistory.push("/collections");
-  },
-
   _toFeeds: function () {
     hashHistory.push("/feeds");
   },
@@ -52,16 +48,9 @@ var SidebarCollectionIndex = React.createClass({
                       Click here to get some!
                     </div>;
     }
-
-    var organize = (
-      <div className="sidebar-organize-btn" onClick={this._toOrganize}>
-        <Link to="/collections">Organize</Link>
-      </div>
-    );
     return (
       <div className="sidebar-collection-index">
         {collections}
-        {organize}
       </div>
     );
   }

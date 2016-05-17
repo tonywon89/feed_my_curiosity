@@ -166,14 +166,14 @@ div.main {
 
 .sidebar-add-content {
   color: #DBDBDB;
-  font-size: 10px;
+  font-size: 12px;
   box-shadow: 0 0 0 white;
   background-color: Transparent;
   border: 0.5px solid #DBDBDB;
   padding: 10px;
   width: 75%;
   margin-left: 23px;;
-  margin-top: 40px;
+  margin-top: 25px;
 
   &:hover {
     color: white;
@@ -184,7 +184,7 @@ div.main {
 .sidebar-content {
   .sidebar-collection-index {
     margin: 0;
-    margin-top: 50px;
+    margin-top: 35px;
     margin-bottom: 90px;
     a {
       text-decoration: none;

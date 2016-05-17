@@ -39,9 +39,14 @@ var Sidebar = React.createClass({
     $('body').css("overflow", "auto");
   },
 
-  goToSavedArticles: function () {
+  _toSavedArticles: function () {
     hashHistory.push("/saved_articles");
   },
+
+  _toOrganize: function () {
+    hashHistory.push("/collections");
+  },
+
 
   render: function () {
     var pinBtnContent;
@@ -62,13 +67,17 @@ var Sidebar = React.createClass({
           </button>
 
           <div className="sidebar-content">
-            <div className="sidebar-save" onClick={this.goToSavedArticles}>
+            <div className="sidebar-save" onClick={this._toSavedArticles}>
               <i className="fa fa-bookmark-o sidebar-icon"></i>
               <div>Saved for later</div>
             </div>
 
             <button className="sidebar-add-content" onClick={this.handleAddContentClick}>
               Add Content
+            </button>
+            
+            <button className="sidebar-add-content" onClick={this._toOrganize}>
+              Organize
             </button>
 
             <SidebarCollectionIndex currentUser={this.props.currentUser}/>
