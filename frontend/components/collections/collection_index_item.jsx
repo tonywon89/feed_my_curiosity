@@ -115,7 +115,7 @@ var CollectionIndexItem = React.createClass({
           openDeleteModal={this.openDeleteModal} />
 
         <div className="collection-item-feeds" style={{
-          backgroundColor: isOver ? '#38B769' : '#A9F3A9'
+          backgroundColor: isOver ? '#A9F3A9' : 'Transparent'
         }}>
           {feeds}
         </div>

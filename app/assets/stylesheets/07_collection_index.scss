@@ -201,7 +201,7 @@ $button-hover-green: #05A838;
 }
 
 .collection-item-feeds {
-  border: 1px solid rgba(59, 119, 179, 0.4);
+  border: 2px solid rgba(59, 119, 179, 0.4);
   border-radius: 3px;
   padding: 10px;
   margin-top: 20px;
@@ -209,7 +209,7 @@ $button-hover-green: #05A838;
   transition: all 0.2s;
   background-color: rgba(169, 243, 169, 0.5);
   &:hover {
-    border: 1px solid rgba(59, 119, 179, 1)
+    border: 2px solid rgba(59, 119, 179, 1)
   }
   .collection-feed-item {
 
