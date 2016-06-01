@@ -16,7 +16,25 @@ class Feed < ActiveRecord::Base
   has_many :collections, through: :collection_feeds, source: :collection
 
   def parse
-    feed = Feedjira::Feed.fetch_and_parse url
-    {id: id, feed: feed}
+    begin
+      feed = Feedjira::Feed.fetch_and_parse url
+      {id: id, feed: feed}
+    rescue
+      feed = {
+        title: "Feed could not be fetched",
+        url: "http://www.feedmycuriosity.site",
+        description: "Try again later to get this feed",
+        entries: [
+          {
+            title: "There is no entry",
+            url: "http://www.feedmycuriosity.site",
+            summary: "There is no summary",
+            content: "There is no content",
+            author: "There is no author"
+          }
+        ]
+      }
+      {id: id, feed: feed, error: true}
+    end
   end
 end

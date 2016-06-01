@@ -1,33 +1,41 @@
 require 'uri'
 
 json.array! @feedjira_feeds do |feedjira_feed|
-  json.id feedjira_feed[:id]
-  json.title feedjira_feed[:feed].title
-
-  address = feedjira_feed[:feed].url
-  uri = URI.parse(address)
-
-  json.url  "#{uri.scheme}://#{uri.host}"
-  # json.url feedjira_feed[:feed].url
-
-  description = feedjira_feed[:feed].description
-
-  if description && !description.empty?
-    json.description description
-  else
-    json.description "Click here to learn more about '#{feedjira_feed[:feed].title}'"
-  end
-
-  entries = feedjira_feed[:feed].entries.map do |entry|
-    entry_obj = {}
-    entry.each do |key, value|
-      entry_obj[key] = value
+  if feedjira_feed[:error]
+    json.id feedjira_feed[:id]
+    json.title feedjira_feed[:feed][:title]
+    json.url feedjira_feed[:feed][:url]
+    json.entries do
+      json.array! feedjira_feed[:feed][:entries]
     end
-    entry_obj
-  end
+  else
+    json.id feedjira_feed[:id]
+    json.title feedjira_feed[:feed].title
 
-  json.entries do
-    json.array! entries
-  end
+    address = feedjira_feed[:feed].url
+    uri = URI.parse(address)
 
+    json.url  "#{uri.scheme}://#{uri.host}"
+    # json.url feedjira_feed[:feed].url
+
+    description = feedjira_feed[:feed].description
+
+    if description && !description.empty?
+      json.description description
+    else
+      json.description "Click here to learn more about '#{feedjira_feed[:feed].title}'"
+    end
+
+    entries = feedjira_feed[:feed].entries.map do |entry|
+      entry_obj = {}
+      entry.each do |key, value|
+        entry_obj[key] = value
+      end
+      entry_obj
+    end
+
+    json.entries do
+      json.array! entries
+    end
+  end
 end
