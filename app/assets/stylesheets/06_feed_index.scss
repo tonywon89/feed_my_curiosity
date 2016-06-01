@@ -47,10 +47,9 @@ div.feed-index-item {
     font-size: 17px;
     color: black;
     font-weight: bold;
-    text-underline-position: under;
     margin-top: 15px;
     padding-bottom: 10px;
-
+    text-align: center; 
     &:hover {
       color: green;
     }

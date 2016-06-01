@@ -21,16 +21,16 @@ class Feed < ActiveRecord::Base
       {id: id, feed: feed}
     rescue
       feed = {
-        title: "Feed could not be fetched",
-        url: "http://www.feedmycuriosity.site",
-        description: "Try again later to get this feed",
+        title: "'#{name}' could not be loaded",
+        url: "#",
+        description: "Sorry, the site is currently down",
         entries: [
           {
-            title: "There is no entry",
-            url: "http://www.feedmycuriosity.site",
-            summary: "There is no summary",
-            content: "There is no content",
-            author: "There is no author"
+            title: "Sorry, the site is currently down",
+            url: "#",
+            summary: "Sorry, the site is currently down",
+            content: "Sorry, the site is currently down",
+            author: "Sorry, the site is currently down"
           }
         ]
       }
