@@ -4,6 +4,8 @@ var Link = ReactRouter.Link;
 var Modal = require('react-modal');
 var classNames = require("classnames");
 
+var ReactCSSTransitionGroup = require('react-addons-css-transition-group');
+
 var Sidebar = require("./sidebars/sidebar");
 var LoginForm = require("./user_forms/login_form");
 var SignUpForm = require("./user_forms/sign_up_form");
@@ -138,8 +140,11 @@ var App = React.createClass({
     } else {
       content = (
         <div className="loading-app">
-          <h2>Loading curious feeds...</h2>
+        <ReactCSSTransitionGroup transitionName="example" transitionAppear={true} transitionAppearTimeout={500} transitionEnterTimeout={500} transitionLeaveTimeout={300}>
+          <h2 key="1" id="loading-word">Loading curious feeds... </h2>
           <i className="fa fa-spinner fa-spin fa-fw loading-icon"></i>
+        </ReactCSSTransitionGroup>
+
         </div>
       );
     }

@@ -119,6 +119,7 @@ div.loading-app {
   align-items: center;
 
   h2 {
+    position: relative;
     font-size: 30px;
     margin-top: 50px;
   }
@@ -127,4 +128,33 @@ div.loading-app {
     font-size: 30px;
     padding: 20px;
   }
+}
+
+.example-appear {
+  left: -300px;
+  opacity: 0.01;
+}
+
+.example-appear.example-appear-active {
+  opacity: 1;
+  left: 0;
+  transition: opacity .5s, left 1s;
+}
+
+.example-enter {
+  opacity: 0.01;
+}
+
+.example-enter.example-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+
+.example-leave {
+  opacity: 1;
+}
+
+.example-leave.example-leave-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
 }
