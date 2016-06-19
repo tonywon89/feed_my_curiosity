@@ -140,10 +140,9 @@ var App = React.createClass({
     } else {
       content = (
         <div className="loading-app">
-        <ReactCSSTransitionGroup transitionName="example" transitionAppear={true} transitionAppearTimeout={500} transitionEnterTimeout={500} transitionLeaveTimeout={300}>
-          <h2 key="1" id="loading-word">Loading curious feeds... </h2>
+          <h2 key="1" id="loading-word" className="appear">Loading curious feeds... </h2>
           <i className="fa fa-spinner fa-spin fa-fw loading-icon"></i>
-        </ReactCSSTransitionGroup>
+
 
         </div>
       );
