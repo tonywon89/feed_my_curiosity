@@ -140,7 +140,7 @@ var App = React.createClass({
     } else {
       content = (
         <div className="loading-app">
-          <h2><span id="loading-word">Loading</span> <span id="curious-feeds-word">curious feeds ...</span> </h2>
+          <h2><span id="loading-word">Loading</span> <span id="curious-feeds-word">curious feeds...</span> </h2>
           <i className="fa fa-spinner fa-spin fa-fw loading-icon"></i>
         </div>
       );
